@@ -1,9 +1,12 @@
 # =============================================================================
 # Crushed Stone Project - Import and Raw Data Pull
 # =============================================================================
-# Pulls all raw source data used by the state-year analysis. Run this file from
-# the project root. API keys may be defined in an untracked api-keys.R file or
+# Pulls and minimally parses all source data used by the state-year analysis.
+# Run this file from the project root. Derived variables are created in
+# R/02_clean.R. API keys may be defined in an untracked api-keys.R file or
 # supplied as BEA_KEY, BLS_KEY, and FRED_KEY environment variables.
+# Pass a comma-separated source list to refresh selected imports, for example:
+#   Rscript R/01_import.R usgs,fred
 
 suppressPackageStartupMessages({
   library(dplyr)
@@ -16,26 +19,133 @@ suppressPackageStartupMessages({
   library(tidyr)
 })
 
-if (file.exists("api-keys.R")) {
-  source("api-keys.R")
-}
-
 analysis_start_year <- 2015L
 analysis_end_year <- 2023L
 analysis_years <- analysis_start_year:analysis_end_year
 
-bea_key <- if (exists("bea_key")) bea_key else Sys.getenv("BEA_KEY", unset = NA_character_)
-bls_key <- if (exists("bls_key")) bls_key else Sys.getenv("BLS_KEY", unset = NA_character_)
-fred_key <- if (exists("fred_key")) fred_key else Sys.getenv("FRED_KEY", unset = NA_character_)
+available_sources <- c(
+  "usgs", "census_bps", "fhwa", "bls", "bea", "fred",
+  "bea_construction", "census_construction", "eia", "msha"
+)
+arguments <- commandArgs(trailingOnly = TRUE)
+requested_sources <- if (length(arguments) == 0L) {
+  available_sources
+} else {
+  trimws(strsplit(arguments[[1]], ",", fixed = TRUE)[[1]])
+}
+unknown_sources <- setdiff(requested_sources, available_sources)
+if (length(unknown_sources) > 0L) {
+  stop(
+    "Unknown import source(s): ", paste(unknown_sources, collapse = ", "),
+    ". Choose from: ", paste(available_sources, collapse = ", ")
+  )
+}
+
+should_import <- function(source) source %in% requested_sources
+
+key_environment <- new.env(parent = baseenv())
+if (file.exists("api-keys.R")) {
+  sys.source("api-keys.R", envir = key_environment)
+}
+
+get_api_key <- function(object_name, environment_name) {
+  if (exists(object_name, envir = key_environment, inherits = FALSE)) {
+    return(get(object_name, envir = key_environment, inherits = FALSE))
+  }
+  Sys.getenv(environment_name, unset = NA_character_)
+}
+
+bea_key <- get_api_key("bea_key", "BEA_KEY")
+bls_key <- get_api_key("bls_key", "BLS_KEY")
+fred_key <- get_api_key("fred_key", "FRED_KEY")
 
 require_api_key <- function(key, key_name) {
-  if (length(key) != 1 || is.na(key) || !nzchar(key)) {
+  if (length(key) != 1L || is.na(key) || !nzchar(key)) {
     stop(
       key_name,
-      " is missing. Define it in api-keys.R or its corresponding environment variable."
+      " is missing. Define it in api-keys.R or its corresponding ",
+      "environment variable."
     )
   }
   invisible(key)
+}
+
+mean_or_na <- function(x) {
+  if (all(is.na(x))) NA_real_ else mean(x, na.rm = TRUE)
+}
+
+assert_required_columns <- function(data, required, source_name) {
+  missing_columns <- setdiff(required, names(data))
+  if (length(missing_columns) > 0L) {
+    stop(
+      source_name, " schema is missing required columns: ",
+      paste(missing_columns, collapse = ", ")
+    )
+  }
+  invisible(data)
+}
+
+validate_state_year_panel <- function(
+  data,
+  years,
+  source_name,
+  require_complete = TRUE
+) {
+  assert_required_columns(data, c("state_fips", "year"), source_name)
+  if (nrow(data) == 0L) {
+    stop(source_name, " returned no rows.")
+  }
+
+  missing_keys <- data |>
+    filter(is.na(.data$state_fips) | is.na(.data$year))
+  if (nrow(missing_keys) > 0L) {
+    stop(source_name, " contains rows with missing state-year keys.")
+  }
+
+  duplicates <- data |>
+    count(.data$state_fips, .data$year) |>
+    filter(.data$n != 1L)
+  if (nrow(duplicates) > 0L) {
+    stop(source_name, " contains duplicate state-year rows.")
+  }
+
+  expected <- tidyr::crossing(
+    state_fips = state_fips_lookup$state_fips,
+    year = as.integer(years)
+  )
+  observed <- distinct(data, .data$state_fips, .data$year)
+  unexpected <- anti_join(
+    observed,
+    expected,
+    by = c("state_fips", "year")
+  )
+  if (nrow(unexpected) > 0L) {
+    stop(source_name, " contains unexpected state-year keys.")
+  }
+
+  missing <- anti_join(
+    expected,
+    observed,
+    by = c("state_fips", "year")
+  )
+
+  if (nrow(missing) > 0L) {
+    detail <- paste0(
+      nrow(missing), " state-year rows are missing (",
+      n_distinct(missing$state_fips), " states affected)."
+    )
+    if (require_complete) {
+      stop(source_name, " ", detail)
+    }
+    warning(source_name, " ", detail, call. = FALSE)
+  }
+
+  message(
+    source_name, " rows: ", nrow(data),
+    "; states: ", n_distinct(data$state_fips),
+    "; years: ", min(data$year), "-", max(data$year)
+  )
+  invisible(data)
 }
 
 write_raw_csv <- function(data, source, filename) {
@@ -73,9 +183,9 @@ usgs_crushed_stone_url <- paste0(
 )
 
 get_usgs_crushed_stone <- function(
-    url = usgs_crushed_stone_url,
-    years = analysis_years,
-    sheet = "Data_1971_2023"
+  url = usgs_crushed_stone_url,
+  years = analysis_years,
+  sheet = "Data_1971_2023"
 ) {
   tmp <- tempfile(fileext = ".xlsx")
   on.exit(unlink(tmp), add = TRUE)
@@ -105,7 +215,17 @@ get_usgs_crushed_stone <- function(
     )
   }
 
-  read_excel(tmp, sheet = sheet) |>
+  raw <- read_excel(tmp, sheet = sheet)
+  assert_required_columns(
+    raw,
+    c(
+      "Commodity", "Data Description", "Year", "State Coverage", "Region",
+      "Division", "Quantity", "Total Value", "Unit Value"
+    ),
+    "USGS crushed-stone workbook"
+  )
+
+  raw |>
     filter(
       Commodity == "Stone, crushed",
       `Data Description` == "State totals",
@@ -125,8 +245,11 @@ get_usgs_crushed_stone <- function(
     arrange(state, year)
 }
 
-usgs_stone <- get_usgs_crushed_stone()
-write_raw_csv(usgs_stone, "usgs", "usgs_crushed_stone_production.csv")
+if (should_import("usgs")) {
+  usgs_stone <- get_usgs_crushed_stone()
+  validate_state_year_panel(usgs_stone, analysis_years, "USGS crushed stone")
+  write_raw_csv(usgs_stone, "usgs", "usgs_crushed_stone_production.csv")
+}
 
 # =============================================================================
 
@@ -140,12 +263,12 @@ write_raw_csv(usgs_stone, "usgs", "usgs_crushed_stone_production.csv")
 
 bps_state_col_names <- c(
   "time", "state_fips", "region_code", "division_code", "state_name",
-  "bldgs_1unit",   "units_1unit",   "value_1unit",
-  "bldgs_2unit",   "units_2unit",   "value_2unit",
-  "bldgs_34unit",  "units_34unit",  "value_34unit",
-  "bldgs_5punit",  "units_5punit",  "value_5punit",
-  "bldgs_1unit_rep",  "units_1unit_rep",  "value_1unit_rep",
-  "bldgs_2unit_rep",  "units_2unit_rep",  "value_2unit_rep",
+  "bldgs_1unit", "units_1unit", "value_1unit",
+  "bldgs_2unit", "units_2unit", "value_2unit",
+  "bldgs_34unit", "units_34unit", "value_34unit",
+  "bldgs_5punit", "units_5punit", "value_5punit",
+  "bldgs_1unit_rep", "units_1unit_rep", "value_1unit_rep",
+  "bldgs_2unit_rep", "units_2unit_rep", "value_2unit_rep",
   "bldgs_34unit_rep", "units_34unit_rep", "value_34unit_rep",
   "bldgs_5punit_rep", "units_5punit_rep", "value_5punit_rep"
 )
@@ -159,14 +282,25 @@ get_census_building_permits <- function(years = analysis_years) {
   map2_dfr(urls, years, function(url, file_year) {
     message("Census BPS: pulling ", file_year)
 
-    read_csv(
+    out <- read_csv(
       url,
       skip = 2,
       col_names = bps_state_col_names,
       col_types = cols(.default = "c"),
       na = c("", "NA"),
       show_col_types = FALSE
-    ) |>
+    )
+    assert_required_columns(out, bps_state_col_names, "Census BPS flat file")
+    observed_years <- unique(as.integer(substr(out$time, 1L, 4L)))
+    observed_years <- observed_years[!is.na(observed_years)]
+    if (!identical(observed_years, as.integer(file_year))) {
+      stop(
+        "Census BPS file for ", file_year,
+        " contains unexpected year values: ",
+        paste(observed_years, collapse = ", ")
+      )
+    }
+    out |>
       mutate(source_year = file_year)
   }) |>
     filter(.data$state_fips %in% state_fips_lookup$state_fips) |>
@@ -184,8 +318,11 @@ get_census_building_permits <- function(years = analysis_years) {
     arrange(state_name, year)
 }
 
-building_permits <- get_census_building_permits()
-write_raw_csv(building_permits, "census", "census_building_permits.csv")
+if (should_import("census_bps")) {
+  building_permits <- get_census_building_permits()
+  validate_state_year_panel(building_permits, analysis_years, "Census BPS")
+  write_raw_csv(building_permits, "census", "census_building_permits.csv")
+}
 
 # =============================================================================
 
@@ -220,45 +357,13 @@ fhwa_col_names <- c(
 )
 
 download_fhwa_workbook <- function(url, destfile) {
-  standard_download <- tryCatch(
-    {
-      suppressWarnings(
-        utils::download.file(
-          url,
-          destfile = destfile,
-          mode = "wb",
-          method = "libcurl",
-          quiet = TRUE
-        )
-      )
-      TRUE
-    },
-    error = function(error) {
-      message(
-        "Standard FHWA download failed (", conditionMessage(error),
-        "). Retrying this official FHWA archive with relaxed certificate ",
-        "verification."
-      )
-      FALSE
-    }
+  utils::download.file(
+    url,
+    destfile = destfile,
+    mode = "wb",
+    method = "libcurl",
+    quiet = TRUE
   )
-
-  if (!standard_download) {
-    # Some older FHWA archive files have an incomplete TLS certificate chain.
-    # Keep this exception narrowly scoped to the hard-coded official FHWA host.
-    if (!grepl("^https://www\\.fhwa\\.dot\\.gov/", url)) {
-      stop("Refusing relaxed TLS verification for a non-FHWA URL: ", url)
-    }
-
-    response <- httr::GET(
-      url,
-      httr::user_agent("MDATA600-Crushed-Stone/1.0"),
-      httr::config(ssl_verifypeer = 0L),
-      httr::timeout(60)
-    )
-    httr::stop_for_status(response)
-    writeBin(httr::content(response, as = "raw"), destfile)
-  }
 
   connection <- file(destfile, open = "rb")
   on.exit(close(connection), add = TRUE)
@@ -268,6 +373,17 @@ download_fhwa_workbook <- function(url, destfile) {
   }
 
   invisible(destfile)
+}
+
+normalize_fhwa_state <- function(x) {
+  x |>
+    trimws() |>
+    sub(
+      pattern = "\\s+(?:\\(?[0-9]+\\)?|[0-9]+/)$",
+      replacement = "",
+      perl = TRUE
+    ) |>
+    trimws()
 }
 
 get_fhwa_state_capital_outlays <- function(years = analysis_years) {
@@ -280,19 +396,27 @@ get_fhwa_state_capital_outlays <- function(years = analysis_years) {
     message("FHWA SF-4C: pulling ", year)
 
     tmp <- tempfile(fileext = ".xlsx")
-    on.exit(unlink(tmp), add = TRUE)
+    raw <- tryCatch(
+      {
+        download_fhwa_workbook(url, tmp)
+        read_excel(
+          tmp,
+          sheet = 1,
+          range = "A15:S65",
+          col_names = fhwa_col_names
+        )
+      },
+      finally = unlink(tmp)
+    )
+    assert_required_columns(raw, fhwa_col_names, "FHWA SF-4C workbook")
+    if (nrow(raw) != 51L) {
+      stop("FHWA SF-4C workbook has an unexpected row count for ", year, ".")
+    }
 
-    download_fhwa_workbook(url, tmp)
-
-    read_excel(
-      tmp,
-      sheet = 1,
-      range = "A15:S65",
-      col_names = fhwa_col_names
-    ) |>
+    raw |>
       filter(!is.na(state), trimws(state) != "Total") |>
       mutate(
-        state = trimws(state),
+        state = normalize_fhwa_state(state),
         year = year,
         across(
           -c(state, year),
@@ -310,18 +434,18 @@ get_fhwa_state_capital_outlays <- function(years = analysis_years) {
     arrange(state, year)
 }
 
-fhwa_outlays <- get_fhwa_state_capital_outlays()
-write_raw_csv(fhwa_outlays, "fhwa", "fhwa_state_capital_outlays.csv")
+if (should_import("fhwa")) {
+  fhwa_outlays <- get_fhwa_state_capital_outlays()
+  validate_state_year_panel(fhwa_outlays, analysis_years, "FHWA SF-4C")
+  write_raw_csv(fhwa_outlays, "fhwa", "fhwa_state_capital_outlays.csv")
+}
 
 # =============================================================================
 
 # 4. BLS - State Construction Employment
 # =============================================================================
-# IMPORTANT CHANGE:
-# The old script used a national CES series. That cannot explain state-level
-# differences because every state would receive the same employment value.
-#
-# This function constructs State and Metro Area CES (SAE) statewide series IDs.
+# Constructs State and Metro Area CES (SAE) statewide series IDs. A national
+# CES series is not suitable because it cannot explain state-level differences.
 # Default industry = Heavy and Civil Engineering Construction (NAICS 237).
 # The function calculates annual averages from monthly, not-seasonally-adjusted
 # observations. Some states may not publish the detailed heavy/civil series;
@@ -332,16 +456,15 @@ write_raw_csv(fhwa_outlays, "fhwa", "fhwa_state_capital_outlays.csv")
 #   "construction" -> Total Construction (broader fallback)
 
 get_bls_state_construction <- function(
-    start_year = analysis_start_year,
-    end_year = analysis_end_year,
-    industry = c("heavy_civil", "construction"),
-    key = bls_key
+  start_year = analysis_start_year,
+  end_year = analysis_end_year,
+  industry = c("heavy_civil", "construction"),
+  key = bls_key
 ) {
   require_api_key(key, "bls_key")
   industry <- match.arg(industry)
 
-  series_tail <- switch(
-    industry,
+  series_tail <- switch(industry,
     heavy_civil = "000002023700001",
     construction = "000002000000001"
   )
@@ -407,10 +530,7 @@ get_bls_state_construction <- function(
   annual <- monthly |>
     group_by(series_id, year) |>
     summarise(
-      construction_employment_thousands = mean(
-        employment_thousands,
-        na.rm = TRUE
-      ),
+      construction_employment_thousands = mean_or_na(employment_thousands),
       months_reported = sum(!is.na(employment_thousands)),
       .groups = "drop"
     ) |>
@@ -425,48 +545,51 @@ get_bls_state_construction <- function(
     ) |>
     arrange(state, year)
 
-  missing_states <- anti_join(
-    state_fips_lookup,
-    distinct(annual, state_fips),
-    by = "state_fips"
-  )
-
-  if (nrow(missing_states) > 0) {
+  incomplete_years <- annual |>
+    filter(.data$months_reported != 12L)
+  if (nrow(incomplete_years) > 0L) {
     warning(
-      "BLS did not return the selected series for: ",
-      paste(missing_states$state, collapse = ", "),
-      ". Try industry = 'construction' if heavy/civil coverage is too sparse."
+      "BLS returned fewer than 12 monthly observations for ",
+      nrow(incomplete_years), " state-year rows.",
+      call. = FALSE
     )
   }
 
   annual
 }
 
-bls_construction_emp <- get_bls_state_construction(
-  industry = "heavy_civil"
-)
-write_raw_csv(
-  bls_construction_emp,
-  "bls",
-  "bls_state_construction_employment.csv"
-)
+if (should_import("bls")) {
+  bls_construction_emp <- get_bls_state_construction(
+    industry = "heavy_civil"
+  )
+  validate_state_year_panel(
+    bls_construction_emp,
+    analysis_years,
+    "BLS state construction employment",
+    require_complete = FALSE
+  )
+  write_raw_csv(
+    bls_construction_emp,
+    "bls",
+    "bls_state_construction_employment.csv"
+  )
+}
 
 # =============================================================================
 
 # 5. BEA - State Real GDP and Personal Income
 # =============================================================================
-# IMPORTANT CHANGE:
-# The old real-GDP pull used NIPA T10106, a national table. This project needs
-# regional/state GDP. The BEA Regional API uses:
+# This project needs regional/state GDP rather than the national NIPA table.
+# The BEA Regional API uses:
 #   SAGDP9,  LineCode 1 -> Real GDP by state
 #   SAINC1,  LineCode 1 -> Personal income by state
 
 get_bea_regional <- function(
-    table_name,
-    line_code,
-    years = analysis_years,
-    geo_fips = "STATE",
-    key = bea_key
+  table_name,
+  line_code,
+  years = analysis_years,
+  geo_fips = "STATE",
+  key = bea_key
 ) {
   require_api_key(key, "bea_key")
 
@@ -510,30 +633,37 @@ get_bea_regional <- function(
     arrange(state, year)
 }
 
-real_gdp <- get_bea_regional(
-  table_name = "SAGDP9",
-  line_code = 1
-) |>
-  rename(real_gdp = value)
+if (should_import("bea")) {
+  real_gdp <- get_bea_regional(
+    table_name = "SAGDP9",
+    line_code = 1
+  ) |>
+    rename(real_gdp = value)
 
-state_income <- get_bea_regional(
-  table_name = "SAINC1",
-  line_code = 1
-) |>
-  rename(personal_income = value)
+  state_income <- get_bea_regional(
+    table_name = "SAINC1",
+    line_code = 1
+  ) |>
+    rename(personal_income = value)
 
-bea_state_gdp_personal_income <- full_join(
-  real_gdp,
-  state_income,
-  by = c("state_fips", "state", "year")
-) |>
-  arrange(state, year)
+  bea_state_gdp_personal_income <- full_join(
+    real_gdp,
+    state_income,
+    by = c("state_fips", "state", "year")
+  ) |>
+    arrange(state, year)
 
-write_raw_csv(
-  bea_state_gdp_personal_income,
-  "bea",
-  "bea_state_gdp_personal_income.csv"
-)
+  validate_state_year_panel(
+    bea_state_gdp_personal_income,
+    analysis_years,
+    "BEA state GDP and personal income"
+  )
+  write_raw_csv(
+    bea_state_gdp_personal_income,
+    "bea",
+    "bea_state_gdp_personal_income.csv"
+  )
+}
 
 # =============================================================================
 
@@ -548,10 +678,10 @@ write_raw_csv(
 #   CPIAUCSL     -> Consumer Price Index (used below to derive annual inflation)
 
 get_fred_series <- function(
-    series_id,
-    start_date,
-    end_date,
-    key = fred_key
+  series_id,
+  start_date,
+  end_date,
+  key = fred_key
 ) {
   require_api_key(key, "fred_key")
 
@@ -591,63 +721,58 @@ annualize_fred <- function(data) {
     group_by(series_id, year) |>
     summarise(
       observations = sum(!is.na(value)),
-      value = mean(value, na.rm = TRUE),
+      value = mean_or_na(value),
       .groups = "drop"
     )
 }
 
-mortgage_rates <- get_fred_series(
-  series_id = "MORTGAGE30US",
-  start_date = sprintf("%d-01-01", analysis_start_year),
-  end_date = sprintf("%d-12-31", analysis_end_year)
-)
-
-mortgage_rates_annual <- annualize_fred(mortgage_rates) |>
-  transmute(
-    year,
-    mortgage_rate_pct = value,
-    observations
+if (should_import("fred")) {
+  mortgage_rates <- get_fred_series(
+    series_id = "MORTGAGE30US",
+    start_date = sprintf("%d-01-01", analysis_start_year),
+    end_date = sprintf("%d-12-31", analysis_end_year)
   )
 
-# Pull one extra prior year so 2015 inflation can be calculated from 2014 CPI.
-cpi <- get_fred_series(
-  series_id = "CPIAUCSL",
-  start_date = sprintf("%d-01-01", analysis_start_year - 1),
-  end_date = sprintf("%d-12-31", analysis_end_year)
-)
+  mortgage_rates_annual <- annualize_fred(mortgage_rates) |>
+    transmute(
+      year,
+      mortgage_rate_pct = value,
+      observations
+    )
 
-cpi_annual <- annualize_fred(cpi) |>
-  arrange(year) |>
-  mutate(
-    inflation_pct = 100 * (value / lag(value) - 1)
+  # Pull one prior year so initial-year inflation can be calculated when clean.
+  cpi <- get_fred_series(
+    series_id = "CPIAUCSL",
+    start_date = sprintf("%d-01-01", analysis_start_year - 1L),
+    end_date = sprintf("%d-12-31", analysis_end_year)
+  )
+
+  cpi_annual <- annualize_fred(cpi) |>
+    arrange(year) |>
+    transmute(
+      year,
+      cpi_index = value,
+      observations
+    )
+
+  fred_mortgage_rates_inflation <- full_join(
+    mortgage_rates_annual |>
+      rename(mortgage_rate_observations = observations),
+    cpi_annual |>
+      rename(cpi_observations = observations),
+    by = "year"
   ) |>
-  filter(year %in% analysis_years) |>
-  transmute(
-    year,
-    cpi_index = value,
-    inflation_pct,
-    observations
+    arrange(year)
+
+  write_raw_csv(
+    fred_mortgage_rates_inflation,
+    "fred",
+    "fred_mortgage_rates_inflation.csv"
   )
-
-fred_mortgage_rates_inflation <- full_join(
-  mortgage_rates_annual |>
-    rename(mortgage_rate_observations = observations),
-  cpi_annual |>
-    rename(cpi_observations = observations),
-  by = "year"
-) |>
-  arrange(year)
-
-write_raw_csv(
-  fred_mortgage_rates_inflation,
-  "fred",
-  "fred_mortgage_rates_inflation.csv"
-)
+}
 
 # =============================================================================
-
-# =============================================================================
-# BEA - State Construction-Sector Real GDP
+# 7. BEA - State Construction-Sector Real GDP
 # =============================================================================
 # Official source and API documentation:
 #   https://apps.bea.gov/api/data/
@@ -656,18 +781,6 @@ write_raw_csv(
 # SAGDP9 reports real GDP by state and industry. The construction LineCode is
 # discovered from BEA metadata rather than hard-coded. The current table reports
 # millions of chained 2017 dollars; UNIT_MULT == 6 confirms a 10^6 multiplier.
-
-if (!exists("analysis_years")) analysis_years <- 2015:2023
-if (!exists("bea_key")) bea_key <- NA_character_
-
-if (!exists("require_api_key")) {
-  require_api_key <- function(key, key_name) {
-    if (length(key) != 1 || is.na(key) || !nzchar(key)) {
-      stop(key_name, " is missing. Add it to api-keys.R before running this pull.")
-    }
-    invisible(key)
-  }
-}
 
 get_bea_construction_line_code <- function(key = bea_key) {
   require_api_key(key, "bea_key")
@@ -698,8 +811,12 @@ get_bea_construction_line_code <- function(key = bea_key) {
 
   exact <- values |>
     dplyr::filter(tolower(trimws(.data$Desc)) == "construction")
-  matches <- if (nrow(exact) == 1) exact else values |>
-    dplyr::filter(grepl("construction", .data$Desc, ignore.case = TRUE))
+  matches <- if (nrow(exact) == 1) {
+    exact
+  } else {
+    values |>
+      dplyr::filter(grepl("construction", .data$Desc, ignore.case = TRUE))
+  }
 
   if (nrow(matches) != 1) {
     stop(
@@ -713,8 +830,8 @@ get_bea_construction_line_code <- function(key = bea_key) {
 }
 
 get_bea_construction_gdp <- function(
-    years = analysis_years,
-    key = bea_key
+  years = analysis_years,
+  key = bea_key
 ) {
   line_code <- get_bea_construction_line_code(key)
 
@@ -753,43 +870,30 @@ get_bea_construction_gdp <- function(
       construction_real_gdp_unit = "millions_of_chained_2017_dollars",
       unit_multiplier = as.integer(.data$UNIT_MULT)
     ) |>
-    dplyr::filter(.data$state %in% state.name) |>
-    dplyr::filter(.data$unit_multiplier == 6L) |>
-    dplyr::group_by(state_fips, state) |>
-    dplyr::arrange(year, .by_group = TRUE) |>
-    dplyr::mutate(
-      construction_real_gdp_growth_pct =
-        100 * (.data$construction_real_gdp /
-          dplyr::lag(.data$construction_real_gdp) - 1)
+    dplyr::filter(
+      .data$state %in% state.name,
+      .data$unit_multiplier == 6L
     ) |>
-    dplyr::ungroup()
+    dplyr::arrange(.data$state, .data$year)
 }
 
-bea_construction_gdp <- get_bea_construction_gdp()
+if (should_import("bea_construction")) {
+  bea_construction_gdp <- get_bea_construction_gdp()
+  validate_state_year_panel(
+    bea_construction_gdp,
+    analysis_years,
+    "BEA construction GDP"
+  )
 
-bea_construction_duplicates <- bea_construction_gdp |>
-  dplyr::count(state_fips, year) |>
-  dplyr::filter(n != 1)
-
-if (nrow(bea_construction_duplicates) > 0) {
-  stop("BEA construction GDP contains duplicate state-year rows.")
+  write_raw_csv(
+    bea_construction_gdp,
+    "bea",
+    "bea_construction_gdp.csv"
+  )
 }
-
-message(
-  "BEA construction GDP rows: ", nrow(bea_construction_gdp),
-  "; states: ", dplyr::n_distinct(bea_construction_gdp$state_fips),
-  "; years: ", min(bea_construction_gdp$year), "-",
-  max(bea_construction_gdp$year)
-)
-
-write_raw_csv(
-  bea_construction_gdp,
-  "bea",
-  "bea_construction_gdp.csv"
-)
 
 # =============================================================================
-# Census - Annual Value of Construction Put in Place by State
+# 8. Census - Annual Value of Construction Put in Place by State
 # =============================================================================
 # Official source:
 #   https://www.census.gov/construction/c30/historical_data.html
@@ -799,34 +903,28 @@ write_raw_csv(
 # variables measure demand-side construction activity, but must be deflated in
 # the cleaning step before being interpreted as real activity.
 
-if (!exists("analysis_years")) analysis_years <- 2015:2023
-
-if (!exists("state_fips_lookup")) {
-  state_fips_lookup <- tibble::tibble(
-    state = state.name,
-    state_fips = c(
-      "01", "02", "04", "05", "06", "08", "09", "10", "12", "13",
-      "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
-      "25", "26", "27", "28", "29", "30", "31", "32", "33", "34",
-      "35", "36", "37", "38", "39", "40", "41", "42", "44", "45",
-      "46", "47", "48", "49", "50", "51", "53", "54", "55", "56"
-    )
-  )
-}
-
 census_construction_urls <- tibble::tribble(
-  ~series, ~url,
+  ~series, ~source_priority, ~url,
   "private_nonresidential_spending_nominal_millions",
+  1L,
   "https://www.census.gov/construction/c30/xlsx/nrstatehs1.xlsx",
   "private_nonresidential_spending_nominal_millions",
+  2L,
   "https://www.census.gov/construction/c30/xlsx/nrstate.xlsx",
   "state_local_construction_spending_nominal_millions",
+  1L,
   "https://www.census.gov/construction/c30/xlsx/slstatehs.xlsx",
   "state_local_construction_spending_nominal_millions",
+  2L,
   "https://www.census.gov/construction/c30/xlsx/slstate.xlsx"
 )
 
-read_census_state_construction <- function(url, series, years = analysis_years) {
+read_census_state_construction <- function(
+  url,
+  series,
+  source_priority,
+  years = analysis_years
+) {
   message("Census construction spending: downloading ", basename(url))
 
   workbook <- tempfile(fileext = ".xlsx")
@@ -871,46 +969,65 @@ read_census_state_construction <- function(url, series, years = analysis_years) 
     ) |>
     dplyr::mutate(
       year = as.integer(.data$year),
-      series = series
+      series = series,
+      source_priority = source_priority,
+      source_file = basename(url)
     )
 }
 
-census_construction_long <- purrr::pmap_dfr(
-  census_construction_urls,
-  function(series, url) {
-    read_census_state_construction(url, series, analysis_years)
+if (should_import("census_construction")) {
+  census_construction_long <- purrr::pmap_dfr(
+    census_construction_urls,
+    function(series, source_priority, url) {
+      read_census_state_construction(
+        url,
+        series,
+        source_priority,
+        analysis_years
+      )
+    }
+  )
+
+  overlapping_census_rows <- census_construction_long |>
+    dplyr::count(.data$state, .data$year, .data$series) |>
+    dplyr::filter(.data$n > 1L)
+  if (nrow(overlapping_census_rows) > 0L) {
+    message(
+      "Census construction: resolving ", nrow(overlapping_census_rows),
+      " overlapping state-year-series rows in favor of current workbooks."
+    )
   }
-)
 
-census_construction_spending <- census_construction_long |>
-  tidyr::pivot_wider(names_from = "series", values_from = "value") |>
-  dplyr::left_join(state_fips_lookup, by = "state") |>
-  dplyr::select(state_fips, state, year, dplyr::everything()) |>
-  dplyr::arrange(state, year)
+  census_construction_spending <- census_construction_long |>
+    dplyr::arrange(
+      .data$state,
+      .data$year,
+      .data$series,
+      is.na(.data$value),
+      dplyr::desc(.data$source_priority)
+    ) |>
+    dplyr::distinct(.data$state, .data$year, .data$series, .keep_all = TRUE) |>
+    dplyr::select(-source_priority, -source_file) |>
+    tidyr::pivot_wider(names_from = "series", values_from = "value") |>
+    dplyr::left_join(state_fips_lookup, by = "state") |>
+    dplyr::select(state_fips, state, year, dplyr::everything()) |>
+    dplyr::arrange(state, year)
 
-census_duplicates <- census_construction_spending |>
-  dplyr::count(state_fips, year) |>
-  dplyr::filter(n != 1)
+  validate_state_year_panel(
+    census_construction_spending,
+    analysis_years,
+    "Census construction spending"
+  )
 
-if (nrow(census_duplicates) > 0) {
-  stop("Census construction data contain duplicate state-year rows.")
+  write_raw_csv(
+    census_construction_spending,
+    "census",
+    "census_construction_spending.csv"
+  )
 }
 
-message(
-  "Census construction rows: ", nrow(census_construction_spending),
-  "; states: ", dplyr::n_distinct(census_construction_spending$state_fips),
-  "; years: ", min(census_construction_spending$year), "-",
-  max(census_construction_spending$year)
-)
-
-write_raw_csv(
-  census_construction_spending,
-  "census",
-  "census_construction_spending.csv"
-)
-
 # =============================================================================
-# EIA SEDS - State Industrial Energy Prices
+# 9. EIA SEDS - State Industrial Energy Prices
 # =============================================================================
 # Official bulk price file and codebook:
 #   https://www.eia.gov/state/seds/sep_prices/total/csv/pr_all.csv
@@ -923,21 +1040,6 @@ write_raw_csv(
 #   TEICD - Total energy average price, industrial sector
 # These are production/transportation cost controls, not direct demand measures.
 
-if (!exists("analysis_years")) analysis_years <- 2015:2023
-
-if (!exists("state_fips_lookup")) {
-  state_fips_lookup <- tibble::tibble(
-    state = state.name,
-    state_fips = c(
-      "01", "02", "04", "05", "06", "08", "09", "10", "12", "13",
-      "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
-      "25", "26", "27", "28", "29", "30", "31", "32", "33", "34",
-      "35", "36", "37", "38", "39", "40", "41", "42", "44", "45",
-      "46", "47", "48", "49", "50", "51", "53", "54", "55", "56"
-    )
-  )
-}
-
 eia_seds_price_url <-
   "https://www.eia.gov/state/seds/sep_prices/total/csv/pr_all.csv"
 
@@ -949,8 +1051,8 @@ eia_price_series <- c(
 )
 
 get_eia_industrial_prices <- function(
-    url = eia_seds_price_url,
-    years = analysis_years
+  url = eia_seds_price_url,
+  years = analysis_years
 ) {
   message("EIA SEDS: downloading industrial energy prices")
   raw <- readr::read_csv(
@@ -973,7 +1075,11 @@ get_eia_industrial_prices <- function(
 
   out <- raw |>
     dplyr::filter(.data$MSN %in% names(eia_price_series)) |>
-    dplyr::select(state_abbr = State, MSN, dplyr::all_of(as.character(years))) |>
+    dplyr::select(
+      state_abbr = State,
+      MSN,
+      dplyr::all_of(as.character(years))
+    ) |>
     tidyr::pivot_longer(
       cols = dplyr::all_of(as.character(years)),
       names_to = "year",
@@ -993,30 +1099,22 @@ get_eia_industrial_prices <- function(
     dplyr::select(state_fips, state, year, dplyr::everything(), -state_abbr) |>
     dplyr::arrange(state, year)
 
-  duplicates <- out |>
-    dplyr::count(state_fips, year) |>
-    dplyr::filter(n != 1)
-  if (nrow(duplicates) > 0) {
-    stop("EIA energy prices contain duplicate state-year rows.")
-  }
-
   out
 }
 
-eia_energy_prices <- get_eia_industrial_prices()
+if (should_import("eia")) {
+  eia_energy_prices <- get_eia_industrial_prices()
+  validate_state_year_panel(
+    eia_energy_prices,
+    analysis_years,
+    "EIA energy prices"
+  )
 
-message(
-  "EIA energy-price rows: ", nrow(eia_energy_prices),
-  "; states: ", dplyr::n_distinct(eia_energy_prices$state_fips),
-  "; years: ", min(eia_energy_prices$year), "-",
-  max(eia_energy_prices$year)
-)
-
-write_raw_csv(eia_energy_prices, "eia", "eia_energy_prices.csv")
-
+  write_raw_csv(eia_energy_prices, "eia", "eia_energy_prices.csv")
+}
 
 # =============================================================================
-# MSHA - Stone Quarry Employment and Capacity Controls
+# 10. MSHA - Stone Quarry Employment and Capacity Controls
 # =============================================================================
 # Official datasets and definitions:
 #   https://arlweb.msha.gov/OpenGovernmentData/DataSets/MinesProdYearly.zip
@@ -1026,29 +1124,14 @@ write_raw_csv(eia_energy_prices, "eia", "eia_energy_prices.csv")
 # Defensible filters from the MSHA dictionaries:
 #   PRIMARY_CANVASS_CD == "6" identifies M/NM (Stone).
 #   SUBUNIT_CD == "03" identifies strip, quarry, or open-pit operations.
-# A mine is active in a state-year here when that quarry subunit reports positive
+# A mine is active in a state-year when that quarry subunit reports positive
 # annual hours or positive average annual employment. This historical activity
 # definition is preferred to the Mines file's current-status field.
 #
 # Limitation: Mines.zip describes each mine's current primary commodity, not a
 # historical commodity classification. The measures are supply-capacity controls
-# and contemporaneous employment can respond to demand; lagged versions are
-# therefore also created.
-
-if (!exists("analysis_years")) analysis_years <- 2015:2023
-
-if (!exists("state_fips_lookup")) {
-  state_fips_lookup <- tibble::tibble(
-    state = state.name,
-    state_fips = c(
-      "01", "02", "04", "05", "06", "08", "09", "10", "12", "13",
-      "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
-      "25", "26", "27", "28", "29", "30", "31", "32", "33", "34",
-      "35", "36", "37", "38", "39", "40", "41", "42", "44", "45",
-      "46", "47", "48", "49", "50", "51", "53", "54", "55", "56"
-    )
-  )
-}
+# and contemporaneous employment can respond to demand. Lagged versions are
+# therefore created in R/02_clean.R.
 
 msha_urls <- c(
   employment =
@@ -1180,31 +1263,16 @@ get_msha_stone_capacity <- function(years = analysis_years) {
         ~ tidyr::replace_na(.x, 0)
       )
     ) |>
-    dplyr::group_by(state_fips, state) |>
-    dplyr::arrange(year, .by_group = TRUE) |>
-    dplyr::mutate(
-      lag_active_stone_mines = dplyr::lag(.data$active_stone_mines),
-      lag_stone_mine_employee_hours =
-        dplyr::lag(.data$stone_mine_employee_hours)
-    ) |>
-    dplyr::ungroup()
+    dplyr::arrange(.data$state, .data$year)
 }
 
-msha_stone_capacity <- get_msha_stone_capacity()
+if (should_import("msha")) {
+  msha_stone_capacity <- get_msha_stone_capacity()
+  validate_state_year_panel(
+    msha_stone_capacity,
+    analysis_years,
+    "MSHA stone capacity"
+  )
 
-msha_duplicates <- msha_stone_capacity |>
-  dplyr::count(state_fips, year) |>
-  dplyr::filter(n != 1)
-
-if (nrow(msha_duplicates) > 0) {
-  stop("MSHA stone-capacity data contain duplicate state-year rows.")
+  write_raw_csv(msha_stone_capacity, "msha", "msha_stone_capacity.csv")
 }
-
-message(
-  "MSHA stone-capacity rows: ", nrow(msha_stone_capacity),
-  "; states: ", dplyr::n_distinct(msha_stone_capacity$state_fips),
-  "; years: ", min(msha_stone_capacity$year), "-",
-  max(msha_stone_capacity$year)
-)
-
-write_raw_csv(msha_stone_capacity, "msha", "msha_stone_capacity.csv")
