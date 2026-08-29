@@ -44,8 +44,8 @@ if (length(unknown_sources) > 0L) {
 should_import <- function(source) source %in% requested_sources
 
 key_environment <- new.env(parent = baseenv())
-if (file.exists("api-keys.R")) {
-  sys.source("api-keys.R", envir = key_environment)
+if (file.exists("/Users/jschnee12/Library/Mobile Documents/com~apple~CloudDocs/MDATA600-Crushed-Stone/api-keys.R")) {
+  sys.source("/Users/jschnee12/Library/Mobile Documents/com~apple~CloudDocs/MDATA600-Crushed-Stone/api-keys.R", envir = key_environment)
 }
 
 get_api_key <- function(object_name, environment_name) {
