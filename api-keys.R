@@ -1,0 +1,5 @@
+census_key <- "692cf2d7290648e78c1c31104905891cd7e15468"
+bls_key <- "92dddf44a3fb40e4af1d8bf7d934c7f1"
+bea_key <- "346D81F4-72CD-4B58-8D94-3E709D93F37C"
+fred_key <- "60bd38a53c5bad31d793bd1707bf6be8"
+eia_key <- "hf1SJxqZk30VRGp9Kxet3e9R4K7TLImfE0nsqg3e"
