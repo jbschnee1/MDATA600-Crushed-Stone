@@ -1,0 +1,451 @@
+state_fips,state,year,construction_real_gdp,construction_real_gdp_unit,unit_multiplier,construction_real_gdp_growth_pct
+01,Alabama,2015,8009.1,millions_of_chained_2017_dollars,6,
+01,Alabama,2016,8509.7,millions_of_chained_2017_dollars,6,6.25039018116893
+01,Alabama,2017,8824.8,millions_of_chained_2017_dollars,6,3.7028332373644
+01,Alabama,2018,9193.6,millions_of_chained_2017_dollars,6,4.179131538391823
+01,Alabama,2019,9821.6,millions_of_chained_2017_dollars,6,6.8308388444135115
+01,Alabama,2020,10006.9,millions_of_chained_2017_dollars,6,1.8866579783334725
+01,Alabama,2021,10365.4,millions_of_chained_2017_dollars,6,3.5825280556416095
+01,Alabama,2022,9693.1,millions_of_chained_2017_dollars,6,-6.486001505007033
+01,Alabama,2023,9877.3,millions_of_chained_2017_dollars,6,1.9003208467879062
+02,Alaska,2015,2708.7,millions_of_chained_2017_dollars,6,
+02,Alaska,2016,2550.2,millions_of_chained_2017_dollars,6,-5.851515487134051
+02,Alaska,2017,2445,millions_of_chained_2017_dollars,6,-4.125166653595791
+02,Alaska,2018,2500.5,millions_of_chained_2017_dollars,6,2.2699386503067576
+02,Alaska,2019,2560,millions_of_chained_2017_dollars,6,2.3795240951809626
+02,Alaska,2020,2467.7,millions_of_chained_2017_dollars,6,-3.605468750000007
+02,Alaska,2021,2374.9,millions_of_chained_2017_dollars,6,-3.76058678121326
+02,Alaska,2022,2106.8,millions_of_chained_2017_dollars,6,-11.28889637458419
+02,Alaska,2023,2224.5,millions_of_chained_2017_dollars,6,5.58667172963736
+04,Arizona,2015,12776.5,millions_of_chained_2017_dollars,6,
+04,Arizona,2016,13918.7,millions_of_chained_2017_dollars,6,8.939850506789826
+04,Arizona,2017,15520.3,millions_of_chained_2017_dollars,6,11.506821757779084
+04,Arizona,2018,17030.5,millions_of_chained_2017_dollars,6,9.730482013878605
+04,Arizona,2019,18334.7,millions_of_chained_2017_dollars,6,7.658025307536476
+04,Arizona,2020,19960.8,millions_of_chained_2017_dollars,6,8.868975221847087
+04,Arizona,2021,20707.7,millions_of_chained_2017_dollars,6,3.7418339946294843
+04,Arizona,2022,21122.8,millions_of_chained_2017_dollars,6,2.004568348971625
+04,Arizona,2023,22526.2,millions_of_chained_2017_dollars,6,6.644005529569941
+05,Arkansas,2015,4550.6,millions_of_chained_2017_dollars,6,
+05,Arkansas,2016,4698.3,millions_of_chained_2017_dollars,6,3.245725838350988
+05,Arkansas,2017,4819.6,millions_of_chained_2017_dollars,6,2.5817849009216243
+05,Arkansas,2018,4762.3,millions_of_chained_2017_dollars,6,-1.1888953440119532
+05,Arkansas,2019,4859.8,millions_of_chained_2017_dollars,6,2.0473300716040477
+05,Arkansas,2020,4970.9,millions_of_chained_2017_dollars,6,2.2861023087369814
+05,Arkansas,2021,5200.5,millions_of_chained_2017_dollars,6,4.618881892615034
+05,Arkansas,2022,4986.8,millions_of_chained_2017_dollars,6,-4.109220267281987
+05,Arkansas,2023,5243.3,millions_of_chained_2017_dollars,6,5.14357904868854
+06,California,2015,97403.7,millions_of_chained_2017_dollars,6,
+06,California,2016,104378.3,millions_of_chained_2017_dollars,6,7.16050827637964
+06,California,2017,110699.1,millions_of_chained_2017_dollars,6,6.05566482688451
+06,California,2018,116056.6,millions_of_chained_2017_dollars,6,4.8396960770232145
+06,California,2019,119243.5,millions_of_chained_2017_dollars,6,2.7459877335713756
+06,California,2020,113508.9,millions_of_chained_2017_dollars,6,-4.80915102290691
+06,California,2021,114963.6,millions_of_chained_2017_dollars,6,1.2815735153807406
+06,California,2022,106070.6,millions_of_chained_2017_dollars,6,-7.735491929619465
+06,California,2023,101578.9,millions_of_chained_2017_dollars,6,-4.234632405209371
+08,Colorado,2015,18169.9,millions_of_chained_2017_dollars,6,
+08,Colorado,2016,19568.7,millions_of_chained_2017_dollars,6,7.69844633157033
+08,Colorado,2017,20895.7,millions_of_chained_2017_dollars,6,6.781237384190053
+08,Colorado,2018,22141.5,millions_of_chained_2017_dollars,6,5.961992180209319
+08,Colorado,2019,22811.9,millions_of_chained_2017_dollars,6,3.027798477971233
+08,Colorado,2020,22723.7,millions_of_chained_2017_dollars,6,-0.3866403061560053
+08,Colorado,2021,22994,millions_of_chained_2017_dollars,6,1.189506990498912
+08,Colorado,2022,21745.4,millions_of_chained_2017_dollars,6,-5.430112203183435
+08,Colorado,2023,21178.5,millions_of_chained_2017_dollars,6,-2.6069881446190935
+09,Connecticut,2015,7643,millions_of_chained_2017_dollars,6,
+09,Connecticut,2016,7726.7,millions_of_chained_2017_dollars,6,1.0951197173884486
+09,Connecticut,2017,7547.7,millions_of_chained_2017_dollars,6,-2.3166422923110774
+09,Connecticut,2018,7498,millions_of_chained_2017_dollars,6,-0.6584787418683846
+09,Connecticut,2019,7491.8,millions_of_chained_2017_dollars,6,-0.08268871699119718
+09,Connecticut,2020,7141.2,millions_of_chained_2017_dollars,6,-4.6797832296644355
+09,Connecticut,2021,7164.5,millions_of_chained_2017_dollars,6,0.32627569596146433
+09,Connecticut,2022,6732.5,millions_of_chained_2017_dollars,6,-6.029729918347404
+09,Connecticut,2023,6744.1,millions_of_chained_2017_dollars,6,0.17229855180096454
+10,Delaware,2015,2473.9,millions_of_chained_2017_dollars,6,
+10,Delaware,2016,2536.3,millions_of_chained_2017_dollars,6,2.5223331581713193
+10,Delaware,2017,2597,millions_of_chained_2017_dollars,6,2.393250009856862
+10,Delaware,2018,2630.4,millions_of_chained_2017_dollars,6,1.2860993453985392
+10,Delaware,2019,2735.4,millions_of_chained_2017_dollars,6,3.9917883211678884
+10,Delaware,2020,2715.6,millions_of_chained_2017_dollars,6,-0.7238429480149189
+10,Delaware,2021,2769.8,millions_of_chained_2017_dollars,6,1.9958756812490819
+10,Delaware,2022,2503.5,millions_of_chained_2017_dollars,6,-9.614412592967003
+10,Delaware,2023,2525.4,millions_of_chained_2017_dollars,6,0.8747753145596171
+12,Florida,2015,43128.4,millions_of_chained_2017_dollars,6,
+12,Florida,2016,49139.1,millions_of_chained_2017_dollars,6,13.936756290518538
+12,Florida,2017,53428,millions_of_chained_2017_dollars,6,8.728080082866807
+12,Florida,2018,57752.4,millions_of_chained_2017_dollars,6,8.093883357041264
+12,Florida,2019,59323.5,millions_of_chained_2017_dollars,6,2.720406424668065
+12,Florida,2020,60376,millions_of_chained_2017_dollars,6,1.7741704383591683
+12,Florida,2021,62616.5,millions_of_chained_2017_dollars,6,3.71091162051147
+12,Florida,2022,58886.6,millions_of_chained_2017_dollars,6,-5.956736642897642
+12,Florida,2023,60251.7,millions_of_chained_2017_dollars,6,2.318184442640603
+13,Georgia,2015,21649.9,millions_of_chained_2017_dollars,6,
+13,Georgia,2016,24084.5,millions_of_chained_2017_dollars,6,11.245317530334997
+13,Georgia,2017,25738.8,millions_of_chained_2017_dollars,6,6.8687330025535065
+13,Georgia,2018,27464.8,millions_of_chained_2017_dollars,6,6.705829331592761
+13,Georgia,2019,28610.5,millions_of_chained_2017_dollars,6,4.171521365529696
+13,Georgia,2020,28903.2,millions_of_chained_2017_dollars,6,1.023050977787876
+13,Georgia,2021,30326.8,millions_of_chained_2017_dollars,6,4.925406183398362
+13,Georgia,2022,29154.2,millions_of_chained_2017_dollars,6,-3.866547080470073
+13,Georgia,2023,29090.3,millions_of_chained_2017_dollars,6,-0.21917939782262197
+15,Hawaii,2015,4976.3,millions_of_chained_2017_dollars,6,
+15,Hawaii,2016,5428.9,millions_of_chained_2017_dollars,6,9.09511082531196
+15,Hawaii,2017,5274.4,millions_of_chained_2017_dollars,6,-2.845880380924315
+15,Hawaii,2018,5119.1,millions_of_chained_2017_dollars,6,-2.9444107386622065
+15,Hawaii,2019,5195.4,millions_of_chained_2017_dollars,6,1.4904963763161305
+15,Hawaii,2020,5063.8,millions_of_chained_2017_dollars,6,-2.5330099703583797
+15,Hawaii,2021,4922.2,millions_of_chained_2017_dollars,6,-2.796318969943523
+15,Hawaii,2022,4314.2,millions_of_chained_2017_dollars,6,-12.352200235666977
+15,Hawaii,2023,4343.3,millions_of_chained_2017_dollars,6,0.6745167122525597
+16,Idaho,2015,3581.2,millions_of_chained_2017_dollars,6,
+16,Idaho,2016,3703.6,millions_of_chained_2017_dollars,6,3.417848765776843
+16,Idaho,2017,3842.9,millions_of_chained_2017_dollars,6,3.7612053137487944
+16,Idaho,2018,3958.6,millions_of_chained_2017_dollars,6,3.010747092039856
+16,Idaho,2019,4312.1,millions_of_chained_2017_dollars,6,8.929924720860916
+16,Idaho,2020,4664.9,millions_of_chained_2017_dollars,6,8.181628440898848
+16,Idaho,2021,5308.3,millions_of_chained_2017_dollars,6,13.7923642521812
+16,Idaho,2022,5261.6,millions_of_chained_2017_dollars,6,-0.8797543469660662
+16,Idaho,2023,5223.8,millions_of_chained_2017_dollars,6,-0.718412650144451
+17,Illinois,2015,29831.4,millions_of_chained_2017_dollars,6,
+17,Illinois,2016,30121.7,millions_of_chained_2017_dollars,6,0.973135689240201
+17,Illinois,2017,30646.9,millions_of_chained_2017_dollars,6,1.7435934890793092
+17,Illinois,2018,29497.9,millions_of_chained_2017_dollars,6,-3.7491557057973246
+17,Illinois,2019,29319.2,millions_of_chained_2017_dollars,6,-0.6058058370256858
+17,Illinois,2020,27997.6,millions_of_chained_2017_dollars,6,-4.507626401811793
+17,Illinois,2021,29006.1,millions_of_chained_2017_dollars,6,3.602094465239869
+17,Illinois,2022,26456.9,millions_of_chained_2017_dollars,6,-8.78849621286556
+17,Illinois,2023,26310.8,millions_of_chained_2017_dollars,6,-0.5522188918580917
+18,Indiana,2015,13787,millions_of_chained_2017_dollars,6,
+18,Indiana,2016,14586,millions_of_chained_2017_dollars,6,5.795314426633791
+18,Indiana,2017,15743.6,millions_of_chained_2017_dollars,6,7.936377348142054
+18,Indiana,2018,16173.2,millions_of_chained_2017_dollars,6,2.728727864020941
+18,Indiana,2019,16641.4,millions_of_chained_2017_dollars,6,2.894912571414454
+18,Indiana,2020,16747.7,millions_of_chained_2017_dollars,6,0.6387683728532378
+18,Indiana,2021,17310.2,millions_of_chained_2017_dollars,6,3.3586701457513524
+18,Indiana,2022,16358.4,millions_of_chained_2017_dollars,6,-5.498492218460793
+18,Indiana,2023,16666.3,millions_of_chained_2017_dollars,6,1.8822134194053097
+19,Iowa,2015,8434.3,millions_of_chained_2017_dollars,6,
+19,Iowa,2016,9029.5,millions_of_chained_2017_dollars,6,7.056898616364138
+19,Iowa,2017,8400,millions_of_chained_2017_dollars,6,-6.971593111467966
+19,Iowa,2018,8433.1,millions_of_chained_2017_dollars,6,0.39404761904762164
+19,Iowa,2019,8374.6,millions_of_chained_2017_dollars,6,-0.693695082472634
+19,Iowa,2020,8332.2,millions_of_chained_2017_dollars,6,-0.5062928378668841
+19,Iowa,2021,8275.1,millions_of_chained_2017_dollars,6,-0.6852931998751921
+19,Iowa,2022,7749.8,millions_of_chained_2017_dollars,6,-6.347959541274428
+19,Iowa,2023,7702,millions_of_chained_2017_dollars,6,-0.6167901107125395
+20,Kansas,2015,6301.6,millions_of_chained_2017_dollars,6,
+20,Kansas,2016,6432.6,millions_of_chained_2017_dollars,6,2.0788371207312473
+20,Kansas,2017,6434.5,millions_of_chained_2017_dollars,6,0.029537045673588835
+20,Kansas,2018,6589.1,millions_of_chained_2017_dollars,6,2.4026730903722093
+20,Kansas,2019,6752.8,millions_of_chained_2017_dollars,6,2.484406064561173
+20,Kansas,2020,6743.2,millions_of_chained_2017_dollars,6,-0.14216325079967618
+20,Kansas,2021,6729.9,millions_of_chained_2017_dollars,6,-0.19723573377624648
+20,Kansas,2022,6103.6,millions_of_chained_2017_dollars,6,-9.306230404612247
+20,Kansas,2023,6262.2,millions_of_chained_2017_dollars,6,2.598466478799377
+21,Kentucky,2015,7868.3,millions_of_chained_2017_dollars,6,
+21,Kentucky,2016,7771.5,millions_of_chained_2017_dollars,6,-1.2302530406822387
+21,Kentucky,2017,7813.5,millions_of_chained_2017_dollars,6,0.540436209226014
+21,Kentucky,2018,7774.3,millions_of_chained_2017_dollars,6,-0.5016957829397817
+21,Kentucky,2019,8036,millions_of_chained_2017_dollars,6,3.36621946670439
+21,Kentucky,2020,7932.5,millions_of_chained_2017_dollars,6,-1.2879542060726723
+21,Kentucky,2021,7908.3,millions_of_chained_2017_dollars,6,-0.30507406240151136
+21,Kentucky,2022,7570.8,millions_of_chained_2017_dollars,6,-4.267668146124959
+21,Kentucky,2023,7795.9,millions_of_chained_2017_dollars,6,2.973265705077388
+22,Louisiana,2015,14504.3,millions_of_chained_2017_dollars,6,
+22,Louisiana,2016,14998.7,millions_of_chained_2017_dollars,6,3.4086443330598515
+22,Louisiana,2017,16168.8,millions_of_chained_2017_dollars,6,7.8013427830411874
+22,Louisiana,2018,16445.6,millions_of_chained_2017_dollars,6,1.7119390430953452
+22,Louisiana,2019,15022.8,millions_of_chained_2017_dollars,6,-8.651554215109202
+22,Louisiana,2020,13284,millions_of_chained_2017_dollars,6,-11.574406901509704
+22,Louisiana,2021,13820,millions_of_chained_2017_dollars,6,4.034929238181273
+22,Louisiana,2022,12253.1,millions_of_chained_2017_dollars,6,-11.337916063675834
+22,Louisiana,2023,12517.2,millions_of_chained_2017_dollars,6,2.1553729260350485
+23,Maine,2015,2170.9,millions_of_chained_2017_dollars,6,
+23,Maine,2016,2173.4,millions_of_chained_2017_dollars,6,0.11515961122114948
+23,Maine,2017,2208.6,millions_of_chained_2017_dollars,6,1.6195822214042366
+23,Maine,2018,2256.1,millions_of_chained_2017_dollars,6,2.1506836910259786
+23,Maine,2019,2284.5,millions_of_chained_2017_dollars,6,1.2588094499357272
+23,Maine,2020,2291.7,millions_of_chained_2017_dollars,6,0.31516743269861536
+23,Maine,2021,2402.8,millions_of_chained_2017_dollars,6,4.847929484662061
+23,Maine,2022,2242.1,millions_of_chained_2017_dollars,6,-6.688030630930597
+23,Maine,2023,2297.6,millions_of_chained_2017_dollars,6,2.4753579233754097
+24,Maryland,2015,20262.6,millions_of_chained_2017_dollars,6,
+24,Maryland,2016,22535.7,millions_of_chained_2017_dollars,6,11.218204968760181
+24,Maryland,2017,24317.1,millions_of_chained_2017_dollars,6,7.904791064843764
+24,Maryland,2018,24008.9,millions_of_chained_2017_dollars,6,-1.2674208684423593
+24,Maryland,2019,23976,millions_of_chained_2017_dollars,6,-0.1370325171082487
+24,Maryland,2020,23421.7,millions_of_chained_2017_dollars,6,-2.311895228561889
+24,Maryland,2021,23262.7,millions_of_chained_2017_dollars,6,-0.67885764056409
+24,Maryland,2022,21459.3,millions_of_chained_2017_dollars,6,-7.752324536704691
+24,Maryland,2023,20864.7,millions_of_chained_2017_dollars,6,-2.770826634605972
+25,Massachusetts,2015,18845.6,millions_of_chained_2017_dollars,6,
+25,Massachusetts,2016,19845.7,millions_of_chained_2017_dollars,6,5.30680901642826
+25,Massachusetts,2017,20871,millions_of_chained_2017_dollars,6,5.166358455484055
+25,Massachusetts,2018,21578.9,millions_of_chained_2017_dollars,6,3.3917876479325537
+25,Massachusetts,2019,22127.1,millions_of_chained_2017_dollars,6,2.540444600975933
+25,Massachusetts,2020,20983.7,millions_of_chained_2017_dollars,6,-5.167419137618568
+25,Massachusetts,2021,21832,millions_of_chained_2017_dollars,6,4.042661685022186
+25,Massachusetts,2022,20032.8,millions_of_chained_2017_dollars,6,-8.241113961157943
+25,Massachusetts,2023,19434.3,millions_of_chained_2017_dollars,6,-2.987600335449858
+26,Michigan,2015,17600,millions_of_chained_2017_dollars,6,
+26,Michigan,2016,18142.1,millions_of_chained_2017_dollars,6,3.080113636363624
+26,Michigan,2017,18720,millions_of_chained_2017_dollars,6,3.185408524922706
+26,Michigan,2018,19043.8,millions_of_chained_2017_dollars,6,1.7297008547008552
+26,Michigan,2019,18405.4,millions_of_chained_2017_dollars,6,-3.3522721305621617
+26,Michigan,2020,17733.6,millions_of_chained_2017_dollars,6,-3.6500157562454616
+26,Michigan,2021,18651.8,millions_of_chained_2017_dollars,6,5.177741688094928
+26,Michigan,2022,17837.4,millions_of_chained_2017_dollars,6,-4.366334616498124
+26,Michigan,2023,18235.6,millions_of_chained_2017_dollars,6,2.232388128314655
+27,Minnesota,2015,14856.8,millions_of_chained_2017_dollars,6,
+27,Minnesota,2016,15526.4,millions_of_chained_2017_dollars,6,4.507027085240423
+27,Minnesota,2017,16350.9,millions_of_chained_2017_dollars,6,5.310310181368516
+27,Minnesota,2018,16449.8,millions_of_chained_2017_dollars,6,0.60485967133308
+27,Minnesota,2019,17004.2,millions_of_chained_2017_dollars,6,3.370253741686846
+27,Minnesota,2020,16555,millions_of_chained_2017_dollars,6,-2.6417002858117433
+27,Minnesota,2021,17518.6,millions_of_chained_2017_dollars,6,5.820598006644517
+27,Minnesota,2022,15914.8,millions_of_chained_2017_dollars,6,-9.154841140273762
+27,Minnesota,2023,16097.9,millions_of_chained_2017_dollars,6,1.1505014200618335
+28,Mississippi,2015,4124.8,millions_of_chained_2017_dollars,6,
+28,Mississippi,2016,3887.4,millions_of_chained_2017_dollars,6,-5.755430566330489
+28,Mississippi,2017,3643.8,millions_of_chained_2017_dollars,6,-6.266399135669087
+28,Mississippi,2018,3644.7,millions_of_chained_2017_dollars,6,0.024699489543866804
+28,Mississippi,2019,3658.7,millions_of_chained_2017_dollars,6,0.38411940626115193
+28,Mississippi,2020,3626.1,millions_of_chained_2017_dollars,6,-0.8910268674665822
+28,Mississippi,2021,3805.2,millions_of_chained_2017_dollars,6,4.9391908662199
+28,Mississippi,2022,3473.5,millions_of_chained_2017_dollars,6,-8.717018816356559
+28,Mississippi,2023,3622.8,millions_of_chained_2017_dollars,6,4.298258240967323
+29,Missouri,2015,11587.4,millions_of_chained_2017_dollars,6,
+29,Missouri,2016,12615.5,millions_of_chained_2017_dollars,6,8.872568479555376
+29,Missouri,2017,13523.8,millions_of_chained_2017_dollars,6,7.199873171891724
+29,Missouri,2018,13440.7,millions_of_chained_2017_dollars,6,-0.6144722637128508
+29,Missouri,2019,13752.3,millions_of_chained_2017_dollars,6,2.318331634513071
+29,Missouri,2020,14091.9,millions_of_chained_2017_dollars,6,2.469405117689405
+29,Missouri,2021,14664.8,millions_of_chained_2017_dollars,6,4.065456042123494
+29,Missouri,2022,13531.7,millions_of_chained_2017_dollars,6,-7.726665211936057
+29,Missouri,2023,13764.9,millions_of_chained_2017_dollars,6,1.7233607011683638
+30,Montana,2015,2668.9,millions_of_chained_2017_dollars,6,
+30,Montana,2016,2669.8,millions_of_chained_2017_dollars,6,0.03372175802764943
+30,Montana,2017,2677.1,millions_of_chained_2017_dollars,6,0.27342872125251105
+30,Montana,2018,2759.3,millions_of_chained_2017_dollars,6,3.0704867207052455
+30,Montana,2019,2794.8,millions_of_chained_2017_dollars,6,1.2865581850469265
+30,Montana,2020,2931.1,millions_of_chained_2017_dollars,6,4.876914269357369
+30,Montana,2021,3152.9,millions_of_chained_2017_dollars,6,7.567124970147732
+30,Montana,2022,3196.6,millions_of_chained_2017_dollars,6,1.3860255637666796
+30,Montana,2023,3165.6,millions_of_chained_2017_dollars,6,-0.9697803916661418
+31,Nebraska,2015,4608.3,millions_of_chained_2017_dollars,6,
+31,Nebraska,2016,4763.7,millions_of_chained_2017_dollars,6,3.372176290606066
+31,Nebraska,2017,5086.4,millions_of_chained_2017_dollars,6,6.774146146902615
+31,Nebraska,2018,5184,millions_of_chained_2017_dollars,6,1.9188424032714702
+31,Nebraska,2019,5454.1,millions_of_chained_2017_dollars,6,5.210262345679029
+31,Nebraska,2020,5701.9,millions_of_chained_2017_dollars,6,4.543371041968425
+31,Nebraska,2021,5727.2,millions_of_chained_2017_dollars,6,0.44371174520774215
+31,Nebraska,2022,5455.8,millions_of_chained_2017_dollars,6,-4.7387903338454995
+31,Nebraska,2023,5796.9,millions_of_chained_2017_dollars,6,6.252062025734073
+32,Nevada,2015,8047.8,millions_of_chained_2017_dollars,6,
+32,Nevada,2016,9126.9,millions_of_chained_2017_dollars,6,13.408633415343306
+32,Nevada,2017,10717.4,millions_of_chained_2017_dollars,6,17.42650845303444
+32,Nevada,2018,11614.3,millions_of_chained_2017_dollars,6,8.368634183663936
+32,Nevada,2019,12886.7,millions_of_chained_2017_dollars,6,10.955460079384904
+32,Nevada,2020,13639.9,millions_of_chained_2017_dollars,6,5.844785709297184
+32,Nevada,2021,14007.6,millions_of_chained_2017_dollars,6,2.6957675642783396
+32,Nevada,2022,13396.3,millions_of_chained_2017_dollars,6,-4.364059510551421
+32,Nevada,2023,13934.8,millions_of_chained_2017_dollars,6,4.019766651986001
+33,New Hampshire,2015,2393.6,millions_of_chained_2017_dollars,6,
+33,New Hampshire,2016,2463.5,millions_of_chained_2017_dollars,6,2.9202874331550888
+33,New Hampshire,2017,2561,millions_of_chained_2017_dollars,6,3.95778364116095
+33,New Hampshire,2018,2602.3,millions_of_chained_2017_dollars,6,1.612651308082791
+33,New Hampshire,2019,2688.6,millions_of_chained_2017_dollars,6,3.316297121776879
+33,New Hampshire,2020,2348.9,millions_of_chained_2017_dollars,6,-12.63482853529717
+33,New Hampshire,2021,2739.2,millions_of_chained_2017_dollars,6,16.616288475456575
+33,New Hampshire,2022,2581.5,millions_of_chained_2017_dollars,6,-5.757155373831768
+33,New Hampshire,2023,2636.7,millions_of_chained_2017_dollars,6,2.138291690877381
+34,New Jersey,2015,21526.3,millions_of_chained_2017_dollars,6,
+34,New Jersey,2016,21242.1,millions_of_chained_2017_dollars,6,-1.3202454671727204
+34,New Jersey,2017,21117.5,millions_of_chained_2017_dollars,6,-0.5865710075745767
+34,New Jersey,2018,20977.7,millions_of_chained_2017_dollars,6,-0.662010181129391
+34,New Jersey,2019,21269.4,millions_of_chained_2017_dollars,6,1.390524223341938
+34,New Jersey,2020,20415.5,millions_of_chained_2017_dollars,6,-4.014687767402947
+34,New Jersey,2021,20846.4,millions_of_chained_2017_dollars,6,2.110651220886095
+34,New Jersey,2022,19180.4,millions_of_chained_2017_dollars,6,-7.991787550848106
+34,New Jersey,2023,19374.1,millions_of_chained_2017_dollars,6,1.0098850910304158
+35,New Mexico,2015,3582.3,millions_of_chained_2017_dollars,6,
+35,New Mexico,2016,3579.4,millions_of_chained_2017_dollars,6,-0.08095357731067176
+35,New Mexico,2017,3748.2,millions_of_chained_2017_dollars,6,4.715874168855105
+35,New Mexico,2018,3884.5,millions_of_chained_2017_dollars,6,3.6364121444960373
+35,New Mexico,2019,4130.7,millions_of_chained_2017_dollars,6,6.3380100399021755
+35,New Mexico,2020,4066.5,millions_of_chained_2017_dollars,6,-1.5542159924467946
+35,New Mexico,2021,3984.6,millions_of_chained_2017_dollars,6,-2.0140169679085274
+35,New Mexico,2022,3726.2,millions_of_chained_2017_dollars,6,-6.484967123425189
+35,New Mexico,2023,4030.2,millions_of_chained_2017_dollars,6,8.158445601416986
+36,New York,2015,48804.3,millions_of_chained_2017_dollars,6,
+36,New York,2016,51969.4,millions_of_chained_2017_dollars,6,6.485289206074052
+36,New York,2017,53737.5,millions_of_chained_2017_dollars,6,3.402194368224376
+36,New York,2018,54280.3,millions_of_chained_2017_dollars,6,1.0100953710165284
+36,New York,2019,54140.7,millions_of_chained_2017_dollars,6,-0.2571835454115101
+36,New York,2020,49029.1,millions_of_chained_2017_dollars,6,-9.441326026445907
+36,New York,2021,49583.2,millions_of_chained_2017_dollars,6,1.1301451586914757
+36,New York,2022,44866.3,millions_of_chained_2017_dollars,6,-9.513101211700725
+36,New York,2023,43942.7,millions_of_chained_2017_dollars,6,-2.0585606568850223
+37,North Carolina,2015,19604.1,millions_of_chained_2017_dollars,6,
+37,North Carolina,2016,21416.2,millions_of_chained_2017_dollars,6,9.243474579297196
+37,North Carolina,2017,22761.1,millions_of_chained_2017_dollars,6,6.279825552619034
+37,North Carolina,2018,23781.3,millions_of_chained_2017_dollars,6,4.4822086805998085
+37,North Carolina,2019,25020.2,millions_of_chained_2017_dollars,6,5.209555406979449
+37,North Carolina,2020,25119.8,millions_of_chained_2017_dollars,6,0.39807835269101144
+37,North Carolina,2021,26119,millions_of_chained_2017_dollars,6,3.9777386762633427
+37,North Carolina,2022,25211.9,millions_of_chained_2017_dollars,6,-3.47295072552547
+37,North Carolina,2023,25864,millions_of_chained_2017_dollars,6,2.5864770207719268
+38,North Dakota,2015,4350.8,millions_of_chained_2017_dollars,6,
+38,North Dakota,2016,3906,millions_of_chained_2017_dollars,6,-10.223407189482403
+38,North Dakota,2017,3228.4,millions_of_chained_2017_dollars,6,-17.34767025089605
+38,North Dakota,2018,2993.4,millions_of_chained_2017_dollars,6,-7.279147565357458
+38,North Dakota,2019,3138.1,millions_of_chained_2017_dollars,6,4.8339680630720805
+38,North Dakota,2020,2845.2,millions_of_chained_2017_dollars,6,-9.333673241770502
+38,North Dakota,2021,2715.3,millions_of_chained_2017_dollars,6,-4.565584141712343
+38,North Dakota,2022,2466.5,millions_of_chained_2017_dollars,6,-9.162891761499658
+38,North Dakota,2023,2593.9,millions_of_chained_2017_dollars,6,5.165213865801754
+39,Ohio,2015,22497.8,millions_of_chained_2017_dollars,6,
+39,Ohio,2016,23348.7,millions_of_chained_2017_dollars,6,3.7821475877641397
+39,Ohio,2017,25111.1,millions_of_chained_2017_dollars,6,7.54817184682659
+39,Ohio,2018,25069.9,millions_of_chained_2017_dollars,6,-0.16407086905789736
+39,Ohio,2019,25609.4,millions_of_chained_2017_dollars,6,2.15198305537716
+39,Ohio,2020,25303.7,millions_of_chained_2017_dollars,6,-1.1937023124321544
+39,Ohio,2021,25555.1,millions_of_chained_2017_dollars,6,0.9935305903879588
+39,Ohio,2022,23782.4,millions_of_chained_2017_dollars,6,-6.936775829482167
+39,Ohio,2023,23601.9,millions_of_chained_2017_dollars,6,-0.7589646124865457
+40,Oklahoma,2015,7787.6,millions_of_chained_2017_dollars,6,
+40,Oklahoma,2016,7423,millions_of_chained_2017_dollars,6,-4.681801838820698
+40,Oklahoma,2017,7165.7,millions_of_chained_2017_dollars,6,-3.4662535363060742
+40,Oklahoma,2018,7218.1,millions_of_chained_2017_dollars,6,0.7312614259597838
+40,Oklahoma,2019,7348.3,millions_of_chained_2017_dollars,6,1.8037987836134084
+40,Oklahoma,2020,7253.2,millions_of_chained_2017_dollars,6,-1.2941768844494717
+40,Oklahoma,2021,7266,millions_of_chained_2017_dollars,6,0.17647383223957647
+40,Oklahoma,2022,6585.6,millions_of_chained_2017_dollars,6,-9.364161849710973
+40,Oklahoma,2023,6570.4,millions_of_chained_2017_dollars,6,-0.23080660835763656
+41,Oregon,2015,8338.2,millions_of_chained_2017_dollars,6,
+41,Oregon,2016,9243.2,millions_of_chained_2017_dollars,6,10.853661461706366
+41,Oregon,2017,10077.3,millions_of_chained_2017_dollars,6,9.023931106110417
+41,Oregon,2018,10897.5,millions_of_chained_2017_dollars,6,8.139084873924563
+41,Oregon,2019,11230.1,millions_of_chained_2017_dollars,6,3.0520761642578664
+41,Oregon,2020,11422.5,millions_of_chained_2017_dollars,6,1.7132527760215899
+41,Oregon,2021,11668.8,millions_of_chained_2017_dollars,6,2.156270518713055
+41,Oregon,2022,11252.5,millions_of_chained_2017_dollars,6,-3.567633347045107
+41,Oregon,2023,10977.3,millions_of_chained_2017_dollars,6,-2.4456787380582212
+42,Pennsylvania,2015,29052.4,millions_of_chained_2017_dollars,6,
+42,Pennsylvania,2016,29198.3,millions_of_chained_2017_dollars,6,0.5021960319973484
+42,Pennsylvania,2017,30059.4,millions_of_chained_2017_dollars,6,2.9491442994968864
+42,Pennsylvania,2018,30425.6,millions_of_chained_2017_dollars,6,1.2182545227116925
+42,Pennsylvania,2019,30646.4,millions_of_chained_2017_dollars,6,0.7257046697517922
+42,Pennsylvania,2020,28088.1,millions_of_chained_2017_dollars,6,-8.347799415265754
+42,Pennsylvania,2021,29135,millions_of_chained_2017_dollars,6,3.727201199084318
+42,Pennsylvania,2022,26987.4,millions_of_chained_2017_dollars,6,-7.371203020422168
+42,Pennsylvania,2023,26731.9,millions_of_chained_2017_dollars,6,-0.9467381074130921
+44,Rhode Island,2015,2077,millions_of_chained_2017_dollars,6,
+44,Rhode Island,2016,2124.2,millions_of_chained_2017_dollars,6,2.2725084256138617
+44,Rhode Island,2017,2117.1,millions_of_chained_2017_dollars,6,-0.3342434798983107
+44,Rhode Island,2018,2247.4,millions_of_chained_2017_dollars,6,6.154645505644529
+44,Rhode Island,2019,2322.7,millions_of_chained_2017_dollars,6,3.350538399928804
+44,Rhode Island,2020,2202.3,millions_of_chained_2017_dollars,6,-5.183622508287755
+44,Rhode Island,2021,2233.9,millions_of_chained_2017_dollars,6,1.434863551741361
+44,Rhode Island,2022,2057,millions_of_chained_2017_dollars,6,-7.918886252741841
+44,Rhode Island,2023,2073.4,millions_of_chained_2017_dollars,6,0.7972775887214345
+45,South Carolina,2015,9807.6,millions_of_chained_2017_dollars,6,
+45,South Carolina,2016,10750.7,millions_of_chained_2017_dollars,6,9.616012072270497
+45,South Carolina,2017,11813.2,millions_of_chained_2017_dollars,6,9.883077381007755
+45,South Carolina,2018,11917.2,millions_of_chained_2017_dollars,6,0.8803711102834066
+45,South Carolina,2019,12272.2,millions_of_chained_2017_dollars,6,2.9788876581747337
+45,South Carolina,2020,12047.3,millions_of_chained_2017_dollars,6,-1.8325972523264067
+45,South Carolina,2021,12303.3,millions_of_chained_2017_dollars,6,2.1249574593477316
+45,South Carolina,2022,11822.1,millions_of_chained_2017_dollars,6,-3.911145790153847
+45,South Carolina,2023,11997.9,millions_of_chained_2017_dollars,6,1.4870454487781348
+46,South Dakota,2015,1940.4,millions_of_chained_2017_dollars,6,
+46,South Dakota,2016,2008.4,millions_of_chained_2017_dollars,6,3.5044320758606418
+46,South Dakota,2017,1943.2,millions_of_chained_2017_dollars,6,-3.2463652658832887
+46,South Dakota,2018,2007.9,millions_of_chained_2017_dollars,6,3.3295594895018654
+46,South Dakota,2019,2101.3,millions_of_chained_2017_dollars,6,4.651626076995874
+46,South Dakota,2020,2184.4,millions_of_chained_2017_dollars,6,3.9546947127968357
+46,South Dakota,2021,2252,millions_of_chained_2017_dollars,6,3.0946713056216657
+46,South Dakota,2022,2147.9,millions_of_chained_2017_dollars,6,-4.6225577264653595
+46,South Dakota,2023,2212.4,millions_of_chained_2017_dollars,6,3.002933097444016
+47,Tennessee,2015,11200.2,millions_of_chained_2017_dollars,6,
+47,Tennessee,2016,11542.8,millions_of_chained_2017_dollars,6,3.0588739486794747
+47,Tennessee,2017,12016.2,millions_of_chained_2017_dollars,6,4.101257927019453
+47,Tennessee,2018,12496.2,millions_of_chained_2017_dollars,6,3.994607280171758
+47,Tennessee,2019,13204.5,millions_of_chained_2017_dollars,6,5.66812310942526
+47,Tennessee,2020,13262.2,millions_of_chained_2017_dollars,6,0.4369722443106516
+47,Tennessee,2021,14268.6,millions_of_chained_2017_dollars,6,7.588484565155107
+47,Tennessee,2022,14432.6,millions_of_chained_2017_dollars,6,1.1493769535904086
+47,Tennessee,2023,15189.2,millions_of_chained_2017_dollars,6,5.242298684921631
+48,Texas,2015,86858.7,millions_of_chained_2017_dollars,6,
+48,Texas,2016,88504.9,millions_of_chained_2017_dollars,6,1.8952620750713578
+48,Texas,2017,88478.1,millions_of_chained_2017_dollars,6,-0.030280809311111767
+48,Texas,2018,87963,millions_of_chained_2017_dollars,6,-0.5821779626822954
+48,Texas,2019,90412.5,millions_of_chained_2017_dollars,6,2.7846935643395465
+48,Texas,2020,88221,millions_of_chained_2017_dollars,6,-2.4238905018664436
+48,Texas,2021,88534.6,millions_of_chained_2017_dollars,6,0.3554709196223138
+48,Texas,2022,84946.7,millions_of_chained_2017_dollars,6,-4.052539910950081
+48,Texas,2023,85807.6,millions_of_chained_2017_dollars,6,1.013459027837471
+49,Utah,2015,9654.3,millions_of_chained_2017_dollars,6,
+49,Utah,2016,10599.8,millions_of_chained_2017_dollars,6,9.793563489843905
+49,Utah,2017,11447.2,millions_of_chained_2017_dollars,6,7.994490462084203
+49,Utah,2018,12156.1,millions_of_chained_2017_dollars,6,6.192780767349215
+49,Utah,2019,12894.3,millions_of_chained_2017_dollars,6,6.072671333733681
+49,Utah,2020,14271,millions_of_chained_2017_dollars,6,10.676810683790517
+49,Utah,2021,15266.1,millions_of_chained_2017_dollars,6,6.972882068530595
+49,Utah,2022,15033.5,millions_of_chained_2017_dollars,6,-1.5236373402506276
+49,Utah,2023,15018,millions_of_chained_2017_dollars,6,-0.10310306981075046
+50,Vermont,2015,1170.5,millions_of_chained_2017_dollars,6,
+50,Vermont,2016,1196.9,millions_of_chained_2017_dollars,6,2.255446390431448
+50,Vermont,2017,1195.4,millions_of_chained_2017_dollars,6,-0.12532375302866106
+50,Vermont,2018,1162.8,millions_of_chained_2017_dollars,6,-2.727120629078139
+50,Vermont,2019,1147.5,millions_of_chained_2017_dollars,6,-1.3157894736842035
+50,Vermont,2020,1086.4,millions_of_chained_2017_dollars,6,-5.324618736383435
+50,Vermont,2021,1138.7,millions_of_chained_2017_dollars,6,4.814064801178208
+50,Vermont,2022,1067.1,millions_of_chained_2017_dollars,6,-6.287872134890682
+50,Vermont,2023,1095.3,millions_of_chained_2017_dollars,6,2.6426764127073454
+51,Virginia,2015,21812.4,millions_of_chained_2017_dollars,6,
+51,Virginia,2016,22406.8,millions_of_chained_2017_dollars,6,2.7250554730336773
+51,Virginia,2017,23295.5,millions_of_chained_2017_dollars,6,3.966206687255669
+51,Virginia,2018,23424.5,millions_of_chained_2017_dollars,6,0.5537550170633843
+51,Virginia,2019,24028.6,millions_of_chained_2017_dollars,6,2.5789237763879536
+51,Virginia,2020,24451.1,millions_of_chained_2017_dollars,6,1.7583213337439618
+51,Virginia,2021,25055.9,millions_of_chained_2017_dollars,6,2.4735083493176324
+51,Virginia,2022,23703,millions_of_chained_2017_dollars,6,-5.39952665839184
+51,Virginia,2023,23706.8,millions_of_chained_2017_dollars,6,0.016031725941867414
+53,Washington,2015,19294.5,millions_of_chained_2017_dollars,6,
+53,Washington,2016,21198.2,millions_of_chained_2017_dollars,6,9.866542278887769
+53,Washington,2017,22953.2,millions_of_chained_2017_dollars,6,8.27900482116406
+53,Washington,2018,24997.8,millions_of_chained_2017_dollars,6,8.907690430963866
+53,Washington,2019,25133.2,millions_of_chained_2017_dollars,6,0.5416476649945157
+53,Washington,2020,24715.4,millions_of_chained_2017_dollars,6,-1.6623430363025715
+53,Washington,2021,25835.8,millions_of_chained_2017_dollars,6,4.533206017300939
+53,Washington,2022,24036.8,millions_of_chained_2017_dollars,6,-6.963206093869745
+53,Washington,2023,23113.5,millions_of_chained_2017_dollars,6,-3.8411935032949485
+54,West Virginia,2015,3650.9,millions_of_chained_2017_dollars,6,
+54,West Virginia,2016,3243.8,millions_of_chained_2017_dollars,6,-11.150675175984004
+54,West Virginia,2017,3454.4,millions_of_chained_2017_dollars,6,6.492385473827
+54,West Virginia,2018,4766.9,millions_of_chained_2017_dollars,6,37.995020842982854
+54,West Virginia,2019,3808.1,millions_of_chained_2017_dollars,6,-20.11370072793639
+54,West Virginia,2020,3004.3,millions_of_chained_2017_dollars,6,-21.1076389800688
+54,West Virginia,2021,2991,millions_of_chained_2017_dollars,6,-0.4426987983889852
+54,West Virginia,2022,2627.5,millions_of_chained_2017_dollars,6,-12.153126044801066
+54,West Virginia,2023,2780.4,millions_of_chained_2017_dollars,6,5.819219790675545
+55,Wisconsin,2015,12398.5,millions_of_chained_2017_dollars,6,
+55,Wisconsin,2016,12804.8,millions_of_chained_2017_dollars,6,3.277009315643009
+55,Wisconsin,2017,13297.1,millions_of_chained_2017_dollars,6,3.8446520054979505
+55,Wisconsin,2018,13728.6,millions_of_chained_2017_dollars,6,3.245068473576951
+55,Wisconsin,2019,13909,millions_of_chained_2017_dollars,6,1.3140451320600821
+55,Wisconsin,2020,13805.7,millions_of_chained_2017_dollars,6,-0.7426845927097525
+55,Wisconsin,2021,14088.5,millions_of_chained_2017_dollars,6,2.048429271967378
+55,Wisconsin,2022,13087,millions_of_chained_2017_dollars,6,-7.108634702061966
+55,Wisconsin,2023,13173.9,millions_of_chained_2017_dollars,6,0.6640177275158532
+56,Wyoming,2015,2414.1,millions_of_chained_2017_dollars,6,
+56,Wyoming,2016,2147.4,millions_of_chained_2017_dollars,6,-11.04759537715918
+56,Wyoming,2017,1936.4,millions_of_chained_2017_dollars,6,-9.82583589457018
+56,Wyoming,2018,1978.7,millions_of_chained_2017_dollars,6,2.1844660194174637
+56,Wyoming,2019,2250.1,millions_of_chained_2017_dollars,6,13.716076211654116
+56,Wyoming,2020,2113.3,millions_of_chained_2017_dollars,6,-6.079729789787114
+56,Wyoming,2021,2088.7,millions_of_chained_2017_dollars,6,-1.1640562153977352
+56,Wyoming,2022,1892.6,millions_of_chained_2017_dollars,6,-9.388614927945603
+56,Wyoming,2023,1965.9,millions_of_chained_2017_dollars,6,3.8729789707281137

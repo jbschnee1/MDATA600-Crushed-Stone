@@ -4,7 +4,7 @@ This project builds a reproducible U.S. state-year dataset for studying crushed-
 
 ## Current status
 
-The import and initial cleaning stages are implemented. The join, exploratory analysis, modeling, final report, and presentation files are scaffolded but not yet developed.
+The import, cleaning, and state-year join stages are implemented. Exploratory analysis, modeling, the final report, and the presentation are scaffolded but not yet developed.
 
 Recent workflow additions include:
 
@@ -68,13 +68,23 @@ This writes cleaned FRED, BEA construction-GDP, and MSHA capacity files beneath 
 - calculates state construction-sector real-GDP growth; and
 - creates one-year lags for active stone mines and stone-mine employee hours.
 
+Assemble the 50-state, 2015-2023 panel after running the cleaning stage:
+
+```sh
+Rscript R/03_join.R
+```
+
+This writes `data/processed/crushed_stone_state_year.csv`, with one row per
+state-year and all available source variables. Missing BLS observations remain
+missing rather than removing otherwise complete state-year rows.
+
 ## Project structure
 
 ```text
 R/
   01_import.R       Download, minimally parse, validate, and save raw data
   02_clean.R        Validate raw inputs and create derived clean variables
-  03_join.R         Reserved for assembling the analysis panel
+  03_join.R         Assemble and validate the state-year analysis panel
   04_eda.R          Reserved for exploratory analysis
   05_models.R       Reserved for modeling
 data/
@@ -94,7 +104,8 @@ AI tools were used as assistants during this project. Their overarching uses are
 
 - Helped organize and scaffold the project's R scripts and reporting files.
 - Assisted with developing and refining code for importing data from public APIs and other government data sources.
-- Supported debugging, code review, refactoring, and documentation.
+- Assisted with implementing the cleaning and state-year join workflows, including validation checks, missing-data handling, and generation of the processed panel.
+- Supported debugging, code review, refactoring, and documentation, including updates to this README and AI-use disclosure.
 - Helped identify potential data-quality, reproducibility, and workflow issues.
 
 ### GitHub Copilot
@@ -103,4 +114,4 @@ AI tools were used as assistants during this project. Their overarching uses are
 - Suggested routine syntax, data-transformation steps, comments, and repetitive boilerplate.
 - Assisted with small edits and alternative implementations during development.
 
-All AI-generated suggestions were reviewed, adapted, and validated by the project author. The author remains responsible for the analysis, methodological choices, interpretation, and final submitted work.
+AI tools were used for assistance with code and prose, not as data sources or as substitutes for methodological judgment. All AI-generated suggestions and outputs were reviewed, adapted, and validated by the project author. The author remains responsible for the analysis, methodological choices, interpretation, and final submitted work.
