@@ -1,0 +1,92 @@
+Construction aggregates 
+The U.S. Geological Survey (USGS) defines the construction aggregates industry as those companies that mine and process crushed stone and (or) construction sand and gravel. Construction aggregates are an essential part of the construction industry and serve as an indicator of the strength of the industry. All 50 U.S. States produce construction aggregates. The USGS National Minerals Information Center (NMIC) collects construction aggregates data from producers that voluntarily complete canvass forms for the survey and estimates production data for nonrespondents based on the Mine Safety and Health Administration worker hours. In 2023, a total of 1,322 companies operating 3,531 quarries and 389 sales/distribution yards produced crushed stone and 3,100 companies operating 6,324 pits and 319 sales/distribution yards produced construction sand and gravel.
+
+Data set 
+
+This data set contains the following information on construction aggregates standardized to metric tons (t) and dollars per metric ton ($/t):
+Production (quantities sold or used)
+Total value
+Unit value 
+Types of stone
+
+This data set replaces the discrete construction aggregate tables that were included in the individual State chapters of the Minerals Yearbook Volume II—Area Reports: Domestic prior to 2014. 
+
+Procedures for using the aggregate data set
+
+Three tables can be created using this file. Choose a table number from the first column.
+
+Table 1 gives the total quantity and value of construction aggregates for the United States for all years from 2000 to 2023. Included are the totals for construction aggregates, construction sand and gravel, and crushed stone.  
+Table 2 gives the total quantity and value of construction aggregates sold or used in all States for all years from 1971 to 2023. Included for the years 2000 to 2023 are the totals for construction aggregates, construction sand and gravel, and crushed stone. The years 1971 to 1999 only include totals for construction sand and gravel and crushed stone.   
+Table 3 gives the type of stone that was sold or used from 2010 to 2023. 
+Table 4 gives the major use category of the crushed stone and construction sand and gravel sold or used from 2010 to 2022. This table has been discontinued and will not be updated.  
+
+
+The spreadsheet can be further filtered by Year, State, Region, Division, or Commodity.  All other columns are determined by the table number selected. The purpose of the last column, sort index, is to make sure the table can be reset to the default order after filtering and sorting by the user.
+
+
+Example: Table 2—all years, all states, and all commodities
+
+
+
+Comments on the types of stone
+
+The types of stone are broken out into natural sand and gravel and nine different types of crushed stone. The types of crushed stone are: limestone, dolomite, marble, granite, traprock, sandstone and quartzite, slate, volcanic cinder and scoria, and miscellaneous stone. Some locations have reported production of limestone and dolomite with no distinction between the two kinds of stone. Production from these locations were included with the limestone totals. 
+
+The miscellaneous stone category includes two different types of crushed stone production. The first type is a crushed stone, which was reported by the company as “Other” on the survey form or as a type of stone not listed in table 3. The second type is production of unknown stone type from a company or operation that is new to the survey. The type of stone produced is updated when a response is received from the operation. 
+
+Comments on the data
+
+Construction aggregates production reported to the USGS is actual material that was either sold to other companies or consumers or was used by producers. Stockpiled production is not included in the reported quantities. The “sold or used” tonnage, therefore, represents the amount of production released for domestic consumption or export in a given year. Production data for the nonresponding operations was estimated by using employment data published by the Mine Safety and Health Administration.
+
+In addition, companies provided import data when reporting the quantity sold or used for consumption at each operation, usually out of a sales yard. The tonnage reported is attributed to the state where the material was first sold or used. For example, crushed stone imported from Mexico to Florida is included in the total for crushed stone sold or used in Florida. The same accounting practice was used for large quantities of crushed stone, which were transported from one state to another. For example, crushed stone mined in Kentucky and shipped down the Mississippi River to be used in Louisiana was included in the total of crushed stone sold or used in Louisiana.
+
+Data are rounded to no more than three significant digits, except unit values. Data may not add to totals shown between the different tables because of rounding and revisions.
+
+Table 4 has been discontinued and was last updated for 2022.  To minimize concealments on this table, the 58 crushed stone use categories in prior years were reduced to six major categories: construction; agricultural; chemical and metallurgical; special and miscellaneous uses; unspecified, reported; and unspecified, estimated. The total production, sold or used, is also included in this table. Similarly, the 16 construction sand and gravel use categories in prior years also were reduced to six major categories: concrete and plaster and gunite sands; asphalt and road base; fill; special and miscellaneous uses; unspecified, reported; and unspecified, estimated. The total production, sold or used, is also presented in this table. 
+
+Construction Sand and Gravel End Use Categories
+
+Concrete and plaster and gunite sands—concrete aggregate, concrete products, and plaster and gunite.
+
+Asphalt and road base—asphaltic concrete road base and cover, road stabilization cement, and road stabilization lime.
+
+Fill—fill.
+
+Special and miscellaneous uses—filtration, golf courses, railroad ballast, roofing granules, snow and ice control, and other miscellaneous uses.
+
+Unspecified, reported—total production that was reported without a breakdown by end use.
+
+Unspecified, estimated—estimated production of nonrespondents.
+
+Crushed Stone End Use Categories
+
+Construction—bituminous aggregate, coarse; bituminous surface-treatment aggregate; concrete aggregate, coarse; crusher run, fill, or waste; filter stone; graded road base or subbase; macadam; other coarse and fine aggregates; other construction materials; other graded coarse aggregate; railroad ballast; riprap and jetty stone; roofing granules; screening, undesignated; road surfacing.
+
+Agricultural—agricultural limestone, other agricultural uses, poultry grit and mineral food.
+
+Chemical and metallurgical—cement manufacture, chemical stone, dead-burned dolomite manufacture, flux stone, lime manufacture, sulfur oxides removal.
+
+Special and miscellaneous uses—abrasive; acid neutralization; asphalt fillers or extenders; building products; carbon dioxide fixation; chemicals; dam construction; disinfectant and animal sanitation; drain field; ferrosilicon; flour (slate); glass manufacture; lightweight aggregate (slate); magnesia (dolomite); magnesium metal manufacturing; other fillers or extenders; other miscellaneous uses and specified uses not listed; paper manufacture; pipe bedding; porcelain, pottery, and tile; refractory stone (including gannister); sugar refining; stucco; waste material; whiting or whiting substitute.
+
+Unspecified, reported—total production was reported without a breakdown by end use.
+
+Unspecified, estimated— estimated production of nonrespondents.
+
+
+Contacts
+
+Jason Christopher Willett, Construction Aggregates Commodity Specialist
+U.S. Geological Survey
+989 National Center
+Reston, VA 20192
+Email: jwillett@usgs.gov
+
+Robert M. Callaghan, State Minerals Specialist
+Email: rcallaghan@usgs.gov 
+
+Elizabeth Sangine, Chief, Mineral Commodities Section
+National Minerals Information Center
+Email: escottsangine@usgs.gov 
+
+
+

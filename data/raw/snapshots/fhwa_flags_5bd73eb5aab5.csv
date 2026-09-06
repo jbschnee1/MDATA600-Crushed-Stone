@@ -1,0 +1,9 @@
+state_fips,state,table_year,reported_year,footnote,authoritative_url,recommended_action
+25,Massachusetts,2015,2011,3,https://www.fhwa.dot.gov/policyinformation/statistics/2015/sf4c.cfm,Mask predictor in strict timing analysis; preserve original
+44,Rhode Island,2015,2013,4,https://www.fhwa.dot.gov/policyinformation/statistics/2015/sf4c.cfm,Mask predictor in strict timing analysis; preserve original
+25,Massachusetts,2016,2011,3,https://www.fhwa.dot.gov/policyinformation/statistics/2016/sf4c.cfm,Mask predictor in strict timing analysis; preserve original
+02,Alaska,2017,2016,3,https://www.fhwa.dot.gov/policyinformation/statistics/2017/sf4c.cfm,Mask predictor in strict timing analysis; preserve original
+25,Massachusetts,2018,2017,3,https://www.fhwa.dot.gov/policyinformation/statistics/2018/sf4c.cfm,Mask predictor in strict timing analysis; preserve original
+41,Oregon,2018,2017,3,https://www.fhwa.dot.gov/policyinformation/statistics/2018/sf4c.cfm,Mask predictor in strict timing analysis; preserve original
+41,Oregon,2019,2017,3,https://www.fhwa.dot.gov/policyinformation/statistics/2019/sf4c.cfm,Mask predictor in strict timing analysis; preserve original
+25,Massachusetts,2020,2019,3,https://www.fhwa.dot.gov/policyinformation/statistics/2020/sf4c.cfm,Mask predictor in strict timing analysis; preserve original

@@ -1,0 +1,2 @@
+source_id,url,attempted_utc,snapshot,sha256,bytes,status
+fhwa_2023,https://www.fhwa.dot.gov/policyinformation/statistics/2023/xls/sf4c.xlsx,2026-09-06T13:18:34.788357+00:00,output/source_verification/fhwa_2023_40d4da294e83.xlsx,40d4da294e8389aa0547a7c18b1b5b792535279a23c744d2965d7eae8dac2198,125214,"curl exit 0; recorded time is download file modification time, not publisher date"

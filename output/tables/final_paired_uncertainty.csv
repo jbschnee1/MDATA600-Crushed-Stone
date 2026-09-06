@@ -1,0 +1,2 @@
+model,states,bootstrap_draws,rmse_difference,rmse_difference_lower,rmse_difference_upper,mae_difference,mae_difference_lower,mae_difference_upper
+log_ar_l_highway,47,500,-26690.383966309717,-468444.2260443511,560980.9728717899,34735.20689411368,-226350.94791030878,323919.6825861146

@@ -1,0 +1,9 @@
+source,input_rows,before_rows,after_rows,join
+usgs,450,450,450,left one-to-one state_fips/year
+census_bps,450,450,450,left one-to-one state_fips/year
+fhwa,450,450,450,left one-to-one state_fips/year
+bea,450,450,450,left one-to-one state_fips/year
+bls,324,450,450,left one-to-one state_fips/year
+eia,450,450,450,left one-to-one state_fips/year
+census_construction,450,450,450,left one-to-one state_fips/year
+msha,450,450,450,left one-to-one state_fips/year

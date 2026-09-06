@@ -1,0 +1,15 @@
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+Error in source("R/08_gate2.R", encoding = "UTF-8") : 
+  R/08_gate2.R:28:9: unexpected INCOMPLETE_STRING
+27: },character(1))
+28: text<-c('# Decision Gate 2 
+            ^
+In addition: Warning message:
+In source("R/08_gate2.R", encoding = "UTF-8") :
+  invalid input found on input connection 'R/08_gate2.R'
+Execution halted

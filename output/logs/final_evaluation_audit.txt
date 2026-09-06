@@ -1,0 +1,6 @@
+Final evaluation completed with the previously frozen selection. No final-year tuning.
+Selected model: log_ar_l_highway
+Selection SHA256: f62706c77a2a91c398ddf370317c9fba4f23142b5590d4abba5d11017a14cecd
+2022 trained through 2021; 2023 refit unchanged through 2022. 94 scored observations per benchmark.
+Current-vintage retrospective evaluation does not establish historical real-time data availability.
+Empirical intervals and paired state bootstrap do not account for unidentified future aggregate shocks.

@@ -1,0 +1,451 @@
+fhwa_state_token,year,highway_capital_outlays_nominal_thousand_usd,highway_construction_preservation_nominal_thousand_usd,state_fips,fhwa_reported_year,fhwa_footnote,fhwa_year_matches,fhwa_provenance
+Alabama,2015,827758,764600,01,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alabama,2016,777419,736635,01,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alabama,2017,792071,733694,01,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alabama,2018,1606033,25492,01,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alabama,2019,1387759,930440,01,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alabama,2020,1153775,692566,01,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alabama,2021,925510,591614,01,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alabama,2022,1266049,1225238,01,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alabama,2023,968233,939928,01,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alaska,2015,792549,582065,02,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alaska,2016,899986,786625,02,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alaska  3/,2017,899986,786625,02,2016,3,FALSE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alaska,2018,711226,559333,02,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alaska,2019,767574,612999,02,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alaska,2020,608948,484978,02,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alaska,2021,724483,569206,02,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alaska,2022,702933,553468,02,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Alaska,2023,778710,682923,02,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arizona,2015,786634,639113,04,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arizona,2016,1054975,710522,04,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arizona,2017,996308,746996,04,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arizona,2018,1106242,848157,04,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arizona,2019,1375627,1234567,04,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arizona,2020,1084251,902722,04,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arizona,2021,857953,667115,04,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arizona,2022,907115,711386,04,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arizona,2023,1045462,849750,04,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arkansas,2015,853322,724009,05,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arkansas,2016,927320,785039,05,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arkansas,2017,1225591,1073072,05,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arkansas,2018,1200279,1060915,05,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arkansas,2019,919783,802429,05,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arkansas,2020,1025919,880060,05,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arkansas,2021,1322702,1153190,05,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arkansas,2022,1400824,1236278,05,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Arkansas,2023,1460931,1232014,05,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+California,2015,3065850,2306604,06,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+California,2016,2212144,1585578,06,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+California,2017,1865537,1317826,06,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+California,2018,4578573,3114875,06,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+California,2019,4513968,2944955,06,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+California,2020,5166858,3479383,06,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+California,2021,5574533,3973153,06,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+California,2022,5487338,3673492,06,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+California,2023,5541301,3646092,06,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Colorado,2015,924589,862883,08,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Colorado,2016,1130916,1037429,08,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Colorado,2017,959208,797582,08,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Colorado,2018,1108022,979071,08,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Colorado,2019,1051281,931436,08,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Colorado,2020,1283453,1160356,08,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Colorado,2021,1122846,1013283,08,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Colorado,2022,1392181,1246457,08,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Colorado,2023,1149578,1041627,08,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Connecticut,2015,837283,738400,09,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Connecticut,2016,1039596,923045,09,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Connecticut,2017,938453,784468,09,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Connecticut,2018,905748,754186,09,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Connecticut,2019,928035,772385,09,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Connecticut,2020,943260,793010,09,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Connecticut,2021,973724,815189,09,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Connecticut,2022,1023676,854618,09,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Connecticut,2023,1239753,1071044,09,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Delaware,2015,308591,237943,10,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Delaware,2016,449479,377008,10,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Delaware,2017,508042,406830,10,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Delaware,2018,557243,441119,10,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Delaware,2019,591785,468307,10,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Delaware,2020,497435,377909,10,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Delaware,2021,459924,306367,10,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Delaware,2022,499530,305007,10,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Delaware,2023,543667,425871,10,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Florida,2015,5548290,3994201,12,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Florida,2016,6099136,4562823,12,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Florida,2017,5677789,4093947,12,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Florida,2018,6681407,5062567,12,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Florida,2019,6509736,4772194,12,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Florida,2020,6568232,4987666,12,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Florida,2021,6312207,4663542,12,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Florida,2022,6504653,4777112,12,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Florida,2023,7549824,5520768,12,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Georgia,2015,1168206,937066,13,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Georgia,2016,1303783,1076059,13,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Georgia,2017,1629104,1312297,13,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Georgia,2018,1602348,1251710,13,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Georgia,2019,1564658,1145852,13,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Georgia,2020,1762623,1191483,13,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Georgia,2021,1765779,1187421,13,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Georgia,2022,1803146,1122016,13,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Georgia,2023,2090317,1437624,13,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Hawaii,2015,320458,305320,15,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Hawaii,2016,194446,179506,15,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Hawaii,2017,293475,281337,15,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Hawaii,2018,192775,178054,15,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Hawaii,2019,243071,225431,15,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Hawaii,2020,266020,250204,15,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Hawaii,2021,136972,119049,15,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Hawaii,2022,223540,206275,15,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Hawaii,2023,171953,153769,15,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Idaho,2015,366642,292669,16,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Idaho,2016,299863,228207,16,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Idaho,2017,307131,234401,16,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Idaho,2018,426560,346708,16,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Idaho,2019,602942,507643,16,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Idaho,2020,511559,390183,16,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Idaho,2021,648103,524037,16,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Idaho,2022,726996,574220,16,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Idaho,2023,742026,549714,16,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Illinois,2015,4417695,3809078,17,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Illinois,2016,4220642,3635204,17,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Illinois,2017,3544877,2818883,17,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Illinois,2018,3455712,2772215,17,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Illinois,2019,3146026,2507697,17,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Illinois,2020,4239202,3544526,17,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Illinois,2021,4763226,4148546,17,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Illinois,2022,4153116,3547515,17,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Illinois,2023,3817534,3150537,17,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Indiana,2015,1417027,1213534,18,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Indiana,2016,1355349,1187588,18,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Indiana,2017,1304272,1106407,18,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Indiana,2018,1302795,1077713,18,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Indiana,2019,1554090,1243694,18,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Indiana,2020,1842803,1465664,18,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Indiana,2021,2284400,1815737,18,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Indiana,2022,1997211,1621640,18,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Indiana,2023,2096678,1676896,18,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Iowa,2015,1008054,829577,19,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Iowa,2016,928893,777303,19,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Iowa,2017,1034361,821843,19,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Iowa,2018,1102172,928657,19,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Iowa,2019,1011405,830970,19,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Iowa,2020,1224020,1044858,19,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Iowa,2021,1279174,1110913,19,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Iowa,2022,1207421,1061301,19,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Iowa,2023,1243759,1088482,19,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kansas,2015,768163,651270,20,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kansas,2016,780185,662383,20,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kansas,2017,448251,401937,20,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kansas,2018,481822,424101,20,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kansas,2019,445765,378465,20,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kansas,2020,676149,599978,20,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kansas,2021,783416,638830,20,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kansas,2022,1036860,871784,20,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kansas,2023,1440388,1207696,20,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kentucky,2015,1734109,1417034,21,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kentucky,2016,1657291,1315383,21,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kentucky,2017,1370672,992711,21,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kentucky,2018,1167549,836463,21,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kentucky,2019,1293161,919490,21,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kentucky,2020,1379455,985215,21,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kentucky,2021,1297833,940760,21,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kentucky,2022,1516610,1100524,21,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Kentucky,2023,1683107,1257678,21,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Louisiana,2015,1056379,969518,22,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Louisiana,2016,1088686,996536,22,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Louisiana,2017,1151091,1041930,22,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Louisiana,2018,860465,775584,22,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Louisiana,2019,886746,809487,22,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Louisiana,2020,971945,889121,22,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Louisiana,2021,1022700,921081,22,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Louisiana,2022,1190251,1062780,22,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Louisiana,2023,1280139,1185604,22,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maine,2015,406176,331928,23,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maine,2016,423579,346376,23,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maine,2017,509858,426604,23,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maine,2018,440207,356535,23,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maine,2019,486290,401574,23,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maine,2020,597663,509402,23,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maine,2021,528309,441556,23,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maine,2022,533693,465466,23,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maine,2023,567590,499757,23,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maryland,2015,1370582,1084246,24,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maryland,2016,1411409,1061575,24,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maryland,2017,1451730,1146180,24,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maryland,2018,1548445,1241685,24,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maryland,2019,1520245,1260444,24,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maryland,2020,1590609,1324873,24,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maryland,2021,1233482,1075306,24,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maryland,2022,1239236,1082897,24,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Maryland,2023,1250208,1078069,24,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Massachusetts  3/,2015,1064039,887053,25,2011,3,FALSE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Massachusetts  3/,2016,1064039,887053,25,2011,3,FALSE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Massachusetts,2017,1756843,1516896,25,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Massachusetts  3/,2018,1756843,1516896,25,2017,3,FALSE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Massachusetts,2019,877552,771099,25,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Massachusetts  (3),2020,877552,771099,25,2019,3,FALSE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Massachusetts,2021,1080845,966839,25,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Massachusetts,2022,974656,817912,25,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Massachusetts,2023,1089003,904146,25,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Michigan,2015,1082544,1016513,26,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Michigan,2016,1018096,921212,26,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Michigan,2017,1235729,1085279,26,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Michigan,2018,1231419,1164647,26,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Michigan,2019,1453437,1382296,26,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Michigan,2020,1505939,1467112,26,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Michigan,2021,1679568,1405498,26,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Michigan,2022,1983891,1622234,26,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Michigan,2023,2471768,2100832,26,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Minnesota,2015,1225943,739387,27,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Minnesota,2016,1403704,1057875,27,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Minnesota,2017,1056937,982357,27,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Minnesota,2018,991426,837081,27,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Minnesota,2019,1197615,988626,27,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Minnesota,2020,1265830,1031346,27,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Minnesota,2021,1263727,1027207,27,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Minnesota,2022,1212303,955177,27,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Minnesota,2023,1433622,1084645,27,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Mississippi,2015,716925,567067,28,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Mississippi,2016,725208,572577,28,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Mississippi,2017,860884,700257,28,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Mississippi,2018,710243,575296,28,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Mississippi,2019,708631,581001,28,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Mississippi,2020,689563,559242,28,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Mississippi,2021,712097,573422,28,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Mississippi,2022,696862,555791,28,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Mississippi,2023,939676,799520,28,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Missouri,2015,869878,731542,29,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Missouri,2016,759083,635376,29,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Missouri,2017,758828,615530,29,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Missouri,2018,919865,758946,29,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Missouri,2019,805193,713146,29,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Missouri,2020,1026758,801142,29,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Missouri,2021,1095674,798670,29,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Missouri,2022,1096090,712584,29,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Missouri,2023,1422605,1121636,29,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Montana,2015,453865,368877,30,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Montana,2016,445024,358298,30,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Montana,2017,401266,315532,30,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Montana,2018,446364,358823,30,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Montana,2019,528455,438092,30,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Montana,2020,585442,479516,30,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Montana,2021,517090,414590,30,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Montana,2022,455575,384198,30,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Montana,2023,585145,504092,30,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nebraska,2015,490154,426724,31,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nebraska,2016,572870,504521,31,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nebraska,2017,545976,477676,31,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nebraska,2018,546366,462285,31,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nebraska,2019,483546,419079,31,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nebraska,2020,638239,532560,31,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nebraska,2021,595457,513020,31,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nebraska,2022,668685,596603,31,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nebraska,2023,831469,744029,31,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nevada,2015,443125,229598,32,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nevada,2016,600834,430504,32,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nevada,2017,732140,549308,32,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nevada,2018,762411,605986,32,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nevada,2019,690578,530156,32,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nevada,2020,486705,352765,32,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nevada,2021,555653,431487,32,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nevada,2022,649197,477398,32,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Nevada,2023,715421,543192,32,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Hampshire,2015,311666,274188,33,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Hampshire,2016,239972,206661,33,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Hampshire,2017,260665,240199,33,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Hampshire,2018,279037,246996,33,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Hampshire,2019,273146,243390,33,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Hampshire,2020,283372,253924,33,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Hampshire,2021,235818,203724,33,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Hampshire,2022,204976,177270,33,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Hampshire,2023,282162,255017,33,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Jersey,2015,3080659,2834567,34,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Jersey,2016,2631624,2347943,34,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Jersey,2017,2301582,2051341,34,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Jersey,2018,2932895,2638862,34,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Jersey,2019,2944934,2624942,34,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Jersey,2020,2760187,2501185,34,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Jersey,2021,2465160,2188054,34,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Jersey,2022,1912849,1725449,34,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Jersey,2023,2974261,2756460,34,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Mexico,2015,445814,427654,35,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Mexico,2016,392440,374618,35,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Mexico,2017,381462,363798,35,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Mexico,2018,439747,414266,35,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Mexico,2019,435393,412161,35,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Mexico,2020,474163,454834,35,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Mexico,2021,664292,640442,35,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Mexico,2022,607404,574514,35,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New Mexico,2023,710034,676752,35,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New York,2015,4296048,3861353,36,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New York,2016,4288149,3928506,36,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New York,2017,4018762,3407402,36,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New York,2018,2895878,2332839,36,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New York,2019,3937980,3537715,36,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New York,2020,4274851,3608225,36,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New York,2021,3669404,2841479,36,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New York,2022,3596634,2865949,36,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+New York,2023,4428338,2802017,36,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Carolina,2015,2372864,1987151,37,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Carolina,2016,2676904,2145501,37,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Carolina,2017,3069561,2400061,37,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Carolina,2018,3835043,3001298,37,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Carolina,2019,4844323,3765243,37,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Carolina,2020,4558684,3583028,37,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Carolina,2021,3901128,3200600,37,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Carolina,2022,4403076,3301971,37,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Carolina,2023,4815068,3197827,37,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Dakota,2015,651295,559589,38,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Dakota,2016,549947,442864,38,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Dakota,2017,613462,520899,38,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Dakota,2018,263882,204518,38,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Dakota,2019,376287,300592,38,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Dakota,2020,372599,328440,38,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Dakota,2021,382065,321732,38,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Dakota,2022,428934,371041,38,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+North Dakota,2023,628016,528629,38,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Ohio,2015,2732780,2330963,39,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Ohio,2016,2665280,2333164,39,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Ohio,2017,2406441,2075466,39,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Ohio,2018,2098321,1804035,39,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Ohio,2019,1970380,1630763,39,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Ohio,2020,2223112,1806581,39,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Ohio,2021,2324962,1985421,39,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Ohio,2022,1665471,1435424,39,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Ohio,2023,2090265,399476,39,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oklahoma,2015,1108668,949207,40,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oklahoma,2016,1450103,1294357,40,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oklahoma,2017,1593750,1469594,40,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oklahoma,2018,1334489,1248318,40,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oklahoma,2019,1360030,1166790,40,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oklahoma,2020,1491475,1327037,40,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oklahoma,2021,1449120,1287790,40,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oklahoma,2022,1550535,1337660,40,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oklahoma,2023,1530893,1313997,40,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oregon,2015,628405,510737,41,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oregon,2016,544865,426281,41,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oregon,2017,924356,803428,41,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oregon    3/,2018,924356,803428,41,2017,3,FALSE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oregon    (3),2019,924356,803428,41,2017,3,FALSE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oregon,2020,1219205,1043418,41,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oregon,2021,620120,394770,41,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oregon,2022,860112,603733,41,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Oregon,2023,1021762,723000,41,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Pennsylvania,2015,3551258,3074062,42,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Pennsylvania,2016,4658248,4020083,42,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Pennsylvania,2017,3356765,2854220,42,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Pennsylvania,2018,4126697,3531382,42,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Pennsylvania,2019,3817048,3239347,42,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Pennsylvania,2020,3719359,3116874,42,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Pennsylvania,2021,3854349,3352825,42,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Pennsylvania,2022,3108224,2521212,42,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Pennsylvania,2023,4094391,3446674,42,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Rhode Island  4/,2015,246706,194665,44,2013,4,FALSE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Rhode Island,2016,270486,199711,44,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Rhode Island,2017,187377,124872,44,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Rhode Island,2018,258238,169403,44,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Rhode Island,2019,356087,304380,44,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Rhode Island,2020,402173,344717,44,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Rhode Island,2021,400682,350293,44,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Rhode Island,2022,365183,312313,44,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Rhode Island,2023,459574,403096,44,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Carolina,2015,651335,537199,45,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Carolina,2016,741114,442701,45,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Carolina,2017,1071722,865537,45,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Carolina,2018,1217025,982493,45,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Carolina,2019,1903048,1652730,45,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Carolina,2020,2109007,1907712,45,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Carolina,2021,1478612,1206979,45,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Carolina,2022,1602861,942929,45,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Carolina,2023,1742815,1424656,45,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Dakota,2015,314200,284809,46,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Dakota,2016,326422,299033,46,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Dakota,2017,263593,235840,46,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Dakota,2018,217789,190411,46,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Dakota,2019,245906,219631,46,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Dakota,2020,445520,397765,46,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Dakota,2021,515216,459609,46,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Dakota,2022,490124,444035,46,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+South Dakota,2023,607119,548856,46,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Tennessee,2015,1033817,761910,47,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Tennessee,2016,1016158,750517,47,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Tennessee,2017,989681,719640,47,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Tennessee,2018,1124711,828078,47,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Tennessee,2019,1172329,825179,47,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Tennessee,2020,1369145,1002154,47,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Tennessee,2021,1275147,920647,47,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Tennessee,2022,1370242,979627,47,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Tennessee,2023,1648160,1200013,47,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Texas,2015,11847072,10212266,48,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Texas,2016,7175281,5631975,48,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Texas,2017,8716364,6913916,48,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Texas,2018,8207169,6601029,48,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Texas,2019,9622499,7749851,48,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Texas,2020,11374193,9336557,48,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Texas,2021,11276573,9464358,48,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Texas,2022,9857146,8277977,48,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Texas,2023,11217009,9716446,48,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Utah,2015,459847,378573,49,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Utah,2016,456922,358602,49,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Utah,2017,563953,435632,49,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Utah,2018,880398,657978,49,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Utah,2019,938924,659566,49,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Utah,2020,1160963,850133,49,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Utah,2021,1256642,1052679,49,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Utah,2022,1175592,974846,49,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Utah,2023,911022,631448,49,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Vermont,2015,203602,187230,50,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Vermont,2016,183444,165119,50,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Vermont,2017,180091,161495,50,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Vermont,2018,209814,190244,50,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Vermont,2019,194913,171379,50,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Vermont,2020,216302,191806,50,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Vermont,2021,226002,206748,50,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Vermont,2022,228791,208782,50,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Vermont,2023,278480,258972,50,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Virginia,2015,1833512,1402387,51,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Virginia,2016,2014981,1605020,51,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Virginia,2017,1887760,1480545,51,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Virginia,2018,2553033,2230230,51,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Virginia,2019,1530009,1241013,51,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Virginia,2020,1792628,1485616,51,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Virginia,2021,2249323,1939337,51,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Virginia,2022,2069884,1744720,51,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Virginia,2023,2471744,2171713,51,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Washington,2015,2363603,2116077,53,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Washington,2016,1930114,1479023,53,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Washington,2017,2095538,1655980,53,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Washington,2018,1749709,1282480,53,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Washington,2019,1807166,1331915,53,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Washington,2020,1801997,1317082,53,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Washington,2021,1798184,1400618,53,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Washington,2022,1748297,1268780,53,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Washington,2023,2167506,1624065,53,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+West Virginia,2015,654041,501198,54,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+West Virginia,2016,830046,650847,54,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+West Virginia,2017,817454,615915,54,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+West Virginia,2018,1877397,1696385,54,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+West Virginia,2019,910892,746030,54,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+West Virginia,2020,1393312,1222107,54,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+West Virginia,2021,770440,626154,54,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+West Virginia,2022,1188666,992342,54,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+West Virginia,2023,1271908,1092940,54,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wisconsin,2015,1376476,1144880,55,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wisconsin,2016,1553075,1366327,55,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wisconsin,2017,1279547,1104140,55,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wisconsin,2018,973102,830613,55,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wisconsin,2019,1384617,1266099,55,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wisconsin,2020,1545692,1419488,55,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wisconsin,2021,1179831,1033733,55,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wisconsin,2022,1266752,1133093,55,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wisconsin,2023,1518576,1388141,55,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wyoming,2015,407365,358548,56,2015,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wyoming,2016,313317,263772,56,2016,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wyoming,2017,320608,268571,56,2017,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wyoming,2018,346583,290601,56,2018,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wyoming,2019,374234,322714,56,2019,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wyoming,2020,430059,367188,56,2020,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wyoming,2021,384914,324545,56,2021,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wyoming,2022,443316,379789,56,2022,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled
+Wyoming,2023,555303,499509,56,2023,,TRUE,legacy_parsed_archive; HTML footnotes verified; 2023 original reconciled

@@ -1,0 +1,15 @@
+# Local credentials: api-keys.R is ALREADY TRACKED; this rule alone does not untrack it.
+api-keys.R
+.Renviron
+.Rhistory
+.RData
+.DS_Store
+__pycache__/
+# Public source snapshots may include large archives. Keep their manifests in docs/evidence.
+output/source_verification/
+
+.R-library/
+renv/library/
+renv/staging/
+
+.renv-cache/

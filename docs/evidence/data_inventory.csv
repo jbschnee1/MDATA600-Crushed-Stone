@@ -1,0 +1,15 @@
+path,bytes,sha256,rows,columns,min_year,max_year,nonmissing_states,duplicate_key_rows,missing_key_rows
+data/clean/bea/bea_construction_gdp.csv,34620,36ea5143822cb8e7700664025d51ecf1f1715925781f8e0b2fae99de5e71d62c,450,7,2015,2023,50,0,0
+data/clean/fred/fred_mortgage_rates_inflation.csv,622,0cc4a28fdba03c2b7cfbf5818338c70fbe142bbb46321074b67dd6ebfc2f3a5f,9,6,2015,2023,0,0,0
+data/clean/msha/msha_stone_capacity.csv,18251,d9d52f77aa0e71950b05b42b84f5c2fb71888b1013b987a5576e67872ab129d8,450,9,2015,2023,50,0,0
+data/processed/crushed_stone_state_year.csv,240890,6b12b9071f691541a4b31b706ed4e148928632e24e61fa29ff2b5095edfce231,450,80,2015,2023,50,0,0
+data/raw/bea/bea_construction_gdp.csv,34620,36ea5143822cb8e7700664025d51ecf1f1715925781f8e0b2fae99de5e71d62c,450,7,2015,2023,50,0,0
+data/raw/bea/bea_state_gdp_personal_income.csv,15625,b6e599bd3b7f94fbc9e81b8ab3f20fbfeea89c8a9cde051c61797b2bffa7f1d7,450,5,2015,2023,50,0,0
+data/raw/bls/bls_state_construction_employment.csv,18149,02c317d926e807f6600e55166b9a3d76c6d66f001216269c64a93e3edbadd803,324,6,2015,2023,36,0,0
+data/raw/census/census_building_permits.csv,68258,45a63c22976041bb9e48bcd3b3fecca4cff887cc143d786b26de6ed318d65752,450,30,2015,2023,50,0,0
+data/raw/census/census_construction_spending.csv,12485,701282bf99fa2e13943548bf3e24b0f97dda042758b784af48922f419e290333,450,5,2015,2023,50,0,0
+data/raw/eia/eia_energy_prices.csv,23050,96b0590746ce0d28e456394859687ff11e5a9fb9b638c81f6a78afa64fa4a2e3,450,7,2015,2023,50,0,0
+data/raw/fhwa/fhwa_state_capital_outlays.csv,55839,e1231c0073b8d6cf0984e5f17a967cc3161d0280ca15fff6ddeb9604c0731aaa,450,21,2015,2023,50,2,8
+data/raw/fred/fred_mortgage_rates_inflation.csv,653,8e00cabc91b14c279369792f46fbb3eb8c57afc3238ce768f09c126be702fe3e,9,6,2015,2023,0,0,0
+data/raw/msha/msha_stone_capacity.csv,18251,d9d52f77aa0e71950b05b42b84f5c2fb71888b1013b987a5576e67872ab129d8,450,9,2015,2023,50,0,0
+data/raw/usgs/usgs_crushed_stone_production.csv,29299,446877ed65292de11629671f18a32bd5270ccd3b603a6ca0fce9c85ce04971c9,450,8,2015,2023,50,0,0

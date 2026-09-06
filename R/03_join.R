@@ -1,145 +1,62 @@
-# =============================================================================
-# Crushed Stone Project - Assemble the State-Year Analysis Panel
-# =============================================================================
-# Joins every available source variable to a 50-state by 2015-2023 backbone.
-# Run R/02_clean.R first so derived variables are available.
-
-suppressPackageStartupMessages({
-  library(dplyr)
-  library(readr)
-  library(tidyr)
-})
-
-analysis_years <- 2015L:2023L
-key_columns <- c("state_fips", "year")
-
-state_lookup <- tibble(
-  state = state.name,
-  state_fips = c(
-    "01", "02", "04", "05", "06", "08", "09", "10", "12", "13",
-    "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
-    "25", "26", "27", "28", "29", "30", "31", "32", "33", "34",
-    "35", "36", "37", "38", "39", "40", "41", "42", "44", "45",
-    "46", "47", "48", "49", "50", "51", "53", "54", "55", "56"
-  )
-)
-
-read_state_year <- function(path, source_name) {
-  if (!file.exists(path)) stop("Missing input for ", source_name, ": ", path)
-
-  data <- read_csv(
-    path,
-    col_types = cols(state_fips = col_character()),
-    show_col_types = FALSE
-  )
-  missing_keys <- setdiff(key_columns, names(data))
-  if (length(missing_keys) > 0L) {
-    stop(source_name, " is missing keys: ", paste(missing_keys, collapse = ", "))
-  }
-
-  # FHWA occasionally appends footnote markers to state names, which caused
-  # the raw state-name lookup to miss a handful of FIPS codes.
-  if ("state" %in% names(data) && anyNA(data$state_fips)) {
-    repaired_keys <- data |>
-      transmute(
-        row_id = row_number(),
-        state_clean = trimws(gsub(
-          "[[:space:]]+(\\([0-9]+\\)|[0-9]+/)[[:space:]]*$", "", .data$state
-        ))
-      ) |>
-      left_join(state_lookup, by = c("state_clean" = "state"))
-    data$state_fips <- coalesce(data$state_fips, repaired_keys$state_fips)
-  }
-  if (anyNA(data$state_fips) || anyNA(data$year)) {
-    stop(source_name, " contains missing state-year keys.")
-  }
-  duplicates <- data |>
-    count(across(all_of(key_columns))) |>
-    filter(.data$n > 1L)
-  if (nrow(duplicates) > 0L) stop(source_name, " contains duplicate keys.")
-
-  # State is the canonical panel identifier, so source copies are redundant.
-  data |>
-    select(-any_of("state"))
+# Approved analytical panel; original 80-column panel remains unchanged.
+source('R/lib/common.R')
+source_manifest<-verify_manifest()
+panel<-crossing(state_fips=state_fips_lookup$state_fips,year=analysis_years) |>
+ left_join(state_fips_lookup,by='state_fips',relationship='many-to-one')
+joins<-list()
+for(id in c('usgs','census_bps','fhwa','bea','bls','eia','census_construction','msha')) {
+ data<-read_csv(file.path('data/clean/approved',paste0(id,'.csv')),col_types=cols(state_fips=col_character()),show_col_types=FALSE)
+ check_keys(data,id,complete=id!='bls');before<-nrow(panel);panel<-safe_join(panel,data)
+ joins[[id]]<-tibble(source=id,input_rows=nrow(data),before_rows=before,after_rows=nrow(panel),join='left one-to-one state_fips/year')
 }
-
-join_source <- function(panel, data, source_name) {
-  overlapping <- intersect(setdiff(names(data), key_columns), names(panel))
-  if (length(overlapping) > 0L) {
-    stop(
-      source_name, " has non-key columns already present in the panel: ",
-      paste(overlapping, collapse = ", ")
-    )
-  }
-  left_join(panel, data, by = key_columns)
+fred<-read_csv('data/clean/approved/fred.csv',show_col_types=FALSE) |> filter(year %in% analysis_years)
+panel<-safe_join(panel,fred,keys='year',relationship='many-to-one') |>
+ mutate(highway_capital_outlays_2017_million_usd=if_else(fhwa_year_matches,highway_capital_outlays_nominal_thousand_usd/1000*cpi_2017_multiplier,NA_real_),
+ highway_preservation_2017_million_usd=if_else(fhwa_year_matches,highway_construction_preservation_nominal_thousand_usd/1000*cpi_2017_multiplier,NA_real_),
+ private_nonresidential_2017_million_usd=private_nonresidential_nominal_million_usd*cpi_2017_multiplier,
+ state_local_construction_2017_million_usd=state_local_construction_nominal_million_usd*cpi_2017_multiplier,
+ industrial_energy_2017_usd_per_mmbtu=industrial_energy_price_per_mmbtu*cpi_2017_multiplier) |>
+ arrange(state_fips,year)
+lag_columns<-c('crushed_stone_sold_used_metric_tons','housing_units_authorized','highway_capital_outlays_2017_million_usd',
+ 'construction_gdp_chained_2017_million_usd','heavy_civil_employment_thousands','industrial_energy_2017_usd_per_mmbtu',
+ 'active_stone_mines','stone_mine_employee_hours','private_nonresidential_2017_million_usd','state_local_construction_2017_million_usd')
+previous<-panel |> select(state_fips,year,all_of(lag_columns)) |> rename_with(~paste0('lag1_',.x),all_of(lag_columns)) |>
+ mutate(lag1_source_year=year,year=year+1L)
+panel<-safe_join(panel,previous)
+stopifnot(all(panel$year[!is.na(panel$lag1_source_year)]-panel$lag1_source_year[!is.na(panel$lag1_source_year)]==1))
+for(v in lag_columns) {
+ expected<-panel[[v]][match(paste(panel$state_fips,panel$year-1),paste(panel$state_fips,panel$year))]
+ stopifnot(isTRUE(all.equal(panel[[paste0('lag1_',v)]],expected)))
 }
-
-panel <- crossing(
-  state_fips = state_lookup$state_fips,
-  year = analysis_years
-) |>
-  left_join(state_lookup, by = "state_fips") |>
-  select("state_fips", "state", "year")
-
-state_sources <- list(
-  usgs = read_state_year(
-    "data/raw/usgs/usgs_crushed_stone_production.csv", "USGS"
-  ),
-  census_bps = read_state_year(
-    "data/raw/census/census_building_permits.csv", "Census BPS"
-  ) |>
-    rename(
-      census_bps_time = "time",
-      census_bps_state_name = "state_name"
-    ),
-  fhwa = read_state_year(
-    "data/raw/fhwa/fhwa_state_capital_outlays.csv", "FHWA"
-  ),
-  bls = read_state_year(
-    "data/raw/bls/bls_state_construction_employment.csv", "BLS"
-  ),
-  bea = read_state_year(
-    "data/raw/bea/bea_state_gdp_personal_income.csv", "BEA"
-  ),
-  bea_construction = read_state_year(
-    "data/clean/bea/bea_construction_gdp.csv", "BEA construction GDP"
-  ),
-  census_construction = read_state_year(
-    "data/raw/census/census_construction_spending.csv",
-    "Census construction spending"
-  ),
-  eia = read_state_year(
-    "data/raw/eia/eia_energy_prices.csv", "EIA"
-  ),
-  msha = read_state_year(
-    "data/clean/msha/msha_stone_capacity.csv", "MSHA"
-  )
-)
-
-for (source_name in names(state_sources)) {
-  panel <- join_source(panel, state_sources[[source_name]], source_name)
-}
-
-fred <- read_csv(
-  "data/clean/fred/fred_mortgage_rates_inflation.csv",
-  show_col_types = FALSE
-)
-if (anyDuplicated(fred$year)) stop("FRED contains duplicate years.")
-panel <- left_join(panel, fred, by = "year") |>
-  arrange(.data$state_fips, .data$year)
-
-if (nrow(panel) != nrow(state_lookup) * length(analysis_years)) {
-  stop("The assembled panel does not have the expected 450 rows.")
-}
-if (anyDuplicated(panel[key_columns])) {
-  stop("The assembled panel contains duplicate state-year keys.")
-}
-
-output_path <- "data/processed/crushed_stone_state_year.csv"
-dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
-write_csv(panel, output_path, na = "")
-
-message(
-  "Wrote ", nrow(panel), " rows and ", ncol(panel),
-  " columns to ", output_path
-)
+primary<-c('housing_units_authorized','highway_capital_outlays_2017_million_usd','construction_gdp_chained_2017_million_usd')
+panel<-panel |> mutate(target_observed=!is.na(crushed_stone_sold_used_metric_tons),
+ eligible_explanation=target_observed & if_all(all_of(primary),~!is.na(.x)),
+ eligible_prediction=target_observed & if_all(all_of(paste0('lag1_',c('crushed_stone_sold_used_metric_tons',primary))),~!is.na(.x)),
+ dataset_stage='approved_gate1_design; model_choice_pending_gate2')
+check_keys(panel,'approved panel')
+stopifnot(nrow(panel)==450,sum(panel$target_observed)==427,sum(panel$eligible_explanation)==419,
+ sum(panel$eligible_prediction)==371,sum(panel$eligible_prediction & panel$year %in% test_years)==94)
+for(v in c('crushed_stone_sold_used_metric_tons',primary))stopifnot(all(panel[[v]]>0,na.rm=TRUE))
+write_csv(panel,'data/processed/approved/crushed_stone_state_year.csv',na='')
+write_table(bind_rows(joins),'join_audit.csv')
+coverage<-panel |> select(state_fips,state,year,target_observed,target_withheld,fhwa_year_matches,bls_months,msha_no_qualifying_activity,eligible_explanation,eligible_prediction)
+write_table(coverage,'state_year_coverage.csv')
+write_table(coverage |> group_by(year) |> summarise(backbone=n(),observed_target=sum(target_observed),explanation=sum(eligible_explanation),prediction=sum(eligible_prediction),bls_present=sum(!is.na(bls_months))), 'coverage_by_year.csv')
+write_table(map_dfr(names(panel),function(v)tibble(variable=v,type=class(panel[[v]])[1],missing=sum(is.na(panel[[v]])),unique_values=n_distinct(panel[[v]],na.rm=TRUE))),'approved_variable_profile.csv')
+anomalies<-panel |> select(state_fips,state,year,all_of(c('crushed_stone_sold_used_metric_tons',primary))) |>
+ pivot_longer(-c(state_fips,state,year),names_to='variable',values_to='value') |>
+ group_by(state_fips,variable) |> arrange(year,.by_group=TRUE) |> mutate(previous=lag(value),change_pct=100*(value/previous-1)) |>
+ ungroup() |> filter(!is.na(change_pct),abs(change_pct)>50)
+write_table(anomalies,'annual_change_review.csv')
+write_lines(c('# Data quality report - approved pipeline','',
+ 'PASS: 450 unique state-years, exact 50-state/2015-2023 coverage, nonnegative observed target and positive primary inputs.',
+ 'PASS: joins preserve row counts; keys unique; CPI has 12 months in every year 2014-2023.',
+ 'PASS: 23 withheld outcomes stay missing; 8 misdated FHWA values masked; no interpolation.',
+ 'PASS: explicit previous-year joins; each lag reconciled to exact state/year-1 input including missingness.',
+ 'Eligible: 419 contemporaneous, 371 lagged; 94 in final 2022-2023 prediction years.',
+ 'BLS: 324 complete annual observations; not a primary eligibility requirement.',
+ paste(nrow(anomalies),'annual changes above 50% flagged in annual_change_review.csv; no automatic deletion.'),
+ 'All source inputs checksum-pinned. FHWA 2015-2022 uses preserved parsed data; live originals fail certificate validation.',
+ 'MSHA zero aggregates explicitly flagged; current commodity classification and USGS estimation dependence retained as limitations.',
+ 'USGS target uses first-sale/use geography. Read source_register.md for revision and historical-release limitations.'),'docs/data_quality_report.md')
+message('Approved panel complete: 450 rows; 419 explanation / 371 lagged prediction eligible.')

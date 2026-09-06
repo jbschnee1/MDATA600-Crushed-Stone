@@ -1,0 +1,145 @@
+excluded_state,term,estimate
+Alabama,l_permits_t,0.19185459164557928
+Alabama,l_highway_t,0.04135250019967842
+Alabama,l_gdp_t,0.5152735654087045
+Alaska,l_permits_t,0.06938950060588411
+Alaska,l_highway_t,0.06196364434452533
+Alaska,l_gdp_t,0.5528412951970868
+Arizona,l_permits_t,0.2034428403821821
+Arizona,l_highway_t,0.029776965801087504
+Arizona,l_gdp_t,0.5606729358214941
+Arkansas,l_permits_t,0.1930760111650553
+Arkansas,l_highway_t,0.03722108280747647
+Arkansas,l_gdp_t,0.5187344530729641
+California,l_permits_t,0.189676498207125
+California,l_highway_t,0.041155542869448315
+California,l_gdp_t,0.518782542476753
+Colorado,l_permits_t,0.19313467367380216
+Colorado,l_highway_t,0.03840694135606919
+Colorado,l_gdp_t,0.5184397810349319
+Connecticut,l_permits_t,0.2008238481810422
+Connecticut,l_highway_t,0.036785073395491405
+Connecticut,l_gdp_t,0.5320371562790349
+Florida,l_permits_t,0.1910837132394911
+Florida,l_highway_t,0.03939549956042365
+Florida,l_gdp_t,0.5195473643752907
+Georgia,l_permits_t,0.19252773089556033
+Georgia,l_highway_t,0.039091197152372095
+Georgia,l_gdp_t,0.5134196217224303
+Hawaii,l_permits_t,0.21718279625572248
+Hawaii,l_highway_t,0.05389434798058271
+Hawaii,l_gdp_t,0.5202359718726908
+Idaho,l_permits_t,0.20797102672266485
+Idaho,l_highway_t,0.044321462665703026
+Idaho,l_gdp_t,0.5249929306745871
+Illinois,l_permits_t,0.20454325268172616
+Illinois,l_highway_t,0.03740918845447599
+Illinois,l_gdp_t,0.5224660425365162
+Indiana,l_permits_t,0.1925862500132953
+Indiana,l_highway_t,0.04009830455967072
+Indiana,l_gdp_t,0.5194366377836186
+Iowa,l_permits_t,0.19146756278472787
+Iowa,l_highway_t,0.038534719516472374
+Iowa,l_gdp_t,0.5213667844028571
+Kansas,l_permits_t,0.19898109084569135
+Kansas,l_highway_t,0.027106031429543244
+Kansas,l_gdp_t,0.5254126935218109
+Kentucky,l_permits_t,0.19392952010038428
+Kentucky,l_highway_t,0.03834718042731755
+Kentucky,l_gdp_t,0.515818030314913
+Maine,l_permits_t,0.19881884537312153
+Maine,l_highway_t,0.03700602270381173
+Maine,l_gdp_t,0.5154962111294467
+Maryland,l_permits_t,0.19488908159297144
+Maryland,l_highway_t,0.0411859678003476
+Maryland,l_gdp_t,0.5168809454091917
+Massachusetts,l_permits_t,0.19236484166979975
+Massachusetts,l_highway_t,0.03977722056175612
+Massachusetts,l_gdp_t,0.5176543038127833
+Michigan,l_permits_t,0.19283658733911033
+Michigan,l_highway_t,0.04104550048033289
+Michigan,l_gdp_t,0.5154317754965516
+Minnesota,l_permits_t,0.19016071936833667
+Minnesota,l_highway_t,0.039946118763805744
+Minnesota,l_gdp_t,0.519014073138331
+Mississippi,l_permits_t,0.1891008937180702
+Mississippi,l_highway_t,0.030027093173106076
+Mississippi,l_gdp_t,0.5220858890700493
+Missouri,l_permits_t,0.1971074826059654
+Missouri,l_highway_t,0.0363049371251429
+Missouri,l_gdp_t,0.5119350203855543
+Montana,l_permits_t,0.19044703659673218
+Montana,l_highway_t,0.03706072103421687
+Montana,l_gdp_t,0.5300882531453183
+Nebraska,l_permits_t,0.19193118166335263
+Nebraska,l_highway_t,0.039269078327414574
+Nebraska,l_gdp_t,0.5179647190894235
+Nevada,l_permits_t,0.1764279400368338
+Nevada,l_highway_t,0.023437855537978523
+Nevada,l_gdp_t,0.5879812737460134
+New Hampshire,l_permits_t,0.19304106457677184
+New Hampshire,l_highway_t,0.034206453782372304
+New Hampshire,l_gdp_t,0.525107111495471
+New Jersey,l_permits_t,0.19152601605885747
+New Jersey,l_highway_t,0.04045190666879198
+New Jersey,l_gdp_t,0.5224752370924145
+New Mexico,l_permits_t,0.20816251946357525
+New Mexico,l_highway_t,0.0434881545834924
+New Mexico,l_gdp_t,0.5074776127022586
+New York,l_permits_t,0.20096836666779044
+New York,l_highway_t,0.04138292501533103
+New York,l_gdp_t,0.5234464651586923
+North Carolina,l_permits_t,0.1927870987954657
+North Carolina,l_highway_t,0.04084283900750057
+North Carolina,l_gdp_t,0.5198204137902173
+North Dakota,l_permits_t,0.15963635256904227
+North Dakota,l_highway_t,0.02532597623199068
+North Dakota,l_gdp_t,0.41005303790429154
+Ohio,l_permits_t,0.18663396458561166
+Ohio,l_highway_t,0.048336968217150625
+Ohio,l_gdp_t,0.5175822360466884
+Oklahoma,l_permits_t,0.19089120143331528
+Oklahoma,l_highway_t,0.038618999807622775
+Oklahoma,l_gdp_t,0.5279237349419432
+Oregon,l_permits_t,0.19414816244768757
+Oregon,l_highway_t,0.04251164339868168
+Oregon,l_gdp_t,0.5097381227165902
+Pennsylvania,l_permits_t,0.19512777289677405
+Pennsylvania,l_highway_t,0.04045939893002281
+Pennsylvania,l_gdp_t,0.515521261487594
+Rhode Island,l_permits_t,0.1985958007013839
+Rhode Island,l_highway_t,0.039580497083515714
+Rhode Island,l_gdp_t,0.5202324353909792
+South Carolina,l_permits_t,0.19096202465675677
+South Carolina,l_highway_t,0.040475254836474316
+South Carolina,l_gdp_t,0.5138081215123509
+South Dakota,l_permits_t,0.1929218598797073
+South Dakota,l_highway_t,0.037369899663473705
+South Dakota,l_gdp_t,0.5174701052401564
+Tennessee,l_permits_t,0.18865930942433645
+Tennessee,l_highway_t,0.039780466074915664
+Tennessee,l_gdp_t,0.5077091946141049
+Texas,l_permits_t,0.18191523710436588
+Texas,l_highway_t,0.041610716360075774
+Texas,l_gdp_t,0.5318143010693868
+Utah,l_permits_t,0.19389883033374672
+Utah,l_highway_t,0.029515298448419287
+Utah,l_gdp_t,0.4942803803527
+Vermont,l_permits_t,0.18914263120834274
+Vermont,l_highway_t,0.037589168831222625
+Vermont,l_gdp_t,0.5347693091844531
+Virginia,l_permits_t,0.19213048435552343
+Virginia,l_highway_t,0.03926797259211519
+Virginia,l_gdp_t,0.5179677718617426
+Washington,l_permits_t,0.19289120884898384
+Washington,l_highway_t,0.038563989769961005
+Washington,l_gdp_t,0.518821649094452
+West Virginia,l_permits_t,0.18364146786896357
+West Virginia,l_highway_t,0.043585481014864064
+West Virginia,l_gdp_t,0.544332356830975
+Wisconsin,l_permits_t,0.19308279737419387
+Wisconsin,l_highway_t,0.041696170285820545
+Wisconsin,l_gdp_t,0.515332110163025
+Wyoming,l_permits_t,0.22430397665621382
+Wyoming,l_highway_t,0.04314505463002189
+Wyoming,l_gdp_t,0.42285843480959845

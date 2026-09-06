@@ -1,0 +1,6 @@
+source,verified_file_min_year,verified_file_max_year,basis
+eia,1970,2024,Downloaded pr_all.csv year columns; selected series verified for 2015-2023
+usgs_state_table,1971,2023,Workbook embedded instructions
+census_private_history,2008,2021,Workbook title and headers
+census_state_local_history,2006,2021,Workbook title and headers
+census_current_both,2022,2025,Workbook titles and headers
