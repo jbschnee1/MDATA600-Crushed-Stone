@@ -1,0 +1,2 @@
+n,states,years,overall_r_squared,incremental_r_squared_over_state_year,bp_statistic,bp_nominal_p,adjacent_residual_correlation,mean_pairwise_state_residual_correlation,max_cooks_distance,max_within_vif
+419,48,9,0.9945535569206714,0.2857182230870924,205.48653629167552,2.2919452587465484e-18,0.4771373395054787,0.0014989068424588344,0.09685573834059329,1.2806023125047186

@@ -1,0 +1,43 @@
+MDATA 600: Capstone Project Guide
+Welcome to MDATA 600. This course represents the culmination of your graduate studies. Unlike traditional courses you have taken so far, MDATA 600 contains no lectures, quizzes, homework assignments, or routine weekly activities. Instead, you will use all the skills and abilities acquired throughout the program to execute your capstone project.
+Your progress in this course is structured around three mandatory Zoom meetings and a final written report submission at the end of the term.
+Course Structure Overview
+Milestone
+Primary Objective
+Format & Deliverables
+ 
+Meeting 1
+Capstone Proposal Recap
+5-minute presentation (3–5 slides max)
+Meeting 2
+Midpoint Progress Check & Scope Fixes
+Work-in-progress review & corrective planning
+Meeting 3
+Final Presentation of Results
+Completed capstone results presentation
+Final Deliverable
+Final Capstone Report Submission
+Complete written capstone report
+Detailed Meeting Breakdown
+Meeting 1: Capstone Proposal Recap
+Goal: Concisely outline what your capstone proposal is, your specific objectives, and your available data sources.
+Presentation Constraints: Exactly 3 to 5 slides. You have a maximum of 5 minutes. The presentation will be stopped immediately if you exceed the time limit or begin discussing general background information.
+No Background / History: Do not spend time explaining general domain background or fundamentals. For example, if your project involves predicting stock market trends, do not explain stock market theory or history—focus solely on what you propose to do.
+Hyper-Specific Objectives: Goals must be tightly scoped and measurable.
+Incorrect: Proposing to "cure cardiovascular disease."
+Correct: Proposing to "predict the number of cardiac arrests in a specific hospital area during a designated time period."
+Verified Data Access: You must explicitly state where you are acquiring your data (e.g., existing access to clinical records, downloaded Kaggle datasets). You must already have access to your data source at this point; lacking a verified dataset will be problematic.
+Meeting 2: Progress Check & Scope Adjustments
+Goal: Report progress relative to your objectives and address any execution roadblocks.
+Status Tracking: Clearly state accomplishments against your planned objectives (e.g., "I have completed Objectives 1 through 3 and am currently working on Objective 4").
+Problem Solving: Use this meeting to discuss areas where you are stuck or encountering technical issues so corrective measures can be implemented.
+Final Scope Modifications: Any required scope changes or proposal adjustments must be finalized during this meeting. After Meeting 2, no further changes to project scope will be permitted.
+Meeting 3: Final Presentation
+Goal: Showcase the final outcomes and results of your completed capstone project.
+Deliverable Readiness: By Meeting 3, you must already have a fully written, ready-to-submit capstone report.
+Focus: Present what you accomplished, your key findings, and final project outcomes.
+Checklist for Student Success
+Data Verification: Ensure full access to all necessary data files prior to Meeting 1.
+Concise Deck: Draft a strictly 3–5 slide deck for Meeting 1 focusing only on proposal, specific objectives, and data source.
+Timely Adjustments: Identify any necessary scope changes early and resolve them during Meeting 2.
+Final Written Report: Complete the written capstone report in full prior to Meeting 3.

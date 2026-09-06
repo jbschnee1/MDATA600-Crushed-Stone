@@ -1,0 +1,28 @@
+state,year,variable,previous,current,change_pct,action
+Alabama,2018,capital_outlay_total,792071.0,1606033.0,102.76376738953958,Review; do not automatically exclude
+California,2018,capital_outlay_total,1865537.0,4578573.0,145.42922493630522,Review; do not automatically exclude
+Hawaii,2017,capital_outlay_total,194446.0,293475.0,50.92879256965945,Review; do not automatically exclude
+Hawaii,2022,capital_outlay_total,136972.0,223540.0,63.201238209269036,Review; do not automatically exclude
+Indiana,2021,active_stone_mines,1.0,0.0,-100.0,Review; do not automatically exclude
+Indiana,2023,active_stone_mines,1.0,5.0,400.0,Review; do not automatically exclude
+Kansas,2020,capital_outlay_total,445765.0,676149.0,51.68283736946597,Review; do not automatically exclude
+Louisiana,2021,industrial_energy_price_per_mmbtu,5.470000000000001,9.11,66.54478976234002,Review; do not automatically exclude
+Louisiana,2023,active_stone_mines,1.0,0.0,-100.0,Review; do not automatically exclude
+Massachusetts,2017,capital_outlay_total,1064039.0,1756843.0,65.11077131571305,Review; do not automatically exclude
+Massachusetts,2019,capital_outlay_total,1756843.0,877552.0,-50.04949218569901,Review; do not automatically exclude
+New Jersey,2023,capital_outlay_total,1912849.0,2974261.0,55.48854091462525,Review; do not automatically exclude
+North Dakota,2018,capital_outlay_total,613462.0,263882.0,-56.98478471364159,Review; do not automatically exclude
+North Dakota,2020,active_stone_mines,2.0,0.0,-100.0,Review; do not automatically exclude
+Oregon,2017,capital_outlay_total,544865.0,924356.0,69.6486285593679,Review; do not automatically exclude
+Oregon,2022,active_stone_mines,1.0,2.0,100.0,Review; do not automatically exclude
+South Carolina,2019,capital_outlay_total,1217025.0,1903048.0,56.368850270125925,Review; do not automatically exclude
+South Dakota,2020,capital_outlay_total,245906.0,445520.0,81.1749204980765,Review; do not automatically exclude
+Texas,2021,industrial_energy_price_per_mmbtu,6.819999999999999,11.52,68.91495601173021,Review; do not automatically exclude
+Utah,2017,active_stone_mines,1.0,2.0,100.0,Review; do not automatically exclude
+Utah,2018,capital_outlay_total,563953.0,880398.0,56.11194549900436,Review; do not automatically exclude
+Utah,2021,active_stone_mines,1.0,2.0,100.0,Review; do not automatically exclude
+Vermont,2020,active_stone_mines,1.0,0.0,-100.0,Review; do not automatically exclude
+West Virginia,2018,capital_outlay_total,817454.0,1877397.0,129.66393216009706,Review; do not automatically exclude
+West Virginia,2019,capital_outlay_total,1877397.0,910892.0,-51.48111986969192,Review; do not automatically exclude
+West Virginia,2020,capital_outlay_total,910892.0,1393312.0,52.96127312568339,Review; do not automatically exclude
+West Virginia,2022,capital_outlay_total,770440.0,1188666.0,54.28404548050465,Review; do not automatically exclude

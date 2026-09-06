@@ -1,102 +1,56 @@
 # MDATA 600 Crushed Stone Project
 
-This project builds a reproducible U.S. state-year dataset for studying crushed-stone production and its relationship to construction demand, macroeconomic conditions, energy costs, and quarry capacity. The current analysis window is 2015–2023 and covers the 50 states.
+This project studies U.S. state-level crushed stone sold or used and its relationship to construction, economic, capacity and cost indicators, using 2015–2023 annual data. Quantities are in metric tons; sold/used production is not a direct measure of latent demand.
 
-## Current status
+**Current stage:** Gate 1 approved; data pipeline, EDA, model comparison and robustness work completed. [Decision Gate 2](docs/decision_gate_2.md) awaits approval of the model and interpretation framework. See [PROJECT_STATUS.md](PROJECT_STATUS.md) for results and limitations. Final report and presentation production follow Gate 2.
 
-The import, cleaning, and state-year join stages are implemented. Exploratory analysis, modeling, the final report, and the presentation are scaffolded but not yet developed.
+## Run the analysis
 
-Recent workflow additions include:
+With the prepared local packages and pinned source snapshots, run from the project root:
 
-- selective refreshes of one or more raw data sources;
-- schema, key, duplicate, coverage, and year checks during import;
-- a separate cleaning stage so raw files remain minimally transformed; and
-- derived inflation, construction-GDP growth, and lagged quarry-capacity variables in cleaned outputs.
+```sh
+Rscript --vanilla R/run_pipeline.R all
+Rscript --vanilla tests/check_pipeline.R
+```
 
-## Data sources
+Use `data` instead of `all` to build only the analytical data, or `development` to include development analyses. The pipeline verifies exact source hashes, preserves original data, and refuses to overwrite a changed frozen model selection. It does not silently refresh source vintages. No API keys or network access are needed for the cached run.
 
-`R/01_import.R` retrieves and minimally parses data from:
+[Reproducibility instructions](docs/reproducibility.md) document local package restoration, source acquisition, manual requirements and the FHWA workbook limitation. Dependencies are pinned in `renv.lock`; added packages reside in ignored `.R-library/`. Original source vintages must accompany the project.
 
-| Source | Project measures |
+## Data and analysis
+
+| Source | Measures and role |
 |---|---|
-| U.S. Geological Survey (USGS) | Crushed-stone quantity, total value, and unit value |
-| Census Building Permits Survey | Residential building and unit permits |
-| Federal Highway Administration (FHWA) | State highway capital outlays |
-| Bureau of Labor Statistics (BLS) | State heavy/civil construction employment |
-| Bureau of Economic Analysis (BEA) | State real GDP, personal income, and construction-sector real GDP |
-| Federal Reserve Economic Data (FRED) | Mortgage rates and CPI |
-| Census Value of Construction Put in Place | Private nonresidential and state/local construction spending |
-| U.S. Energy Information Administration (EIA) | State industrial energy prices |
-| Mine Safety and Health Administration (MSHA) | Active stone mines, employment, hours, and operations |
+| USGS | Target quantity sold/used; value and national totals for context |
+| Census Building Permits Survey | Primary housing units authorized |
+| FHWA | Primary highway capital outlays, with reporting-year flags |
+| BEA | Primary construction real GDP; broader economic context |
+| BLS | Secondary heavy/civil construction employment; 36-state coverage |
+| FRED | CPI for monetary adjustment; national mortgage context |
+| Census construction spending | Secondary private nonresidential and state/local spending |
+| EIA | Secondary industrial energy prices |
+| MSHA | Secondary stone-mine activity; measurement/classification caveats |
 
-Raw outputs are written under `data/raw/<source>/`. The import script validates state-year keys and expected source structure before replacing an output file. BLS coverage is allowed to be incomplete because some states may not publish the detailed heavy-and-civil series.
-
-## Running the workflow
-
-Run commands from the project root.
-
-The BEA, BLS, and FRED pulls require API keys. Supply them as `BEA_KEY`, `BLS_KEY`, and `FRED_KEY` environment variables, or define `bea_key`, `bls_key`, and `fred_key` in a local `api-keys.R` file. Do not commit real credentials.
-
-Refresh every source:
-
-```sh
-Rscript R/01_import.R
-```
-
-Refresh selected sources by passing one comma-separated argument:
-
-```sh
-Rscript R/01_import.R usgs,fred
-```
-
-Accepted source names are:
-
-```text
-usgs, census_bps, fhwa, bls, bea, fred,
-bea_construction, census_construction, eia, msha
-```
-
-After the required raw files are available, create the currently implemented cleaned datasets:
-
-```sh
-Rscript R/02_clean.R
-```
-
-This writes cleaned FRED, BEA construction-GDP, and MSHA capacity files beneath `data/clean/`. In particular, the cleaning stage:
-
-- calculates annual inflation from CPI, using the prior year to support the 2015 value;
-- calculates state construction-sector real-GDP growth; and
-- creates one-year lags for active stone mines and stone-mine employee hours.
-
-Assemble the 50-state, 2015-2023 panel after running the cleaning stage:
-
-```sh
-Rscript R/03_join.R
-```
-
-This writes `data/processed/crushed_stone_state_year.csv`, with one row per
-state-year and all available source variables. Missing BLS observations remain
-missing rather than removing otherwise complete state-year rows.
+The approved backbone has 450 rows and 65 fields, with 427 numeric targets. Strict source-timing eligibility yields 419 explanatory and 371 lagged cases. Primary validation uses rolling development years 2019–2021 and a frozen sequential evaluation of 2022/2023. High level R² is accompanied by weak and unstable improvement over the prior-year baseline. Full definitions and source evidence appear in the [data dictionary](docs/data_dictionary.md), [source register](docs/source_register.md), [quality report](docs/data_quality_report.md) and [validation protocol](docs/validation_protocol.md).
 
 ## Project structure
 
-```text
-R/
-  01_import.R       Download, minimally parse, validate, and save raw data
-  02_clean.R        Validate raw inputs and create derived clean variables
-  03_join.R         Assemble and validate the state-year analysis panel
-  04_eda.R          Reserved for exploratory analysis
-  05_models.R       Reserved for modeling
-data/
-  raw/              Source-specific imported files
-  clean/            Cleaned files generated by 02_clean.R
-  processed/        Assembled analysis data
-report/
-  final_report.qmd  Final-report scaffold
-  presentation.qmd  Presentation scaffold
-```
+| Location | Contents |
+|---|---|
+| `R/run_pipeline.R` | Single entry point |
+| `R/01_import.R` through `R/03_join.R` | Immutable source staging, parsing, cleaning and panel assembly |
+| `R/04_eda.R`, `R/05_models.R`, `R/05_diagnostics.R` | Development analysis, frozen selection and diagnostics |
+| `R/06_evaluate.R`, `R/07_explanation.R`, `R/08_gate2.R` | Final evaluation, explanatory sensitivities and review packet |
+| `data/raw/snapshots/` | Hash-pinned source inputs |
+| `data/clean/approved/`, `data/processed/approved/` | New derived data; original files preserved |
+| `output/tables/`, `output/figures/`, `output/models/`, `output/logs/` | Generated numerical results, visuals, model records and checks |
+| `docs/`, `docs/evidence/` | Decisions, dictionaries, provenance, course guide and historical audit |
+| `report/` | Preserved report/presentation scaffolds; drafting after Gate 2 |
 
 ## AI use log
+
+**2026-09-06 addition:** Codex executed source verification, pipeline repairs, development and final model evaluation, diagnostics, figures and the Gate 2 review documents after design approval. The principal investigator must review the model and substantive interpretation at Gate 2. These additions are not represented as already reviewed or authored in the investigator's personal voice.
+
 
 AI tools were used as assistants during this project. Their overarching uses are summarized below.
 
@@ -114,4 +68,4 @@ AI tools were used as assistants during this project. Their overarching uses are
 - Suggested routine syntax, data-transformation steps, comments, and repetitive boilerplate.
 - Assisted with small edits and alternative implementations during development.
 
-AI tools were used for assistance with code and prose, not as data sources or as substitutes for methodological judgment. All AI-generated suggestions and outputs were reviewed, adapted, and validated by the project author. The author remains responsible for the analysis, methodological choices, interpretation, and final submitted work.
+AI tools were used for assistance with code and prose, not as data sources or as substitutes for methodological judgment. The prior project log stated that earlier AI-generated suggestions and outputs were reviewed, adapted, and validated by the project author. The new analysis and Gate 2 interpretation remain pending author review; approval of the research design does not establish review of every subsequent output. The author remains responsible for the analysis, methodological choices, interpretation, and final submitted work.

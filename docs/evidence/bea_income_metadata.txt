@@ -1,0 +1,3 @@
+Units: Millions of dollars
+Codes: SAINC1-1
+Notes: Estimates prior to 1950 are not available for Alaska and Hawaii.; All dollar estimates are in millions of current dollars (not adjusted for inflation). Calculations are performed on unrounded data.; Last updated: April 9, 2026-- new statistics for 2025; revised statistics for 2020-2024.

@@ -1,0 +1,15 @@
+2026-09-06 Gate 1 audit
+PASS: Python audit helpers parse; all R scripts parse.
+PASS: baseline exact 450 state-year keys and stored lags; all original data hashes preserved.
+PASS: isolated join recreates stored panel.
+EXPECTED FAILURE: clean stage requires 2014 CPI missing from original raw cache; recovery verified separately.
+PASS: 20 selected source-measure comparisons have no numeric mismatches within documented tolerance; coverage limitations remain as registered.
+PASS: all 80 stored columns have dictionary entries.
+PASS: proposed strict contemporaneous/lagged eligibility 419/371; final two years 94.
+PASS: local Markdown links resolve; git diff --check.
+PASS: no existing credential values found in new text/API artifacts.
+PASS: no pre-existing tracked files changed except scoped README status link.
+27 annual changes above 50% flagged for review; no observations removed.
+LIMITATION: FHWA 2015-2022 binary reconciliation unavailable after certificate failures; official HTML consulted.
+PENDING: Gate 1 approval, current meeting milestone and any proposal/feedback constraints.
+NO modeling, commits, remote changes or submission performed.

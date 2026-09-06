@@ -1,0 +1,46 @@
+R/02_clean.R: exit 1
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+Error: FRED macro data are missing years needed for inflation: 2014. Rerun R/01_import.R fred.
+Execution halted
+
+R/03_join.R: exit 0
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+Wrote 450 rows and 80 columns to data/processed/crushed_stone_state_year.csv
+
+Isolated join equals stored panel as CSV records: True
+
+R version 4.6.1 (2026-06-24) 
+dplyr 1.2.1 
+httr 1.4.8 
+jsonlite 2.0.0 
+purrr 1.2.2 
+readr 2.2.0 
+readxl 1.5.0 
+tibble 3.3.1 
+tidyr 1.3.2 
+renv NOT INSTALLED 
+PARSE OK R/00_inspect_source_snapshots.R 
+PARSE OK R/00_verify_apis.R 
+PARSE OK R/01_import.R 
+PARSE OK R/02_clean.R 
+PARSE OK R/03_join.R 
+PARSE OK R/04_eda.R 
+PARSE OK R/05_models.R 
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+
+PASS: all existing data hashes unchanged; panel keys, target nonnegativity, stored capacity lags checked.

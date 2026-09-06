@@ -1,0 +1,192 @@
+{
+  "protocol_sha256": "a8c6e71574f02f22b55183df3e6d21792daedbae3cec48c731cf43a67cd62b44",
+  "source_manifest_sha256": "d92d4cdc4527b7b4798b3e8bcefa03e1fe4e3bfdc388f3967ed9339f870970bb",
+  "panel_sha256": "eda9b664535f68dfec7198f8a93171588eb8d921c8789fde007e947b4f8017c6",
+  "modeling_code_sha256": "be7f6d250e969d8b760723ae1068ac29920854fec70de25678efb195967d7c13",
+  "development_code_sha256": "730f44ccdb28dfeeba737ad29a2ca039ddc0653c826cab127b55d9b359fb4505",
+  "selected_model": "log_ar_l_highway",
+  "best_development_rmse": 2356019.3601,
+  "selected_development_rmse": 2356019.3601,
+  "selection_rule": "simplest within 2 percent of minimum pooled development RMSE",
+  "development_target_years": [2019, 2020, 2021],
+  "final_target_years": [2022, 2023],
+  "seed": 6002026,
+  "benchmark_ids": ["naive_prior_year", "state_historical_mean", "log_ar", "log_ar_l_permits", "log_ar_l_highway", "log_ar_l_gdp", "log_lag_all", "levels_lag_all", "state_log_lag_all", "sameyear_pooled_log", "sameyear_state_log", "forest_m4_n5", "ridge_0.01"],
+  "specs": {
+    "naive_prior_year": {
+      "id": "naive_prior_year",
+      "kind": "naive",
+      "features": [],
+      "complexity": 0,
+      "track": "lagged"
+    },
+    "state_historical_mean": {
+      "id": "state_historical_mean",
+      "kind": "state_mean",
+      "features": [],
+      "complexity": 1,
+      "track": "lagged"
+    },
+    "log_ar": {
+      "id": "log_ar",
+      "kind": "log_lm",
+      "features": "l_lag_y",
+      "complexity": 2,
+      "track": "lagged"
+    },
+    "log_ar_l_permits": {
+      "id": "log_ar_l_permits",
+      "kind": "log_lm",
+      "features": ["l_lag_y", "l_permits"],
+      "complexity": 3,
+      "track": "lagged"
+    },
+    "log_ar_l_highway": {
+      "id": "log_ar_l_highway",
+      "kind": "log_lm",
+      "features": ["l_lag_y", "l_highway"],
+      "complexity": 3,
+      "track": "lagged"
+    },
+    "log_ar_l_gdp": {
+      "id": "log_ar_l_gdp",
+      "kind": "log_lm",
+      "features": ["l_lag_y", "l_gdp"],
+      "complexity": 3,
+      "track": "lagged"
+    },
+    "log_lag_all": {
+      "id": "log_lag_all",
+      "kind": "log_lm",
+      "features": ["l_lag_y", "l_permits", "l_highway", "l_gdp"],
+      "complexity": 4,
+      "track": "lagged"
+    },
+    "levels_lag_all": {
+      "id": "levels_lag_all",
+      "kind": "levels_lm",
+      "features": ["l_lag_y", "l_permits", "l_highway", "l_gdp"],
+      "complexity": 4,
+      "track": "lagged"
+    },
+    "state_log_lag_all": {
+      "id": "state_log_lag_all",
+      "kind": "state_lm",
+      "features": ["l_lag_y", "l_permits", "l_highway", "l_gdp"],
+      "complexity": 6,
+      "track": "lagged"
+    },
+    "sameyear_pooled_log": {
+      "id": "sameyear_pooled_log",
+      "kind": "log_lm",
+      "features": ["l_permits_t", "l_highway_t", "l_gdp_t"],
+      "complexity": 4,
+      "track": "sameyear_conditional"
+    },
+    "sameyear_state_log": {
+      "id": "sameyear_state_log",
+      "kind": "state_lm",
+      "features": ["l_permits_t", "l_highway_t", "l_gdp_t"],
+      "complexity": 6,
+      "track": "sameyear_conditional"
+    },
+    "forest_m4_n5": {
+      "id": "forest_m4_n5",
+      "kind": "forest",
+      "features": ["l_lag_y", "l_permits", "l_highway", "l_gdp"],
+      "mtry": 4,
+      "min_node": 5,
+      "trees": 500,
+      "complexity": 7,
+      "track": "lagged"
+    },
+    "ridge_0.01": {
+      "id": "ridge_0.01",
+      "kind": "ridge",
+      "features": ["l_lag_y", "l_permits", "l_highway", "l_gdp"],
+      "lambda": 0.01,
+      "complexity": 5,
+      "track": "lagged"
+    }
+  },
+  "calibration": [
+    {
+      "model": "forest_m4_n5",
+      "log_ratio_q05": -0.1464,
+      "log_ratio_q95": 0.1316,
+      "n": 137
+    },
+    {
+      "model": "levels_lag_all",
+      "log_ratio_q05": -0.1346,
+      "log_ratio_q95": 0.2059,
+      "n": 135
+    },
+    {
+      "model": "log_ar",
+      "log_ratio_q05": -0.1303,
+      "log_ratio_q95": 0.1394,
+      "n": 137
+    },
+    {
+      "model": "log_ar_l_gdp",
+      "log_ratio_q05": -0.1306,
+      "log_ratio_q95": 0.1419,
+      "n": 137
+    },
+    {
+      "model": "log_ar_l_highway",
+      "log_ratio_q05": -0.1331,
+      "log_ratio_q95": 0.1373,
+      "n": 137
+    },
+    {
+      "model": "log_ar_l_permits",
+      "log_ratio_q05": -0.1305,
+      "log_ratio_q95": 0.1402,
+      "n": 137
+    },
+    {
+      "model": "log_lag_all",
+      "log_ratio_q05": -0.1319,
+      "log_ratio_q95": 0.1516,
+      "n": 137
+    },
+    {
+      "model": "naive_prior_year",
+      "log_ratio_q05": -0.1201,
+      "log_ratio_q95": 0.1348,
+      "n": 137
+    },
+    {
+      "model": "ridge_0.01",
+      "log_ratio_q05": -0.1319,
+      "log_ratio_q95": 0.1517,
+      "n": 137
+    },
+    {
+      "model": "sameyear_pooled_log",
+      "log_ratio_q05": -1.5429,
+      "log_ratio_q95": 0.8103,
+      "n": 139
+    },
+    {
+      "model": "sameyear_state_log",
+      "log_ratio_q05": -0.1593,
+      "log_ratio_q95": 0.1454,
+      "n": 139
+    },
+    {
+      "model": "state_historical_mean",
+      "log_ratio_q05": -0.2072,
+      "log_ratio_q95": 0.1806,
+      "n": 137
+    },
+    {
+      "model": "state_log_lag_all",
+      "log_ratio_q05": -0.1496,
+      "log_ratio_q95": 0.1513,
+      "n": 137
+    }
+  ]
+}

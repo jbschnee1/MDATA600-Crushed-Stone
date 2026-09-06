@@ -1,0 +1,132 @@
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+New names:
+* `` -> `...1`
+* `` -> `...2`
+* `` -> `...3`
+* `` -> `...4`
+* `` -> `...5`
+* `` -> `...6`
+* `` -> `...7`
+* `` -> `...8`
+* `` -> `...9`
+* `` -> `...10`
+* `` -> `...11`
+* `` -> `...12`
+* `` -> `...13`
+* `` -> `...14`
+* `` -> `...15`
+* `` -> `...16`
+* `` -> `...17`
+* `` -> `...18`
+* `` -> `...19`
+New names:
+* `` -> `...1`
+* `` -> `...2`
+* `` -> `...3`
+* `` -> `...4`
+* `` -> `...5`
+* `` -> `...6`
+* `` -> `...7`
+* `` -> `...8`
+* `` -> `...9`
+* `` -> `...10`
+* `` -> `...11`
+* `` -> `...12`
+* `` -> `...13`
+* `` -> `...14`
+* `` -> `...15`
+* `` -> `...16`
+New names:
+* `` -> `...1`
+* `` -> `...2`
+* `` -> `...3`
+* `` -> `...4`
+* `` -> `...5`
+* `` -> `...6`
+* `` -> `...7`
+New names:
+* `` -> `...1`
+* `` -> `...2`
+* `` -> `...3`
+* `` -> `...4`
+* `` -> `...5`
+* `` -> `...6`
+* `` -> `...7`
+* `` -> `...8`
+* `` -> `...9`
+* `` -> `...10`
+* `` -> `...11`
+* `` -> `...12`
+* `` -> `...13`
+* `` -> `...14`
+* `` -> `...15`
+* `` -> `...16`
+* `` -> `...17`
+* `` -> `...18`
+New names:
+* `` -> `...1`
+* `` -> `...2`
+* `` -> `...3`
+* `` -> `...4`
+* `` -> `...5`
+* `` -> `...6`
+* `` -> `...7`
+Warning message:
+One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat <- vroom(...)
+  problems(dat) 
+Warning message:
+The following named parsers don't match the column names: state_fips 
+Warning message:
+The following named parsers don't match the column names: state_fips 
+# A tibble: 20 x 6
+   source           variable                                          
+   <chr>            <chr>                                             
+ 1 usgs             crushed_stone_tons                                
+ 2 census_bps       units_1unit                                       
+ 3 census_bps       units_2unit                                       
+ 4 census_bps       units_34unit                                      
+ 5 census_bps       units_5punit                                      
+ 6 fhwa_2023        capital_outlay_total                              
+ 7 bea_gdp          real_gdp                                          
+ 8 bea_income       personal_income                                   
+ 9 bea_construction construction_real_gdp                             
+10 eia              industrial_distillate_price_per_mmbtu             
+11 eia              industrial_electricity_price_per_mmbtu            
+12 eia              industrial_natural_gas_price_per_mmbtu            
+13 eia              industrial_energy_price_per_mmbtu                 
+14 census_nrstate   private_nonresidential_spending_nominal_millions  
+15 census_slstate   state_local_construction_spending_nominal_millions
+16 msha             active_stone_mines                                
+17 msha             stone_mine_employee_hours                         
+18 fred_cpi         cpi_index                                         
+19 fred_mortgage    mortgage_rate_pct                                 
+20 bls              construction_employment_thousands                 
+   fresh_rows paired_rows fresh_missing different_values
+        <int>       <int>         <int>            <int>
+ 1        450         450            23                0
+ 2        450         450             0                0
+ 3        450         450             0                0
+ 4        450         450             0                0
+ 5        450         450             0                0
+ 6         50          50             0                0
+ 7        450         450             0                0
+ 8        450         450             0                0
+ 9        450         450             0                0
+10        450         450             0                0
+11        450         450             0                0
+12        450         450             0                0
+13        450         450             0                0
+14        450         450             0                0
+15        450         450             0                0
+16        450         450             0                0
+17        450         450             0                0
+18         10           9             0                0
+19         10           9             0                0
+20        324         324             0                0

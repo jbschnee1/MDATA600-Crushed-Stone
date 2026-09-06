@@ -1,0 +1,55 @@
+source_id,url,attempted_utc,http_status,content_type,bytes,sha256,snapshot,error
+fhwa_2015,https://www.fhwa.dot.gov/policyinformation/statistics/2015/xls/sf4c.xlsx,2026-09-06T13:19:47.877744+00:00,,,0,,,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+fhwa_2016,https://www.fhwa.dot.gov/policyinformation/statistics/2016/xls/sf4c.xlsx,2026-09-06T13:19:47.879765+00:00,,,0,,,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+fhwa_2017,https://www.fhwa.dot.gov/policyinformation/statistics/2017/xls/sf4c.xlsx,2026-09-06T13:19:47.880142+00:00,,,0,,,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+fhwa_2018,https://www.fhwa.dot.gov/policyinformation/statistics/2018/xls/sf4c.xlsx,2026-09-06T13:19:47.880461+00:00,,,0,,,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+fhwa_2019,https://www.fhwa.dot.gov/policyinformation/statistics/2019/xls/sf4c.xlsx,2026-09-06T13:19:48.638608+00:00,,,0,,,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+fhwa_2020,https://www.fhwa.dot.gov/policyinformation/statistics/2020/xls/sf4c.xlsx,2026-09-06T13:19:48.646850+00:00,,,0,,,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+fhwa_2021,https://www.fhwa.dot.gov/policyinformation/statistics/2021/xls/sf4c.xlsx,2026-09-06T13:19:48.654569+00:00,,,0,,,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+fhwa_2022,https://www.fhwa.dot.gov/policyinformation/statistics/2022/xls/sf4c.xlsx,2026-09-06T13:19:48.662539+00:00,,,0,,,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+fhwa_2023,https://www.fhwa.dot.gov/policyinformation/statistics/2023/xls/sf4c.xlsx,2026-09-06T13:19:49.246324+00:00,,,0,,,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."

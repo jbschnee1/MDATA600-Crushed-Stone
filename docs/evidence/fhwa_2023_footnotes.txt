@@ -1,0 +1,10 @@
+Virginia | 80620 | 219411 | 2171713 | 2471744 | 1576085 | 37130 | 108099 | 0 | 30400 | 175629 | 464853 | 100700 | 565553 | 120985 | 137310 | 18036 | 20095 | 296426
+Washington | 38224 | 505217 | 1624065 | 2167506 | 537011 | 133142 | 81092 | 0 | 0 | 214234 | 178715 | 50793 | 229508 | 206541 | 17747 | 28195 | 0 | 252483
+West Virginia | 29990 | 148978 | 1092940 | 1271908 | 456785 | 8374 | 32100 | 29309 | 17212 | 86995 | 135745 | 3909 | 139654 | 32435 | 12572 | 2552 | 4119 | 51678
+Wisconsin | 16202 | 114233 | 1388141 | 1518576 | 212237 | 59332 | 32542 | 10580 | 0 | 102454 | 143520 | 70978 | 214498 | 71195 | 13649 | 8195 | 3890 | 96929
+Wyoming | 1537 | 54257 | 499509 | 555303 | 68750 | 15906 | 40066 | 437 | 0 | 56409 | 30659 | 10682 | 41341 | 27819 | 22148 | 2890 | 231 | 53088
+Total | 4313978 | 15702656 | 73557639 | 93574273 | 21363118 | 1863362 | 2030598 | 1443842 | 3868074 | 9205876 | 11664716 | 1755084 | 13419800 | 8262680 | 2728158 | 627421 | 387350 | 12005609
+NA | NA | NA | NA | NA | NA | NA | NA | NA | NA | NA | NA | NA | NA | NA | NA | NA | NA | NA
+(1)  This table provides additional detail of expenditures shown on Table SF-4.  Debt service expenditures are excluded | NA | NA | NA | NA | NA | NA | NA | NA | NA | (2)  See Table SF-12 for expenditures by functional systems and Table SF-12A for expenditures by | NA | NA | NA | NA | NA | NA | NA | NA
+from this table.  A complete classification of expenditures was not available where entries do not appear.  This table is | NA | NA | NA | NA | NA | NA | NA | NA | NA | improvement type. | NA | NA | NA | NA | NA | NA | NA | NA
+compiled from reports of State authorities. | NA | NA | NA | NA | NA | NA | NA | NA | NA | (3) Amounts shown represent data reported for 2022. | NA | NA | NA | NA | NA | NA | NA | NA

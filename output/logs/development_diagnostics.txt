@@ -1,0 +1,4 @@
+Forest permutation importance is measured on held-out development years, not training impurity.
+It describes loss of predictive information when one feature is shuffled across states within a year.
+Correlated predictors and implausible shuffled combinations limit interpretation; no causal claims.
+Large-state checks refit the unchanged selected procedure; they do not choose a different test model.

@@ -1,0 +1,22 @@
+Gate 2 checks — 2026-09-06
+PASS: Rscript --vanilla R/run_pipeline.R all (exit 0); see output/logs/full_pipeline.log.
+PASS: Rscript --vanilla tests/check_pipeline.R (exit 0); see output/logs/pipeline_tests.log.
+PASS: 27 pinned inputs match SHA-256; all 14 original raw/clean/processed CSVs match baseline hashes.
+PASS: 450 rows/65 fields; dictionary exactly matches field names and missing-value counts.
+PASS: analytical panel and frozen selection reproduce byte-for-byte; all prior numerical result tables reproduce byte-for-byte.
+PASS: only model-results register hash changed, because plot-label corrections changed evaluation-code SHA; all 13 model rows match generated numerical scores.
+PASS: six figures opened and visually reviewed; corrected labels and locale-dependent punctuation without analytical changes.
+PASS: no actual values of the three existing local API keys found in nonignored project files outside their original credential file.
+PASS: no machine-specific /Users/ path in active R code; no nonignored file larger than 10 MiB.
+PASS: generated Markdown has no escaped-byte artifacts.
+PASS: git diff --check; no commits, branches, index or remote changes made.
+NOTE: R startup falls back to C locale; output punctuation made portable. Workbook empty-header name-repair messages are expected.
+LIMIT: FHWA 2015-2022 workbook reacquisition still fails TLS validation; pinned parsed archive and verified timing flags used.
+LIMIT: second-machine package restoration not tested; current machine full run succeeds.
+LIMIT: inherited api-keys.R remains Git-tracked; owner action needed before sharing.
+GATE: final model/interpretation approval pending; report/slides/submission not represented as complete.
+
+Panel SHA-256: eda9b664535f68dfec7198f8a93171588eb8d921c8789fde007e947b4f8017c6
+Selection SHA-256: f62706c77a2a91c398ddf370317c9fba4f23142b5590d4abba5d11017a14cecd
+Source manifest SHA-256: d92d4cdc4527b7b4798b3e8bcefa03e1fe4e3bfdc388f3967ed9339f870970bb
+PASS: local links in current README, status and docs Markdown resolve.

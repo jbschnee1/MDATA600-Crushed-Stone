@@ -1,0 +1,67 @@
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+Verified 27 immutable inputs; original parsed CSVs preserved.
+New names:
+* `` -> `...1`
+* `` -> `...2`
+* `` -> `...3`
+* `` -> `...4`
+* `` -> `...5`
+* `` -> `...6`
+* `` -> `...7`
+* `` -> `...8`
+* `` -> `...9`
+* `` -> `...10`
+* `` -> `...11`
+* `` -> `...12`
+* `` -> `...13`
+* `` -> `...14`
+* `` -> `...15`
+* `` -> `...16`
+New names:
+* `` -> `...1`
+* `` -> `...2`
+* `` -> `...3`
+* `` -> `...4`
+* `` -> `...5`
+* `` -> `...6`
+* `` -> `...7`
+New names:
+* `` -> `...1`
+* `` -> `...2`
+* `` -> `...3`
+* `` -> `...4`
+* `` -> `...5`
+* `` -> `...6`
+* `` -> `...7`
+* `` -> `...8`
+* `` -> `...9`
+* `` -> `...10`
+* `` -> `...11`
+* `` -> `...12`
+* `` -> `...13`
+* `` -> `...14`
+* `` -> `...15`
+* `` -> `...16`
+* `` -> `...17`
+* `` -> `...18`
+New names:
+* `` -> `...1`
+* `` -> `...2`
+* `` -> `...3`
+* `` -> `...4`
+* `` -> `...5`
+* `` -> `...6`
+* `` -> `...7`
+Parsed approved sources; CPI support year and quality flags retained.
+Approved panel complete: 450 rows; 419 explanation / 371 lagged prediction eligible.
+Warning message:
+One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat <- vroom(...)
+  problems(dat) 
+Pipeline stage data completed; original raw CSV hashes unchanged.

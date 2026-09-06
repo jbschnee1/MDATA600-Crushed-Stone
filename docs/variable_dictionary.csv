@@ -1,0 +1,81 @@
+variable,source_id,unit,definition,proposed_role,existing_missing
+state_fips,project,two-character FIPS,Canonical 50-state code,key,0
+state,project,state name,Canonical state name,key,0
+year,census_bps,code or source label,Original Census year,audit_only,0
+region,usgs,category,USGS geographic region,audit_only,0
+division,usgs,category,USGS geographic division,audit_only,0
+crushed_stone_tons,usgs,metric tons,State crushed stone sold or used; first-sale/use geography,target,23
+crushed_stone_total_value,usgs,nominal USD,USGS total value of crushed stone sold or used,excluded_target_linked,23
+crushed_stone_unit_value,usgs,USD per metric ton,USGS unit value,excluded_target_linked,23
+census_bps_time,census_bps,code or source label,Original Census time,audit_only,0
+region_code,census_bps,code or source label,Original Census region_code,audit_only,0
+division_code,census_bps,code or source label,Original Census division_code,audit_only,0
+census_bps_state_name,census_bps,code or source label,Original Census state_name,audit_only,0
+bldgs_1unit,census_bps,buildings,one-unit building category; Census total estimate including imputation,audit_only,0
+units_1unit,census_bps,housing units,one-unit building category; Census total estimate including imputation,primary_sum_component,0
+value_1unit,census_bps,thousands of nominal USD,one-unit building category; Census total estimate including imputation,audit_only,0
+bldgs_2unit,census_bps,buildings,two-unit building category; Census total estimate including imputation,audit_only,0
+units_2unit,census_bps,housing units,two-unit building category; Census total estimate including imputation,primary_sum_component,0
+value_2unit,census_bps,thousands of nominal USD,two-unit building category; Census total estimate including imputation,audit_only,0
+bldgs_34unit,census_bps,buildings,three/four-unit building category; Census total estimate including imputation,audit_only,0
+units_34unit,census_bps,housing units,three/four-unit building category; Census total estimate including imputation,primary_sum_component,0
+value_34unit,census_bps,thousands of nominal USD,three/four-unit building category; Census total estimate including imputation,audit_only,0
+bldgs_5punit,census_bps,buildings,five-or-more-unit building category; Census total estimate including imputation,audit_only,0
+units_5punit,census_bps,housing units,five-or-more-unit building category; Census total estimate including imputation,primary_sum_component,0
+value_5punit,census_bps,thousands of nominal USD,five-or-more-unit building category; Census total estimate including imputation,audit_only,0
+bldgs_1unit_rep,census_bps,buildings,one-unit building category; reported-only component,audit_only,0
+units_1unit_rep,census_bps,housing units,one-unit building category; reported-only component,audit_only,0
+value_1unit_rep,census_bps,thousands of nominal USD,one-unit building category; reported-only component,audit_only,0
+bldgs_2unit_rep,census_bps,buildings,two-unit building category; reported-only component,audit_only,0
+units_2unit_rep,census_bps,housing units,two-unit building category; reported-only component,audit_only,0
+value_2unit_rep,census_bps,thousands of nominal USD,two-unit building category; reported-only component,audit_only,0
+bldgs_34unit_rep,census_bps,buildings,three/four-unit building category; reported-only component,audit_only,0
+units_34unit_rep,census_bps,housing units,three/four-unit building category; reported-only component,audit_only,0
+value_34unit_rep,census_bps,thousands of nominal USD,three/four-unit building category; reported-only component,audit_only,0
+bldgs_5punit_rep,census_bps,buildings,five-or-more-unit building category; reported-only component,audit_only,0
+units_5punit_rep,census_bps,housing units,five-or-more-unit building category; reported-only component,audit_only,0
+value_5punit_rep,census_bps,thousands of nominal USD,five-or-more-unit building category; reported-only component,audit_only,0
+capital_right_of_way,fhwa,thousands of nominal USD,SF-4C capital right of way; reporting-year flag applies,audit_only,0
+capital_engineering,fhwa,thousands of nominal USD,SF-4C capital engineering; reporting-year flag applies,audit_only,0
+capital_construction_preservation,fhwa,thousands of nominal USD,SF-4C capital construction preservation; reporting-year flag applies,audit_only,0
+capital_outlay_total,fhwa,thousands of nominal USD,SF-4C capital outlay total; reporting-year flag applies,primary_candidate,0
+physical_maintenance,fhwa,thousands of nominal USD,SF-4C physical maintenance; reporting-year flag applies,audit_only,0
+traffic_control_operations,fhwa,thousands of nominal USD,SF-4C traffic control operations; reporting-year flag applies,audit_only,0
+snow_ice_removal,fhwa,thousands of nominal USD,SF-4C snow ice removal; reporting-year flag applies,audit_only,0
+other_services,fhwa,thousands of nominal USD,SF-4C other services; reporting-year flag applies,audit_only,0
+toll_collection_expenses,fhwa,thousands of nominal USD,SF-4C toll collection expenses; reporting-year flag applies,audit_only,0
+highway_traffic_services_total,fhwa,thousands of nominal USD,SF-4C highway traffic services total; reporting-year flag applies,audit_only,0
+general_administration,fhwa,thousands of nominal USD,SF-4C general administration; reporting-year flag applies,audit_only,0
+research_planning,fhwa,thousands of nominal USD,SF-4C research planning; reporting-year flag applies,audit_only,0
+administration_research_total,fhwa,thousands of nominal USD,SF-4C administration research total; reporting-year flag applies,audit_only,0
+traffic_supervision,fhwa,thousands of nominal USD,SF-4C traffic supervision; reporting-year flag applies,audit_only,0
+highway_safety_driver_education,fhwa,thousands of nominal USD,SF-4C highway safety driver education; reporting-year flag applies,audit_only,0
+vehicle_inspection,fhwa,thousands of nominal USD,SF-4C vehicle inspection; reporting-year flag applies,audit_only,0
+size_weight_enforcement,fhwa,thousands of nominal USD,SF-4C size weight enforcement; reporting-year flag applies,audit_only,0
+law_enforcement_safety_total,fhwa,thousands of nominal USD,SF-4C law enforcement safety total; reporting-year flag applies,audit_only,0
+construction_employment_thousands,bls,thousands of employees,NAICS 237 mean M01-M12 NSA employment,secondary_candidate,126
+months_reported,bls,months,Nonmissing monthly values used in annual mean,audit_only,126
+series_id,bls,series identifier,State CES NAICS 237 series,audit_only,126
+real_gdp,bea,millions of chained 2017 USD,SAGDP9 LineCode 1 total real GDP,secondary_candidate,0
+personal_income,bea,millions of nominal USD,SAINC1 LineCode 1 personal income,secondary_candidate,0
+construction_real_gdp,bea_construction,millions of chained 2017 USD,SAGDP9 LineCode 11 construction value added,primary_candidate,0
+construction_real_gdp_unit,bea_construction,unit label,Stored label; verify CL_UNIT on refresh,audit_only,0
+unit_multiplier,bea_construction,power of ten,UNIT_MULT=6 indicates million multiplier,audit_only,0
+construction_real_gdp_growth_pct,bea_construction,percent,100*(GDP_t/GDP_previous_year-1); first year missing,secondary_candidate,50
+private_nonresidential_spending_nominal_millions,census_construction,millions of nominal USD,Private nonresidential construction excluding power communication railroad,secondary_candidate,0
+state_local_construction_spending_nominal_millions,census_construction,millions of nominal USD,State and local construction put in place,secondary_candidate,0
+industrial_distillate_price_per_mmbtu,eia,nominal USD per million Btu,DFICD annual industrial sector estimated price,secondary_candidate,0
+industrial_electricity_price_per_mmbtu,eia,nominal USD per million Btu,ESICD annual industrial sector estimated price,secondary_candidate,0
+industrial_natural_gas_price_per_mmbtu,eia,nominal USD per million Btu,NGICD annual industrial sector estimated price,secondary_candidate,0
+industrial_energy_price_per_mmbtu,eia,nominal USD per million Btu,TEICD annual industrial sector estimated price,secondary_candidate,0
+active_stone_mines,msha,mine count,Qualifying active stone/open-pit mines,restricted_secondary,0
+stone_mine_employees,msha,average employees,Sum of annual-average mine employment,restricted_secondary,0
+stone_mine_employee_hours,msha,hours per year,Sum of annual mine hours; USGS estimation dependence,restricted_secondary,0
+stone_mine_operations,msha,mine-year count,Duplicates active_stone_mines under current aggregation,excluded_duplicate,0
+lag_active_stone_mines,msha,mine count,Previous calendar-year qualifying count,restricted_secondary,50
+lag_stone_mine_employee_hours,msha,hours per year,Previous calendar-year hours; USGS estimation dependence,restricted_secondary,50
+mortgage_rate_pct,fred,percent,Annual arithmetic mean weekly mortgage rate,national_secondary,0
+mortgage_rate_observations,fred,weekly observations,Count used in annual mortgage mean,audit_only,0
+cpi_index,fred,index 1982-84=100,Annual arithmetic mean monthly seasonally adjusted CPI,deflator_candidate,0
+inflation_pct,fred,percent,Annual-mean CPI percent change; 2015 missing in panel,national_secondary,50
+cpi_observations,fred,months,Count used in annual CPI mean,audit_only,0
