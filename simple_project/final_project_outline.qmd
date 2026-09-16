@@ -1,0 +1,314 @@
+---
+title: "Crushed Stone Aggregates Demand"
+format:
+  html:
+    embed-resources: true
+    toc: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+# Load the packages needed for this project.
+
+library(dplyr)
+
+stone_data <- read.csv("/Users/jschnee12/Library/Mobile Documents/com~apple~CloudDocs/MDATA600-Crushed-Stone/data/processed/crushed_stone_state_year.csv")
+```
+
+## 1. Introduction
+
+### Research questions
+
+1.  Which construction, economic, capacity, and cost indicators best explain state-level crushed-stone production from 2015–2023?
+2.  To what extent do prior-year state highway capital outlays predict state-level crushed-stone production across the United States from 2015–2023?
+3.  How accurately can state-level construction GDP, highway capital outlays, and residential building permits predict crushed-stone production from 2015–2023?
+
+### Project purpose
+
+Crushed stone is a product found at the foundation of our economy. It is used in many segments of the economy, from residential housing, data center construction, road construction, and erosion control. Since this product is at the foundation of the economy, the demand for this material reveals the health of the broader economy.
+
+This project is an explanatory project. The intention is to analyze which publically tracked economic indicators best explain changes in crushed stone demand.
+
+The unit of observation in this project is one state-year combination per row. The full dataset includes 9 years of data, 2015-2023, for each of the 50 U.S. states. There are 450 rows and 80 columns.  
+
+The outcome variable for each of the three research questions is `crushed_stone_tons`. This variable acts as a proxy for crushed stone demand since this measure is difficult to quantify outside of official crushed stone tons published by the United States Geological Survey. The main predictors vary across public sources and mainly represent crushed stone capacity, demand, economic variables, and input costs.
+
+This analysis only includes state-level data from the United States. This project is explanatory in nature, so forecasting into future years is not advised. 
+
+## 2. Data
+
+### Data source and structure
+
+- Report the state and year coverage.
+- Identify any source limitations or withheld value.
+
+The source file is a consolidation of multiple public data sources. Some metrics are posted throughout the year, so a few data points are averages or summations for the entire calendar year. The data was pulled from the following sources:
+
+API-based sources
+
+- **BEA Regional API:** construction GDP, total GDP, personal income.
+- **BLS Public Data API:** construction employment series.
+- **FRED API:** mortgage rates and CPI.
+
+File exports/downloads
+
+- **USGS Excel workbook:** crushed stone production, value, and unit value.
+- **Census BPS text files:** building permits and housing units.
+- **FHWA SF-4C tables/workbook:** highway capital outlays.
+- **Census Construction Spending Excel files:** private and state/local construction spending.
+- **EIA CSV and Excel codebook:** industrial energy prices.
+- **MSHA ZIP archives:** mine and employment data.
+
+For research question 1, I filtered down the dataset to only include 2015 - 2023, combined Census authorized building units into a summation, `residential_permit_units`, and selected the following columns:
+
+- `state`
+- `year`
+- `crushed_stone_tons`
+- `construction_real_gdp`
+- `capital_outlay_total`
+- `residential_permit_units`
+- `private_nonresidential_spending_nominal_millions`
+- `state_local_construction_spending_nominal_millions`
+- `real_gdp`
+- `personal_income`
+- `construction_employment_thousands`
+- `lag_active_stone_mines`
+- `lag_stone_mine_employee_hours`
+- `industrial_energy_price_per_mmbtu`
+
+```{r}
+#| label: coverage
+rq1_data <- stone_data |>
+  filter(year >= 2015, year <= 2023) |>
+  mutate(
+    residential_permit_units =
+      units_1unit +
+      units_2unit +
+      units_34unit +
+      units_5punit
+  ) |>
+  select(
+    state,
+    year,
+    crushed_stone_tons,
+    construction_real_gdp,
+    capital_outlay_total,
+    residential_permit_units,
+    private_nonresidential_spending_nominal_millions,
+    state_local_construction_spending_nominal_millions,
+    real_gdp,
+    personal_income,
+    construction_employment_thousands,
+    lag_active_stone_mines,
+    lag_stone_mine_employee_hours,
+    industrial_energy_price_per_mmbtu
+  )
+```
+
+### Data-quality checks
+
+Check the following before modeling:
+
+- Duplicate state-year keys
+- Missing values by variable
+- Unexpected years or states
+- Invalid or impossible values
+- Consistent variable types and units
+
+```{r}
+#| label: data-quality
+rq1_data |>
+  count(state, year, name = "n") |>
+  filter(n > 1)
+
+colSums(is.na(rq1_data))
+```
+
+### Missing-value rule
+
+- Explain which variables contain missing values.
+- State whether you will remove, retain, or impute incomplete rows.
+- Explain why that choice is appropriate for this project.
+
+```{r}
+#| label: complete-cases
+summary(rq1_data)
+```
+
+## 3. Exploratory analysis
+
+### Descriptive summary
+
+Describe the range and distribution of the outcome and predictors. Include a table with:
+
+- Number of observations
+- Mean
+- Standard deviation
+- Minimum
+- Median
+- Maximum
+
+```{r}
+#| label: summary-table
+# Create the descriptive summary table.
+```
+
+*Write a short interpretation of the table here.*
+
+### Outcome over time
+
+Explain what you want to learn about annual changes in production.
+
+```{r}
+#| label: annual-production
+#| fig-width: 7
+#| fig-height: 4.5
+# Create a plot of average production by year.
+# Add a title, readable axis labels, and an appropriate theme.
+```
+
+*Write a short interpretation of the figure here.*
+
+### Relationship with a key predictor
+
+Choose one predictor for a focused scatterplot. Explain why you selected it.
+
+```{r}
+#| label: predictor-scatterplot
+#| fig-width: 7
+#| fig-height: 4.5
+# Create a scatterplot of production against the selected predictor.
+# Add a fitted linear trend if appropriate.
+```
+
+*Write a short interpretation of the figure here. Avoid causal language.*
+
+### Correlations
+
+Describe the pairwise linear relationships among the numeric variables. Note any strong relationships among predictors that may affect the regression.
+
+```{r}
+#| label: correlations
+# Create and display a correlation table.
+```
+
+## 4. Model
+
+### Modeling strategy
+
+- Define the baseline model.
+- Define the full model.
+- Explain why these predictors were selected.
+- State how coefficients will be interpreted.
+- State what the model does not establish.
+
+```{r}
+#| label: fit-models
+# Fit a mean-only baseline model.
+# Fit a multiple linear regression with the selected predictors.
+```
+
+### Coefficients
+
+Report the coefficient estimates, standard errors, p-values, and confidence intervals.
+
+```{r}
+#| label: coefficients
+# Tidy the full model and select the statistics you want to report.
+```
+
+*Interpret the direction, size, and uncertainty of the important coefficients in their original units.*
+
+### Model fit
+
+Compare the baseline and full models using measures such as:
+
+- R-squared
+- Adjusted R-squared
+- In-sample RMSE
+
+```{r}
+#| label: model-fit
+# Build a comparison table for the baseline and full models.
+```
+
+*Explain whether the full model improves in-sample fit and what that comparison does not tell you.*
+
+## 5. Basic diagnostics
+
+Use diagnostic plots or numerical checks to evaluate the main linear-model assumptions.
+
+### Residuals versus fitted values
+
+```{r}
+#| label: residuals-fitted
+#| fig-width: 7
+#| fig-height: 4.5
+# Create a residuals-versus-fitted plot.
+```
+
+*Comment on nonlinearity, unequal variance, outliers, or other visible patterns.*
+
+### Normal Q-Q plot
+
+```{r}
+#| label: normal-qq
+#| fig-width: 7
+#| fig-height: 4.5
+# Create a normal Q-Q plot of the model residuals.
+```
+
+*Comment on departures from normality, especially in the tails.*
+
+### Diagnostic conclusion
+
+State which assumptions appear reasonable, which appear questionable, and whether you will make any correction or leave the simple model unchanged.
+
+## 6. Findings and limitations
+
+### Main findings
+
+Summarize the most important results in plain language:
+
+- Which predictors have the strongest associations?
+- What are the directions of the conditional coefficients?
+- How much variation does the model explain?
+- How does it compare with the baseline?
+
+*Write your findings here. Distinguish clearly between association and causation.*
+
+### Limitations
+
+Address the limitations that apply to your analysis, such as:
+
+- Short time span
+- State-level aggregation
+- Repeated observations of the same states
+- Missing or withheld source values
+- Measurement differences across sources
+- Omitted variables and confounding
+- Multicollinearity
+- Diagnostic problems
+- In-sample evaluation only
+
+*Write your limitations here.*
+
+### Conclusion
+
+Return to the research question and state what the analysis supports, what it does not support, and what a stronger follow-up analysis could do.
+
+*Write your conclusion here.*
+
+## 7. AI-use disclosure
+
+Write an accurate disclosure describing:
+
+- Whether AI tools were used
+- Which tasks they assisted with
+- Which parts you reviewed, ran, changed, interpreted, or wrote yourself
+
+> Replace this prompt with your own accurate disclosure before submitting.
