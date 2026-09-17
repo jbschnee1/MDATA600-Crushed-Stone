@@ -13,8 +13,11 @@ execute:
 ```{r}
 #| label: setup
 # Load the packages needed for this project.
+# install.packages("corrplot")
 
 library(dplyr)
+library(ggplot2)
+library(corrplot)
 
 stone_data <- read.csv("/Users/jschnee12/Library/Mobile Documents/com~apple~CloudDocs/MDATA600-Crushed-Stone/data/processed/crushed_stone_state_year.csv")
 ```
@@ -63,6 +66,13 @@ File exports/downloads
 - **EIA CSV and Excel codebook:** industrial energy prices.
 - **MSHA ZIP archives:** mine and employment data.
 
+```{r}
+#| label: coverage
+str(stone_data)
+```
+
+### Research Question 1 Dataset
+
 For research question 1, I filtered down the dataset to only include 2015 - 2023, combined Census authorized building units into a summation, `residential_permit_units`, and selected the following columns:
 
 - `state`
@@ -76,12 +86,11 @@ For research question 1, I filtered down the dataset to only include 2015 - 2023
 - `real_gdp`
 - `personal_income`
 - `construction_employment_thousands`
-- `lag_active_stone_mines`
-- `lag_stone_mine_employee_hours`
+- `active_stone_mines`
+- `stone_mine_employee_hours`
 - `industrial_energy_price_per_mmbtu`
 
 ```{r}
-#| label: coverage
 rq1_data <- stone_data |>
   filter(year >= 2015, year <= 2023) |>
   mutate(
@@ -103,21 +112,27 @@ rq1_data <- stone_data |>
     real_gdp,
     personal_income,
     construction_employment_thousands,
-    lag_active_stone_mines,
-    lag_stone_mine_employee_hours,
+    active_stone_mines,
+    stone_mine_employee_hours,
     industrial_energy_price_per_mmbtu
   )
+
+fields <- c("crushed_stone_tons",
+    "construction_real_gdp",
+    "capital_outlay_total",
+    "residential_permit_units",
+    "private_nonresidential_spending_nominal_millions",
+    "state_local_construction_spending_nominal_millions",
+    "real_gdp",
+    "personal_income",
+    "construction_employment_thousands",
+    "active_stone_mines",
+    "stone_mine_employee_hours",
+    "industrial_energy_price_per_mmbtu"
+    )
 ```
 
 ### Data-quality checks
-
-Check the following before modeling:
-
-- Duplicate state-year keys
-- Missing values by variable
-- Unexpected years or states
-- Invalid or impossible values
-- Consistent variable types and units
 
 ```{r}
 #| label: data-quality
@@ -126,40 +141,34 @@ rq1_data |>
   filter(n > 1)
 
 colSums(is.na(rq1_data))
+
+rq1_data |>
+  select(
+    state,
+    year,
+    crushed_stone_tons,
+    construction_employment_thousands
+  ) |>
+  filter(if_any(everything(), is.na))
+
+rq1_data_clean <- rq1_data |>
+  filter(!is.na(crushed_stone_tons))
 ```
 
-### Missing-value rule
-
-- Explain which variables contain missing values.
-- State whether you will remove, retain, or impute incomplete rows.
-- Explain why that choice is appropriate for this project.
-
-```{r}
-#| label: complete-cases
-summary(rq1_data)
-```
+There are 23 rows where the predictor is blank. I filtered these rows out of the dataset, so the remainder of the analysis will take place on `rq1_data_clean`.
 
 ## 3. Exploratory analysis
 
 ### Descriptive summary
 
-Describe the range and distribution of the outcome and predictors. Include a table with:
-
-- Number of observations
-- Mean
-- Standard deviation
-- Minimum
-- Median
-- Maximum
-
 ```{r}
 #| label: summary-table
-# Create the descriptive summary table.
+summary(rq1_data_clean)
 ```
 
 *Write a short interpretation of the table here.*
 
-### Outcome over time
+### Visualizing Scale of the Predictor
 
 Explain what you want to learn about annual changes in production.
 
@@ -167,25 +176,14 @@ Explain what you want to learn about annual changes in production.
 #| label: annual-production
 #| fig-width: 7
 #| fig-height: 4.5
-# Create a plot of average production by year.
-# Add a title, readable axis labels, and an appropriate theme.
+hist(rq1_data_clean$crushed_stone_tons / 1000000,
+     breaks = 25,
+     col = "steelblue",
+     main = "Crushed Stone Production Distribution",
+     xlab = "Production (million metric tons)")
 ```
 
 *Write a short interpretation of the figure here.*
-
-### Relationship with a key predictor
-
-Choose one predictor for a focused scatterplot. Explain why you selected it.
-
-```{r}
-#| label: predictor-scatterplot
-#| fig-width: 7
-#| fig-height: 4.5
-# Create a scatterplot of production against the selected predictor.
-# Add a fitted linear trend if appropriate.
-```
-
-*Write a short interpretation of the figure here. Avoid causal language.*
 
 ### Correlations
 
@@ -193,7 +191,90 @@ Describe the pairwise linear relationships among the numeric variables. Note any
 
 ```{r}
 #| label: correlations
-# Create and display a correlation table.
+# Open a larger plot window
+dev.new(width = 14, height = 11)
+
+plot_labels <- c(
+  "Stone production",
+  "Construction GDP",
+  "Highway outlays",
+  "Residential permits",
+  "Private nonres. spend",
+  "State/local const. spend",
+  "Total real GDP",
+  "Personal income",
+  "Construction employment",
+  "Active stone mines",
+  "Mine employee hours",
+  "Industrial energy price"
+)
+
+cor_matrix <- cor(
+  rq1_data_clean[, fields],
+  use = "complete.obs"
+)
+
+colnames(cor_matrix) <- plot_labels
+rownames(cor_matrix) <- plot_labels
+
+corrplot(
+  cor_matrix,
+  method = "color",
+  type = "lower",
+  order = "hclust",
+  addCoef.col = "black",
+  tl.col = "black",
+  tl.srt = 35,
+  tl.cex = 0.8,
+  number.cex = 0.6,
+  col = colorRampPalette(c("#B2182B", "white", "#2166AC"))(200),
+  title = "Correlation Matrix: Crushed-Stone Production Indicators",
+  mar = c(0, 0, 2, 0)
+)
+```
+
+### Relationships with the predictor
+
+```{r}
+#| label: predictor-scatterplot
+#| fig-width: 7
+#| fig-height: 4.5
+plot(
+  rq1_data_clean$private_nonresidential_spending_nominal_millions,
+  rq1_data_clean$crushed_stone_tons / 1000000,
+  pch = 19,
+  col = "pink",
+  main = "Production vs Housing Units",
+  xlab = "Residential Permit Units",
+  ylab = "Production (million metric tons)"
+) 
+plot(
+  rq1_data_clean$capital_outlay_total,
+  rq1_data_clean$crushed_stone_tons / 1000000,
+  pch = 19,
+  col = "orange",
+  main = "Production vs Contruction Spending",
+  xlab = "Contruction Spending",
+  ylab = "Production (million metric tons)"
+) 
+plot(
+  rq1_data_clean$residential_permit_units,
+  rq1_data_clean$crushed_stone_tons / 1000000,
+  pch = 19,
+  col = "purple",
+  main = "Production vs Active Mines",
+  xlab = "Active Mines",
+  ylab = "Production (million metric tons)"
+) 
+plot(
+  rq1_data_clean$construction_employment_thousands,
+  rq1_data_clean$crushed_stone_tons / 1000000,
+  pch = 19,
+  col = "blue",
+  main = "Production vs Construction Real GDP",
+  xlab = "Construction Real GDP",
+  ylab = "Production (million metric tons)"
+)
 ```
 
 ## 4. Model
@@ -210,6 +291,47 @@ Describe the pairwise linear relationships among the numeric variables. Note any
 #| label: fit-models
 # Fit a mean-only baseline model.
 # Fit a multiple linear regression with the selected predictors.
+
+# Simple regression
+# Model 1: Private nonresidential spending
+model1 <- lm(
+  crushed_stone_tons ~ private_nonresidential_spending_nominal_millions,
+  data = rq1_data_clean
+)
+summary(model1)
+
+# Model 2: Capital outlay
+model2 <- lm(
+  crushed_stone_tons ~ capital_outlay_total,
+  data = rq1_data_clean
+)
+summary(model2)
+
+# Model 3: Residential permit units
+model3 <- lm(
+  crushed_stone_tons ~ residential_permit_units,
+  data = rq1_data_clean
+)
+summary(model3)
+
+# Model 4: Construction employment
+model4 <- lm(
+  crushed_stone_tons ~ construction_employment_thousands,
+  data = rq1_data_clean
+)
+summary(model4)
+
+# Multiple regression
+model5 <- lm(
+  crushed_stone_tons ~
+    private_nonresidential_spending_nominal_millions +
+    capital_outlay_total +
+    residential_permit_units +
+    construction_employment_thousands,
+  data = rq1_data_clean
+)
+
+summary(model5)
 ```
 
 ### Coefficients
